@@ -1,0 +1,244 @@
+package kr.ac.kopo.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import kr.ac.kopo.dao.AccountDAO;
+import kr.ac.kopo.vo.AccountVO;
+import kr.ac.kopo.vo.TransactionVO;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class AccountService {
+
+	private final AccountDAO accountDao;
+
+	public String makeAccount(String userId) {
+
+		int accountNum1 = 2;
+		StringBuilder accountNum2 = new StringBuilder();
+		int accountNum3;
+
+		char[] id = userId.toCharArray();
+		for (int i = 0; i < 2; i++) {
+			int num = (int) id[i];
+			accountNum2.append(num);
+		}
+
+		accountNum2.toString();
+
+		Random random = new Random();
+
+		while (true) {
+			accountNum3 = random.nextInt(100000);
+			if (accountNum3 > 10000) {
+				break;
+			}
+		}
+
+		StringBuilder stb = new StringBuilder();
+
+		stb.append(accountNum1);
+		stb.append("-");
+		stb.append(accountNum2);
+		stb.append("-");
+		stb.append(accountNum3);
+
+		return stb.toString();
+
+	}
+
+	public void addAccount(AccountVO account, String userId) {
+
+		String accountNumber = this.makeAccount(userId);
+
+		account.setAccountNumber(accountNumber);
+
+		accountDao.insertAccount(account);
+	}
+
+	public List<AccountVO> hanaAccountList(String phonenumber) {
+
+		List<AccountVO> hanaAccountlist = accountDao.selectByHanaBank(phonenumber);
+
+		return hanaAccountlist;
+
+	}
+
+	public List<AccountVO> otherAccountList(String phonenumber) {
+
+		List<AccountVO> accountList = new ArrayList<>();
+
+		List<AccountVO> kbAccountlist = accountDao.selectByKbBank(phonenumber);
+
+		List<AccountVO> shinAccountlist = accountDao.selectByShinBank(phonenumber);
+
+		accountList.addAll(kbAccountlist);
+		accountList.addAll(shinAccountlist);
+
+		return accountList;
+
+	}
+
+	@Transactional
+	public void accountTransferProcess(String senderAccountNumber, String receiverAccountNumber, String senderBankCode,
+			String receiverBankCode, int transferAmount) {
+
+		if (senderBankCode.equals("2") && receiverBankCode.equals("2")) {
+
+			accountDao.senderHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("2") && receiverBankCode.equals("9")) {
+
+			accountDao.senderHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("2") && receiverBankCode.equals("14")) {
+
+			accountDao.senderHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("2") && receiverBankCode.equals("20")) {
+
+			accountDao.senderHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("9") && receiverBankCode.equals("2")) {
+
+			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("9") && receiverBankCode.equals("9")) {
+
+			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("9") && receiverBankCode.equals("14")) {
+
+			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("9") && receiverBankCode.equals("20")) {
+
+			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("14") && receiverBankCode.equals("2")) {
+
+			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("14") && receiverBankCode.equals("9")) {
+
+			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("14") && receiverBankCode.equals("14")) {
+
+			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("14") && receiverBankCode.equals("20")) {
+
+			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("20") && receiverBankCode.equals("2")) {
+
+			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("20") && receiverBankCode.equals("9")) {
+
+			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("20") && receiverBankCode.equals("14")) {
+
+			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("20") && receiverBankCode.equals("20")) {
+
+			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		}
+
+	}
+
+	public void addTransaction(Map<String, Object> map) {
+
+		 if(map.get("senderBankCode").equals("2")) {
+			 accountDao.insertHanaTransaction(map);
+		 }
+	}
+	
+	public List<TransactionVO> selectTransactionList(String phoneNumber){
+		
+		List<TransactionVO> transactionList = new ArrayList<>();
+		
+		transactionList = accountDao.selectTransactionList(phoneNumber);
+		
+		return transactionList;
+	}
+	
+	
+	
+
+}

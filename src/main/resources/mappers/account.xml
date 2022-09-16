@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.kopo.dao.AccountDAO">
+
+	<resultMap type="kr.ac.kopo.vo.AccountVO" id="accountMap">
+		<result column="PHONE_NUMBER" property="phoneNumber"/>
+		<result column="ACCOUNT_NUMBER" property="accountNumber"/>
+		<result column="ACCOUNT_PASSWORD" property="accountPassword"/>
+		<result column="BANK_CODE" property="bankCode"/>
+		<result column="BANK_REG_DATE" property="bankRegDate"/>
+		<result column="BALANCE" property="balance"/>
+		<result column="BANK_ALIAS" property="bankAlias"/>
+		<result column="TRANSFER_LIMIT" property="transferLimit"/>
+	</resultMap>
+	
+	<resultMap type="kr.ac.kopo.vo.TransactionVO" id="transactionMap">
+		<result column="TRAN_NUM" property="tranNum"/>
+		<result column="WITHDRAWAL_ACCOUNT_NUM" property="withdrawalAccountNum"/>
+		<result column="DEPOSIT_ACCOUNT_NUM" property="depositAccountNum"/>
+		<result column="WITHDRAWAL_NAME" property="withdrawalName"/>
+		<result column="DEPOSIT_NAME" property="depositName"/>
+		<result column="WITHDRAWAL_BANK_CODE" property="withdrawalBankCode"/>
+		<result column="DEPOSIT_BANK_CODE" property="depositBankCode"/>
+		<result column="WITHDRAWAL_PHONE_NUMBER" property="withdrawalPhoneNum"/>
+		<result column="DEPOSIT_PHONE_NUMBER" property="depositPhoneNum"/>
+		<result column="TRAN_AMOUNT" property="tranAmount"/>
+		<result column="TRAN_DATE" property="tranDate"/>
+	</resultMap>
+
+	<insert id="insertAccount" parameterType="AccountVO">
+		insert into FINAL_ACCOUNT(PHONE_NUMBER, ACCOUNT_NUMBER, ACCOUNT_PASSWORD, BANK_CODE, BALANCE, BANK_ALIAS, TRANSFER_LIMIT)
+		values(#{phoneNumber}, #{accountNumber}, #{accountPassword}, #{bankCode}, #{balance}, #{bankAlias}, #{transferLimit})
+	</insert>
+		
+	<select id="selectHanaBank" parameterType="String" resultMap="accountMap">
+		select ~~, code.bank_name from final_account AS account, final_bank_code AS code where account.phone_number = '${phoneNumber}' and code.bank_code = '2';
+	
+	</select>	
+	
+<!-- 	<select parameterType= "String" resultType="hashmap">
+	
+	select * from final_account AS account 
+	inner join 
+	final_bank_code As code 
+	on account.bank_code = code.bank_code 
+	where account.phone_number = '${phoneNumber}'
+		
+	</select> -->
+	
+		
+	<select id="selectByHanaBank"  parameterType="String" resultMap="accountMap" >
+		select * from final_account where phone_number = '${phoneNumber}'
+	</select>
+	
+	<select id="selectByKbBank"  parameterType="String" resultMap="accountMap" >
+		select * from account@JO_LINK where phone_number = '${phoneNumber}'
+	</select>
+	
+	<select id="selectByShinBank"  parameterType="String" resultMap="accountMap" >
+		select * from account@JIHOON2_BANK where phone_number = '${phoneNumber}'
+	</select>
+	
+	<update id="senderHanaTransferProcess" parameterType="String">
+		update final_account set balance = balance - ${transferAmount}
+		where account_number = '${senderAccountNumber}'
+	</update>
+	
+	<update id="senderKbTransferProcess" parameterType="String">
+		update account@JO_LINK set balance = balance - ${transferAmount}
+		where account_number = '${senderAccountNumber}'
+	</update>
+	
+	<update id="senderShinTransferProcess" parameterType="String">
+		update account@JIHOON2_BANK set balance = balance - ${transferAmount}
+		where account_number = '${senderAccountNumber}'
+	</update>
+	
+	<update id="senderWooriTransferProcess" parameterType="String">
+		update account@YOONJB_LINK set balance = balance - ${transferAmount}
+		where account_number = '${senderAccountNumber}'
+	</update>
+	
+	<update id="receiverHanaTransferProcess" parameterType="String">
+		update final_account set balance = balance + ${transferAmount}
+		where account_number = '${receiverAccountNumber}'
+		
+	</update>
+	
+	<update id="receiverKbTransferProcess" parameterType="String">
+		update account@JO_LINK set balance = balance + ${transferAmount}
+		where account_number = '${receiverAccountNumber}'
+	</update>
+	
+	<update id="receiverShinTransferProcess" parameterType="String">
+		update account@JIHOON2_BANK set balance = balance + ${transferAmount}
+		where account_number = '${receiverAccountNumber}'
+	</update>
+
+	<update id="receiverWooriTransferProcess" parameterType="String">
+		update account@YOONJB_LINK set balance = balance + ${transferAmount}
+		where account_number = '${receiverAccountNumber}'
+	</update>	
+	
+	<insert id="insertHanaTransaction" statementType="CALLABLE" parameterType="map">
+		
+		{ CALL insert_hana_transaction_1(
+			#{memberId},
+			#{phoneNumber},
+			#{senderAccountNumber},
+			#{receiverAccountNumber},
+			#{senderBankCode},
+			#{receiverBankCode},
+			#{transferAmount}
+			)
+		}
+		
+	</insert>
+	
+	
+	<select id="selectTransactionList"  parameterType="String" resultMap="transactionMap">
+		select * from FINAL_TRANSACTION_HISTORY
+		where WITHDRAWAL_PHONE_NUMBER = '${phoneNumber}' or DEPOSIT_PHONE_NUMBER = '${phoneNumber}'
+		
+	</select>	
+	
+	
+	
+	
+	
+	
+	
+
+</mapper>
