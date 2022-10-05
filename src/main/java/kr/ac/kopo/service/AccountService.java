@@ -62,6 +62,18 @@ public class AccountService {
 
 		accountDao.insertAccount(account);
 	}
+	
+	public void newAddAccount(AccountVO account, String userId) {
+		
+		String accountNumber = this.makeAccount(userId);
+
+		account.setAccountNumber(accountNumber);
+
+		accountDao.newInsertAccount(account);
+		
+	}
+	
+	
 
 	public List<AccountVO> hanaAccountList(String phonenumber) {
 
@@ -78,10 +90,13 @@ public class AccountService {
 		List<AccountVO> kbAccountlist = accountDao.selectByKbBank(phonenumber);
 
 		List<AccountVO> shinAccountlist = accountDao.selectByShinBank(phonenumber);
+		List<AccountVO> wooriAccountlist =
+accountDao.selectByWooriBank(phonenumber);
 
 		accountList.addAll(kbAccountlist);
 		accountList.addAll(shinAccountlist);
-
+		accountList.addAll(wooriAccountlist);
+		
 		return accountList;
 
 	}
@@ -103,7 +118,7 @@ public class AccountService {
 			accountDao.senderHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
-			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 		} else if (senderBankCode.equals("2") && receiverBankCode.equals("14")) {
@@ -111,7 +126,7 @@ public class AccountService {
 			accountDao.senderHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
-			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 		} else if (senderBankCode.equals("2") && receiverBankCode.equals("20")) {
@@ -119,12 +134,12 @@ public class AccountService {
 			accountDao.senderHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
-			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 		} else if (senderBankCode.equals("9") && receiverBankCode.equals("2")) {
 
-			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 			accountDao.receiverHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
@@ -132,31 +147,31 @@ public class AccountService {
 
 		} else if (senderBankCode.equals("9") && receiverBankCode.equals("9")) {
 
-			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
-					receiverBankCode, transferAmount);
-
-			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
-					receiverBankCode, transferAmount);
-
-		} else if (senderBankCode.equals("9") && receiverBankCode.equals("14")) {
-
-			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
-					receiverBankCode, transferAmount);
-
-			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
-					receiverBankCode, transferAmount);
-
-		} else if (senderBankCode.equals("9") && receiverBankCode.equals("20")) {
-
-			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
+		} else if (senderBankCode.equals("9") && receiverBankCode.equals("14")) {
+
+			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("9") && receiverBankCode.equals("20")) {
+
+			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
 		} else if (senderBankCode.equals("14") && receiverBankCode.equals("2")) {
 
-			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 			accountDao.receiverHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
@@ -164,31 +179,31 @@ public class AccountService {
 
 		} else if (senderBankCode.equals("14") && receiverBankCode.equals("9")) {
 
-			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
-					receiverBankCode, transferAmount);
-
-			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
-					receiverBankCode, transferAmount);
-
-		} else if (senderBankCode.equals("14") && receiverBankCode.equals("14")) {
-
-			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
-					receiverBankCode, transferAmount);
-
-			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
-					receiverBankCode, transferAmount);
-
-		} else if (senderBankCode.equals("14") && receiverBankCode.equals("20")) {
-
-			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
+		} else if (senderBankCode.equals("14") && receiverBankCode.equals("14")) {
+
+			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+		} else if (senderBankCode.equals("14") && receiverBankCode.equals("20")) {
+
+			accountDao.senderShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
+			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+					receiverBankCode, transferAmount);
+
 		} else if (senderBankCode.equals("20") && receiverBankCode.equals("2")) {
 
-			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 			accountDao.receiverHanaTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
@@ -196,7 +211,7 @@ public class AccountService {
 
 		} else if (senderBankCode.equals("20") && receiverBankCode.equals("9")) {
 
-			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
@@ -204,31 +219,39 @@ public class AccountService {
 
 		} else if (senderBankCode.equals("20") && receiverBankCode.equals("14")) {
 
-			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
-			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.receiverShinTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
 		} else if (senderBankCode.equals("20") && receiverBankCode.equals("20")) {
 
-			accountDao.senderKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.senderWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
 
-			accountDao.receiverKbTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
+			accountDao.receiverWooriTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode,
 					receiverBankCode, transferAmount);
-
 		}
-
 	}
+
+
 
 	public void addTransaction(Map<String, Object> map) {
 
 		 if(map.get("senderBankCode").equals("2")) {
 			 accountDao.insertHanaTransaction(map);
+		 } else if(map.get("senderBankCode").equals("9")) {
+			 accountDao.insertKbTransaction(map);
+		 } else if(map.get("senderBankCode").equals("14")) {
+			 accountDao.insertShinTransaction(map);
+		 } else if(map.get("senderBankCode").equals("20")) {
+			 accountDao.insertWooriTransaction(map);
 		 }
+		 
 	}
-	
+
+
 	public List<TransactionVO> selectTransactionList(String phoneNumber){
 		
 		List<TransactionVO> transactionList = new ArrayList<>();

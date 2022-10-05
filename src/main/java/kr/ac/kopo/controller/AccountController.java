@@ -31,28 +31,51 @@ public class AccountController {
 
 	private final AccountService accountService;
 
-	@GetMapping("/account/write")
+	@GetMapping("/write")
 	public String accountWrite(Model model) {
 		AccountVO accountVO1 = new AccountVO();
 		model.addAttribute("accountVO1", accountVO1);
 		return "account/writeForm";
 	}
 
-	@PostMapping("/account/write")
+	@PostMapping("/accountWrite")
 	public String accountWriteProcess(@Valid @ModelAttribute("acccountVO1") AccountVO account, BindingResult result,
 			HttpSession session) {
 
-		MemberVO member = (MemberVO) session.getAttribute("member");
+			MemberVO member = (MemberVO) session.getAttribute("member");
 
-		String userid = member.getId();
-
-		if (result.hasErrors()) {
-			return "account/write";
-		} else {
+			String userid = member.getId();
+			
 			accountService.addAccount(account, userid);
+			
+			System.out.println("아따야~~");
+			
 			return "account/list";
-		}
+
 	}
+	
+	@GetMapping("/newWrite")
+	public String newAccountWrite(Model model) {
+		AccountVO accountVO2 = new AccountVO();
+		model.addAttribute("accountVO2", accountVO2);
+		return "account/newWriteForm";
+	}
+	
+	@PostMapping("/account/newWrite")
+	public String newAccountWriteProcess(@Valid @ModelAttribute("acccountVO2") AccountVO account, BindingResult result,
+			HttpSession session) {
+
+			MemberVO member = (MemberVO) session.getAttribute("member");
+
+			String userid = member.getId();
+			
+			accountService.newAddAccount(account, userid);
+			
+			System.out.println("일로왓냐?");
+			
+			return "account/list";
+	}
+	
 
 
 	@PostMapping("/account/otherWrite")
@@ -72,7 +95,7 @@ public class AccountController {
 	}
 	
 
-	@GetMapping("/account/list")
+	@GetMapping("/list")
 	public String accountList(Model model) {
 		return "account/list";
 	}
@@ -81,7 +104,7 @@ public class AccountController {
 	@ResponseBody
 	public List<AccountVO> accountListProcess(@RequestParam("phoneNumber") String phoneNumber,
 			@RequestParam("withdrawalBank") String withdrawalBank) {
-
+		
 		List<AccountVO> accountList = new ArrayList<>();
 
 		if (withdrawalBank.equals("hana_bank")) {
@@ -112,12 +135,10 @@ public class AccountController {
 	}
 	
 	
-	
-	
-	@PostMapping("/account/transferForm")
+	@PostMapping("/accountTransferForm")
 	public String accountTransferForm(@RequestParam("accountNumber") String senderAccountNumber,
 			@RequestParam("bankCode") String senderBankCode, @RequestParam("name") String senderName, Model model) {
-
+		
 		model.addAttribute("senderAccountNumber", senderAccountNumber);
 		model.addAttribute("senderBankCode", senderBankCode);
 		model.addAttribute("senderName", senderName);
@@ -125,15 +146,16 @@ public class AccountController {
 		return "account/transferForm";
 	}
 
-	@PostMapping("/account/transferProcess")
+
+	@PostMapping("/accountTransferProcess")
 	public String accountTransferProcess(@RequestParam("name") String name, @RequestParam("id") String memberId,
 			@RequestParam("phoneNumber") String phoneNumber,
 			@RequestParam("senderAccountNumber") String senderAccountNumber,
 			@RequestParam("receiverAccountNumber") String receiverAccountNumber,
 			@RequestParam("senderBankCode") String senderBankCode,
 			@RequestParam("receiverBankCode") String receiverBankCode,
-			@RequestParam("transferAmount") int transferAmount) {
-
+			@RequestParam("transferAmount") int transferAmount, @RequestParam("memberType") String memberType, @RequestParam("guestGroupSelector") String guestGroupSelector) {
+		
 		accountService.accountTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode, receiverBankCode, transferAmount);
 
 		Map<String,Object>  map = new HashMap<>();
@@ -146,13 +168,17 @@ public class AccountController {
 		map.put("receiverBankCode", receiverBankCode);
 		map.put("transferAmount", transferAmount);
 		
+		map.put("memberType", memberType);
+		map.put("guestGroupSelector", guestGroupSelector);
+		
+		
 		accountService.addTransaction(map);
 		  
-		return "account/list";
+		return "channel/transactionList";
 
 	}
 
-	@GetMapping("/account/transactionList")
+	@GetMapping("/accountTransactionList")
 	public String accountTransactionList() {
 			
 		return "account/transactionList";
@@ -161,12 +187,28 @@ public class AccountController {
 	
 	@GetMapping("/transactionData")
 	@ResponseBody
-	public List<TransactionVO> accountTransactionData(@RequestParam("phoneNum") String phoneNum){
-				
-		List<TransactionVO> transactionList =accountService.selectTransactionList(phoneNum);	
-		return transactionList;
+	public List<TransactionVO> accountTransactionData(@RequestParam("phoneNum") String phoneNumber){
 		
+		System.out.println("된건가? phoneNumber:"+phoneNumber);
+		
+		
+				
+		List<TransactionVO> transactionList =accountService.selectTransactionList(phoneNumber);	
+		
+		System.out.println("transactionList:"+transactionList);
+		
+		return transactionList;
 	}
+	
+	
+	
+	
+	
+	@GetMapping("/test1")
+	public String sample(Model model) {
+		return "account/test1";
+	}
+	
 	
 	
 

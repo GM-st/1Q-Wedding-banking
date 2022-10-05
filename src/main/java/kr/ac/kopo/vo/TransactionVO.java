@@ -16,5 +16,8 @@ public class TransactionVO {
 	private String tranDate;
 	private String withdrawalPhoneNum;
 	private String depositPhoneNum;
+	private String guestGroup;
+	private String memberType;
+	private String rePay;
 	
 }

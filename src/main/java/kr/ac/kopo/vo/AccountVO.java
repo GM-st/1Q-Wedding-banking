@@ -13,5 +13,6 @@ public class AccountVO {
 		private int balance;
 		private String bankAlias;
 		private int transferLimit;
-		
+		private int hanaPoint;
+		private String newSubscribe;
 }

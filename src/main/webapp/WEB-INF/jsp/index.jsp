@@ -22,23 +22,27 @@
         <div>
             <ul>
 
-                <li><a href="/member/hanaLogin" >하나금융 로그인</a></li>
+                <li><a href="/hanaLogin" >하나금융 로그인</a></li>
                                 <li><a href="/member/otherLogin" >다른계정 로그인</a></li>
                 
                 <li><a href="/member/logout" >로그아웃</a></li>
                 
-                <li><a href="/member/join">회원가입</a></li>
+                <li><a href="join">회원가입</a></li>
                 <li><a href="/board/list">게시판</a></li>
                 <li><a href="/board/write">게시판 글쓰기</a></li>                
                       
-                <li><a href="/account/write">계좌개설</a></li>
-                <li><a href="/account/list">계좌조회</a></li>
+                <li><a href="/write">계좌개설</a></li>
+                <li><a href="/list">계좌조회</a></li>
                 
                 <li><a href="/account/transactionList">거래내역</a></li>
                 
-                <li><a href="/localhost:3000/">동영상 촬영</a></li>
+                <li><a href="http:/localhost:3000/HanaMain">hanaMain</a></li>
                 
+                <li><a href="/sample">sample</a></li>
                 
+                <li><a href="/kakaoPayConnect">카카오페이</a></li>
+                
+                                
                 
 
             </ul>      

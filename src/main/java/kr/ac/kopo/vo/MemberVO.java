@@ -9,5 +9,9 @@ public class MemberVO {
 	private String id;
 	private String password;
 	private String phonenumber;
+	private String type;
+	private String openbanking;
+	private String video;
+	private String image;
 
 }

@@ -12,12 +12,18 @@ import kr.ac.kopo.vo.TransactionVO;
 public interface AccountDAO {
 
 	public void insertAccount(AccountVO account);
+	
+	public void newInsertAccount(AccountVO account);
 
 	public List<AccountVO> selectByHanaBank(String phoneNumber);
 
 	public List<AccountVO> selectByKbBank(String phoneNumber);
 
 	public List<AccountVO> selectByShinBank(String phoneNumber);
+	
+	public List<AccountVO> selectByWooriBank(String phoneNumber);
+	
+	
 
 	public void senderHanaTransferProcess(String senderAccountNumber, String receiverAccountNumber,
 			String senderBankCode, String receiverBankCode, int transferAmount);
@@ -43,8 +49,17 @@ public interface AccountDAO {
 	public void receiverWooriTransferProcess(String senderAccountNumber, String receiverAccountNumber,
 			String senderBankCode, String receiverBankCode, int transferAmount);
 
+	
+	
 	public void insertHanaTransaction(Map<String, Object> map);
+	
+	public void insertKbTransaction(Map<String, Object> map);
+	
+	public void insertShinTransaction(Map<String, Object> map);
+	
+	public void insertWooriTransaction(Map<String, Object> map);
 
+	
 	
 	public List<TransactionVO> selectTransactionList(String phoneNumber);
 	

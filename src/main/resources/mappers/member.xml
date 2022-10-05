@@ -3,16 +3,73 @@
   
   <mapper namespace="kr.ac.kopo.dao.MemberDAO">
   
+  	<resultMap type="kr.ac.kopo.vo.GuestGroupVO" id="guestGroupMap">
+
+		<result column="MEMBER_TYPE" property="memberType"/>
+		<result column="MEMBER_NAME" property="memberName"/>
+		<result column="MEMBER_ID" property="memberId"/>
+		<result column="MEMBER_PHONENUMBER" property="memberPhoneNumber"/>
+		<result column="FIRST_GUEST_GROUP" property="firstGuestGroup"/>
+		<result column="SECOND_GUEST_GROUP" property="secondGuestGroup"/>
+		<result column="THIRD_GUEST_GROUP" property="thirdGuestGroup"/>
+		<result column="LAST_GUEST_GROUP" property="lastGuestGroup"/>
+
+	</resultMap>
+  
+  
   	<select id="login" parameterType="MemberVO" resultType="MemberVO">
   		SELECT * FROM FINAL_MEMBER
   		WHERE ID=#{id} AND PASSWORD=#{password}
   	</select>
   	
+  	<select id="getMember" parameterType="MemberVO" resultType="MemberVO">
+  		SELECT * FROM FINAL_MEMBER
+  		WHERE PHONENUMBER=#{phonenumber}
+  	</select>
+  	
   	<insert id="joinProcess" parameterType="MemberVO">
-  		insert into FINAL_MEMBER(name, id, password, phonenumber)
-  		values(#{name}, #{id}, #{password}, #{phonenumber})
+  		insert into FINAL_MEMBER(no, name, id, password, phonenumber)
+  		values(seqmember.nextval, #{name}, #{id}, #{password}, #{phonenumber})
   	</insert>
   	
+  	
+  	<update id="agreeOpenBanking" parameterType="String">
+  		
+  		update final_member set openbanking = '동의'
+  		where phonenumber = '${phoneNumber}'
 
-  	  	
+  	</update>
+
+  	<update id="agreeMarryGroom" parameterType="String">
+  		
+  		update final_member set type = '신랑'
+  		where phonenumber = '${phoneNumber}'
+
+  	</update>
+  	
+  	<update id="agreeMarryBride" parameterType="String">
+  		
+  		update final_member set type = '신부'
+  		where phonenumber = '${phoneNumber}'
+
+  	</update>
+  	
+  	<insert id="insertGuestGroup" parameterType="GuestGroupVO">
+  		
+  		insert into GUEST_GROUP(MEMBER_TYPE, MEMBER_NAME, MEMBER_ID, MEMBER_PHONENUMBER, FIRST_GUEST_GROUP, SECOND_GUEST_GROUP, THIRD_GUEST_GROUP) 
+  		values(#{memberType}, #{memberName}, #{memberId}, #{memberPhoneNumber}, #{firstGuestGroup}, #{secondGuestGroup}, #{thirdGuestGroup}) 
+  	</insert>
+
+
+  	<select id="selectGuestGroup" parameterType="String" resultMap="guestGroupMap">
+  		
+  		select * from guest_group
+  		where member_phonenumber = '${phoneNumber}'
+  		
+  	</select>
+
+
   </mapper>
+  
+  
+  
