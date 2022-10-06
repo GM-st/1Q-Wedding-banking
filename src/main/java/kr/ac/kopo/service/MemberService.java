@@ -1,5 +1,6 @@
 package kr.ac.kopo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.dao.MemberDAO;
 import kr.ac.kopo.vo.GuestGroupVO;
 import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.vo.TransactionVO;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -49,5 +51,15 @@ public class MemberService {
 		
 		return guestGroupList;
 	}
+	
+	public List<TransactionVO> getGuestMoney(String groupName){
+		
+		List<TransactionVO> guestGroupList = memberDao.selectGuestMoney(groupName);
+		
+		return guestGroupList;
+	}
+	
+	
+
 	
 }

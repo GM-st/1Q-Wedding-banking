@@ -6,11 +6,13 @@ import org.apache.ibatis.annotations.Mapper;
 
 import kr.ac.kopo.vo.GuestGroupVO;
 import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.vo.TransactionVO;
 
 @Mapper
 public interface MemberDAO {
 	
 	public MemberVO login(MemberVO memberVO);
+	
 	public MemberVO getMember(MemberVO memberVO);
 	
 	
@@ -25,6 +27,8 @@ public interface MemberDAO {
 	
 	public List<GuestGroupVO> selectGuestGroup(String phoneNumber);
 	
+	
+	public List<TransactionVO> selectGuestMoney(String groupName);
 	
 	
 	

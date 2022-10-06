@@ -19,6 +19,7 @@ import kr.ac.kopo.service.MemberService;
 import kr.ac.kopo.vo.AccountVO;
 import kr.ac.kopo.vo.GuestGroupVO;
 import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.vo.TransactionVO;
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -49,13 +50,15 @@ public class MemberController {
 	@ResponseBody
 	@PostMapping("/member/hanaLogin")
 	public String loginProcess(@ModelAttribute MemberVO memberVO, Model model, HttpSession session) {
-	
+		
 	MemberVO member = memberService.login(memberVO);
+	
+	System.out.println("member:"+member);
 		
 	if(member == null) {
 
 		model.addAttribute("msg", "fail");
-		return "member/hanaLogin";
+		return "";
 	}
 	
 	session.setAttribute("member", member);
@@ -262,6 +265,21 @@ public class MemberController {
 		
 		return guestGroupList;
 	}
+	
+	@PostMapping("member/getGuestMoney")
+	@ResponseBody
+	public List<TransactionVO> getGuestMoney(@RequestParam("groupName") String groupName){
+		
+		System.out.println("groupName:"+groupName);
+		
+		List<TransactionVO> guestMoneyList = memberService.getGuestMoney(groupName);
+		
+		System.out.println("guestMoneyList:"+guestMoneyList);
+		
+		
+		return guestMoneyList;
+	}
+	
 	
 	
 	

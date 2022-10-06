@@ -34,7 +34,7 @@
                 <li><a href="/write">계좌개설</a></li>
                 <li><a href="/list">계좌조회</a></li>
                 
-                <li><a href="/account/transactionList">거래내역</a></li>
+                <li><a href="/accountTransactionList">거래내역</a></li>
                 
                 <li><a href="http:/localhost:3000/HanaMain">hanaMain</a></li>
                 

@@ -28,6 +28,7 @@
 <link href="css/fontawesome-all.min.css" rel="stylesheet"
 	type="text/css">
 <link rel="stylesheet" href="css/themify-icons.css">
+
 </head>
 
 <body>
@@ -254,7 +255,7 @@
                                             	      },success : (result) =>{
                                             	         location.href = "http://localhost:3000/HanaMainLogout";
                                             	      },error : (e) => {
-                                            	         alert("실패" + e);
+                                            	         alert("실패당" + e);
                                             	      }
                                             	   })
                                             	};

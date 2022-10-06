@@ -17,8 +17,5 @@
 <div>결제방법: ${info.payment_method_type}</div>
 
 
-
- 
- 
 </body>
 </html>
