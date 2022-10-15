@@ -101,7 +101,7 @@ accountDao.selectByWooriBank(phonenumber);
 
 	}
 
-	@Transactional
+	// @Transactional
 	public void accountTransferProcess(String senderAccountNumber, String receiverAccountNumber, String senderBankCode,
 			String receiverBankCode, int transferAmount) {
 
@@ -251,15 +251,84 @@ accountDao.selectByWooriBank(phonenumber);
 		 
 	}
 
+	
 
-	public List<TransactionVO> selectTransactionList(String phoneNumber){
+	public List<TransactionVO> selectBrideTransactionList(String phoneNumber){
 		
 		List<TransactionVO> transactionList = new ArrayList<>();
 		
-		transactionList = accountDao.selectTransactionList(phoneNumber);
+		transactionList = accountDao.selectBrideTransactionList(phoneNumber);
 		
 		return transactionList;
 	}
+	
+public List<TransactionVO> selectGroomTransactionList(String phoneNumber){
+		
+		List<TransactionVO> transactionList = new ArrayList<>();
+		
+		transactionList = accountDao.selectGroomTransactionList(phoneNumber);
+		
+		return transactionList;
+	}
+
+public List<TransactionVO> selectGuestTransactionList(String phoneNumber){
+	
+	List<TransactionVO> transactionList = new ArrayList<>();
+	
+	transactionList = accountDao.selectGuestTransactionList(phoneNumber);
+	
+	return transactionList;
+}
+
+public List<TransactionVO> selectManagerTransactionList(String phoneNumber){
+	
+	List<TransactionVO> transactionList = new ArrayList<>();
+	
+	transactionList = accountDao.selectManagerTransactionList(phoneNumber);
+	
+	return transactionList;
+}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public List<TransactionVO> selectGuestRePayList(String accountNumber){
+		
+		List<TransactionVO> guestRePayList = new ArrayList<>();
+		
+		guestRePayList = accountDao.selectGuestRePayList(accountNumber);
+		
+		return guestRePayList;
+	}
+	
+	
+	public void changeRePay(String receiverAccountNumber) {
+		
+		accountDao.updateRePay(receiverAccountNumber);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

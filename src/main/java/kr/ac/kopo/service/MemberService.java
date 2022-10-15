@@ -2,10 +2,13 @@ package kr.ac.kopo.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+
 import kr.ac.kopo.dao.MemberDAO;
+import kr.ac.kopo.vo.AccountVO;
 import kr.ac.kopo.vo.GuestGroupVO;
 import kr.ac.kopo.vo.MemberVO;
 import kr.ac.kopo.vo.TransactionVO;
@@ -21,13 +24,20 @@ public class MemberService {
 		return memberDao.login(memberVO);
 	}
 	
-	public MemberVO getMember(MemberVO memberVO) {
-		return memberDao.getMember(memberVO);
+	public MemberVO getMember(String phoneNumber) {
+		return memberDao.getMember(phoneNumber);
 	}
+	
+	
 	
 	public void joinProcess(MemberVO memverVO) {
 		memberDao.joinProcess(memverVO);
 	}
+	
+	
+	
+	
+	
 	
 	public void agreeOpenBanking(String phoneNumber) {
 		memberDao.agreeOpenBanking(phoneNumber);
@@ -45,6 +55,14 @@ public class MemberService {
 	public void guestGroupProcess(GuestGroupVO guestGroupVO) {
 		memberDao.insertGuestGroup(guestGroupVO);
 	}
+
+	public void updateGuestGroupType(GuestGroupVO guestGroupVO) {
+		memberDao.updateGuestGroupType(guestGroupVO);
+	}
+	
+	
+	
+	
 	
 	public List<GuestGroupVO> getGuestGroup(String phoneNumber) {
 		List<GuestGroupVO> guestGroupList = memberDao.selectGuestGroup(phoneNumber);
@@ -58,6 +76,60 @@ public class MemberService {
 		
 		return guestGroupList;
 	}
+	
+	
+	public AccountVO getAccount(String phoneNumber) {
+		
+		AccountVO accountVO = memberDao.getAccount(phoneNumber);
+		
+		return accountVO;
+	}
+	
+	
+	
+	
+	public List<Map<String,Object>> getGroupedGuestCount(){
+		List<Map<String,Object>> groupedGuestCountList = memberDao.getGroupedGuestCount();
+		
+		System.out.println("groupedGuestCountList:"+groupedGuestCountList);
+		
+		return groupedGuestCountList;
+	}
+	
+	public List<Map<String,Object>> getGroupedGuestSum(){
+		List<Map<String,Object>> groupedGuestSumList = memberDao.getGroupedGuestSum();
+		
+		System.out.println("groupedGuestSumList:"+groupedGuestSumList);
+		
+		return groupedGuestSumList;
+	}
+	
+	
+	
+	
+	public void selectVideoMessage(String phonenumber) {
+		memberDao.selectVideoMessage(phonenumber);
+	}
+	
+	public void selectImageMessage(String phonenumber) {
+		memberDao.selectImageMessage(phonenumber);
+	}
+	
+	
+	public MemberVO hanaPointVideo(String phoneNumber) {
+		
+		return memberDao.hanaPointVideo(phoneNumber); 
+	}
+	
+	
+	public void hanaPointUpdate(MemberVO memberVO) {
+		
+		memberDao.hanaPointUpdate(memberVO);
+		
+	}
+	
+	
+	
 	
 	
 

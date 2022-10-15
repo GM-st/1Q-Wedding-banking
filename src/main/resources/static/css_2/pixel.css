@@ -27,6 +27,34 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
  
+ 
+ 
+ @font-face {
+    font-family: 'hana';
+    src: url("/font/HanaUL.woff") format('woff');
+}
+@font-face {
+    font-family: 'hanaB';
+    src: url("/font/HanaB.woff") format('woff');
+}
+@font-face {
+    font-family: 'hanaM';
+    src: url("/font/HanaM.woff") format('woff');
+}
+@font-face {
+    font-family: 'hanaCM';
+    src: url("/font/HanaCM.woff") format('woff');
+}
+@font-face {
+    font-family: 'hanaL';
+    src: url("/font/HanaL.woff") format('woff');
+}
+ 
+ *{
+ 	font-family: hanaM;
+ }
+ 
+ 
  #joinbtn{
 	background-color: #008485;
 	border-color: #008485;
@@ -21358,7 +21386,7 @@ button.bg-gray-dark:focus {
 }
 
 .bg-gradient-secondary {
-    background: linear-gradient(87deg, #1c2540 0, #172345 100%) !important;
+    background: linear-gradient(87deg, #008485, #008485 100%) !important;
 }
 
 .bg-gradient-success {
@@ -25254,6 +25282,7 @@ button.section-github:focus {
     top: 0;
     width: 100%;
     z-index: 100;
+    background: transparent;
 }
 
 .navbar-main .navbar-toggler-icon {

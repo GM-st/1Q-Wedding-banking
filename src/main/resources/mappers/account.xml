@@ -179,14 +179,71 @@
 	
 	
 	
-	<select id="selectTransactionList"  parameterType="String" resultMap="transactionMap">
+	
+	
+	
+	
+	
+	<select id="selectBrideTransactionList"  parameterType="String" resultMap="transactionMap">
 	
 select TRAN_NUM, WITHDRAWAL_ACCOUNT_NUM,  DEPOSIT_ACCOUNT_NUM, WITHDRAWAL_NAME, DEPOSIT_NAME, decode(WITHDRAWAL_BANK_CODE, '2', '하나은행', decode(WITHDRAWAL_BANK_CODE, '9', '국민은행', decode(WITHDRAWAL_BANK_CODE, '14', '신한은행' , decode(WITHDRAWAL_BANK_CODE, '20', '우리은행')))) as WITHDRAWAL_BANK_CODE, DEPOSIT_BANK_CODE, WITHDRAWAL_PHONE_NUMBER,  DEPOSIT_PHONE_NUMBER,  TRAN_AMOUNT,  TRAN_DATE, GUEST_GROUP, MEMBER_TYPE, RE_PAY 
 from FINAL_TRANSACTION_HISTORY
-	where WITHDRAWAL_PHONE_NUMBER = '${phoneNumber}'
+	where DEPOSIT_PHONE_NUMBER = '${phoneNumber}'
 	
-	</select>	
+	</select>
 	
+	
+	<select id="selectGroomTransactionList"  parameterType="String" resultMap="transactionMap">
+	
+select TRAN_NUM, WITHDRAWAL_ACCOUNT_NUM,  DEPOSIT_ACCOUNT_NUM, WITHDRAWAL_NAME, DEPOSIT_NAME, decode(WITHDRAWAL_BANK_CODE, '2', '하나은행', decode(WITHDRAWAL_BANK_CODE, '9', '국민은행', decode(WITHDRAWAL_BANK_CODE, '14', '신한은행' , decode(WITHDRAWAL_BANK_CODE, '20', '우리은행')))) as WITHDRAWAL_BANK_CODE, DEPOSIT_BANK_CODE, WITHDRAWAL_PHONE_NUMBER,  DEPOSIT_PHONE_NUMBER,  TRAN_AMOUNT,  TRAN_DATE, GUEST_GROUP, MEMBER_TYPE, RE_PAY 
+from FINAL_TRANSACTION_HISTORY
+	where DEPOSIT_PHONE_NUMBER = '${phoneNumber}'
+	
+	</select>
+	
+	
+	<select id="selectGuestTransactionList"  parameterType="String" resultMap="transactionMap">
+	
+select TRAN_NUM, WITHDRAWAL_ACCOUNT_NUM,  DEPOSIT_ACCOUNT_NUM, WITHDRAWAL_NAME, DEPOSIT_NAME, decode(WITHDRAWAL_BANK_CODE, '2', '하나은행', decode(WITHDRAWAL_BANK_CODE, '9', '국민은행', decode(WITHDRAWAL_BANK_CODE, '14', '신한은행' , decode(WITHDRAWAL_BANK_CODE, '20', '우리은행')))) as WITHDRAWAL_BANK_CODE, DEPOSIT_BANK_CODE, WITHDRAWAL_PHONE_NUMBER,  DEPOSIT_PHONE_NUMBER,  TRAN_AMOUNT,  TRAN_DATE, GUEST_GROUP, MEMBER_TYPE, RE_PAY 
+from FINAL_TRANSACTION_HISTORY
+	where DEPOSIT_PHONE_NUMBER = '${phoneNumber}' or WITHDRAWAL_PHONE_NUMBER = '${phoneNumber}' 
+	
+	</select>
+	
+	<select id="selectManagerTransactionList" resultMap="transactionMap">
+	
+select TRAN_NUM, WITHDRAWAL_ACCOUNT_NUM,  DEPOSIT_ACCOUNT_NUM, WITHDRAWAL_NAME, DEPOSIT_NAME, decode(WITHDRAWAL_BANK_CODE, '2', '하나은행', decode(WITHDRAWAL_BANK_CODE, '9', '국민은행', decode(WITHDRAWAL_BANK_CODE, '14', '신한은행' , decode(WITHDRAWAL_BANK_CODE, '20', '우리은행')))) as WITHDRAWAL_BANK_CODE, DEPOSIT_BANK_CODE, WITHDRAWAL_PHONE_NUMBER,  DEPOSIT_PHONE_NUMBER,  TRAN_AMOUNT,  TRAN_DATE, GUEST_GROUP, MEMBER_TYPE, RE_PAY 
+from FINAL_TRANSACTION_HISTORY
+	 
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="selectGuestRePayList" parameterType="String" resultMap="transactionMap">
+	
+	select *
+	from FINAL_TRANSACTION_HISTORY
+	where WITHDRAWAL_ACCOUNT_NUM = '${accountNumber}'
+	
+	</select>
+	
+	
+	<update id="updateRePay"  parameterType="String">
+		
+		update FINAL_TRANSACTION_HISTORY set RE_PAY = '완료' 
+		where WITHDRAWAL_ACCOUNT_NUM = '${receiverAccountNumber}'
+	
+	</update>
+	
+	
+
 	
 	
 	

@@ -4,7 +4,8 @@ import lombok.Data;
 
 @Data
 public class AccountVO {
-	
+		
+		private String name;
 		private String phoneNumber;
 		private String accountNumber;
 		private String accountPassword;

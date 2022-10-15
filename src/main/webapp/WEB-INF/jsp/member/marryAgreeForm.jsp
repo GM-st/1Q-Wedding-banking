@@ -64,8 +64,7 @@
 <link type="text/css"
 	href="node_modules_2/@fortawesome/fontawesome-free/css/all.min.css"
 	rel="stylesheet">
-<script src="https://kit.fontawesome.com/530bb32673.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/68941cf0d3.js" crossorigin="anonymous"></script>
 
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css"
@@ -82,244 +81,19 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 
+<!-- kakao map -->
+
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e377ec98c59b3f6221988c2117b57373&libraries=services,clusterer"></script>
+
+
 </head>
 
 <body>
 
-	<div
-		class="preloader bg-dark flex-column justify-content-center align-items-center">
-		<svg id="loader-logo" xmlns="http://www.w3.org/2000/svg" width="50"
-			height="50" viewBox="0 0 64 78.4">
-        <path fill="#fff" d="M10,0h1.2V11.2H0V10A10,10,0,0,1,10,0Z" />
-        <rect fill="none" stroke="#fff" stroke-width="11.2" x="40"
-				y="17.6" width="0" height="25.6" />
-        <rect fill="none" stroke="#fff" stroke-opacity="0.4"
-				stroke-width="11.2" x="23" y="35.2" width="0" height="25.6" />
-        <path fill="#fff"
-				d="M52.8,35.2H64V53.8a7,7,0,0,1-7,7H52.8V35.2Z" />
-        <rect fill="none" stroke="#fff" stroke-width="11.2" x="6"
-				y="52.8" width="0" height="25.6" />
-        <path fill="#fff" d="M52.8,0H57a7,7,0,0,1,7,7h0v4.2H52.8V0Z" />
-        <rect fill="none" stroke="#fff" stroke-opacity="0.4"
-				stroke-width="11.2" x="57.8" y="17.6" width="0" height="11.2" />
-        <rect fill="none" stroke="#fff" stroke-width="11.2" x="6"
-				y="35.2" width="0" height="11.2" />
-        <rect fill="none" stroke="#fff" stroke-width="11.2" x="40.2"
-				y="49.6" width="0" height="11.2" />
-        <path fill="#fff"
-				d="M17.6,67.2H28.8v1.2a10,10,0,0,1-10,10H17.6V67.2Z" />
-        <rect fill="none" stroke="#fff" stroke-opacity="0.4"
-				stroke-width="28.8" x="31.6" width="0" height="11.2" />
-        <rect fill="none" stroke="#fff" x="14" stroke-width="28.8"
-				y="17.6" width="0" height="11.2" />
-    </svg>
-	</div>
+	<jsp:include page="../include/topMenu.jsp" />
 
-	<nav
-		class="navbar navbar-expand-lg navbar-transparent navbar-light navbar-theme-soft mb-4">
-		<div class="container position-relative">
-			<a class="navbar-brand mr-lg-5" href="../../index.html"> <img
-				class="navbar-brand-dark" src="img_2/brand/light.svg"
-				alt="Pixel Logo"> <img class="navbar-brand-light"
-				src="img_2/brand/dark.svg" alt="Pixel Logo Dark">
-			</a>
-			<div class="navbar-collapse collapse" id="navbar-dark-profile">
-				<div class="navbar-collapse-header">
-					<div class="row">
-						<div class="col-6 collapse-brand">
-							<a href="../../index.html"> <img src="img_2/brand/dark.svg"
-								alt="Pixel Logo">
-							</a>
-						</div>
-						<div class="col-6 collapse-close">
-							<span class="fas fa-times" data-toggle="collapse" role="button"
-								data-target="#navbar-dark-profile"
-								aria-controls="navbar-dark-profile" aria-expanded="false"
-								aria-label="Toggle navigation"></span>
-						</div>
-					</div>
-				</div>
-				<ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-					<li class="nav-item dropdown"><a href="#" class="nav-link"
-						data-toggle="dropdown" role="button"> <span
-							class="fas fa-angle-down nav-link-arrow"></span> <span
-							class="nav-link-inner-text">Pages</span>
-					</a>
-						<ul class="dropdown-menu">
-							<li class="dropdown-submenu"><a href="#"
-								class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-								aria-haspopup="true" aria-expanded="false">About<span
-									class="fas fa-angle-right nav-link-arrow"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="../../html/pages/about-company.html"
-										class="dropdown-item">About Company</a> <a
-										href="../../html/pages/about-startup.html"
-										class="dropdown-item">About Startup</a> <a
-										href="../../html/pages/about-team.html" class="dropdown-item">About
-											Team</a></li>
-								</ul></li>
-							<li class="dropdown-submenu"><a href="#"
-								class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-								aria-haspopup="true" aria-expanded="false">Blog <span
-									class="fas fa-angle-right nav-link-arrow"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="../../html/pages/blog.html"
-										class="dropdown-item">Blog</a> <a
-										href="../../html/pages/single-article.html"
-										class="dropdown-item">Single Article</a> <a
-										href="../../html/pages/single-article-2.html"
-										class="dropdown-item">Single Article 2</a></li>
-								</ul></li>
-							<li class="dropdown-submenu"><a href="#"
-								class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-								aria-haspopup="true" aria-expanded="false">Posts <span
-									class="fas fa-angle-right nav-link-arrow"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="../../html/pages/posts.html"
-										class="dropdown-item">Posts</a> <a
-										href="../../html/pages/single-post.html" class="dropdown-item">Single
-											Post</a></li>
-								</ul></li>
-							<li class="dropdown-submenu"><a href="#"
-								class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-								aria-haspopup="true" aria-expanded="false">Profile<span
-									class="fas fa-angle-right nav-link-arrow"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="../../html/pages/profile.html"
-										class="dropdown-item">Profile</a> <a
-										href="../../html/pages/profile-clean.html"
-										class="dropdown-item">Profile Clean</a></li>
-								</ul></li>
-							<li class="dropdown-submenu"><a href="#"
-								class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-								aria-haspopup="true" aria-expanded="false">Specials <span
-									class="fas fa-angle-right nav-link-arrow"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="../../html/pages/signin.html"
-										class="dropdown-item">Login</a> <a
-										href="../../html/pages/signup.html" class="dropdown-item">Signup</a>
-										<a href="../../html/pages/coming-soon.html"
-										class="dropdown-item">Coming Soon</a><a
-										href="../../html/pages/coming-soon-counter.html"
-										class="dropdown-item">Coming Soon 2</a> <a
-										href="../../html/pages/maintenance.html" class="dropdown-item">Maintenance</a>
-										<a href="../../html/pages/404.html" class="dropdown-item">404
-											Not Found</a></li>
-								</ul></li>
-							<li><a class="dropdown-item"
-								href="../../html/pages/contact.html">Contact</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/pages/pricing.html">Pricing</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/pages/services.html">Services</a></li>
-						</ul></li>
-					<li class="nav-item dropdown"><a href="#" class="nav-link"
-						data-toggle="dropdown" role="button"> <span
-							class="fas fa-angle-down nav-link-arrow"></span> <span
-							class="nav-link-inner-text">Sections</span>
-					</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item"
-								href="../../html/sections/about.html">About</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/blog.html">Blog</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/clients.html">Clients</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/contact.html">Contact</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/features.html">Features</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/pricing.html">Pricing</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/team.html">Team</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/testimonials.html">Testimonials</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/navbars.html">Navbars</a></li>
-							<li><a class="dropdown-item"
-								href="../../html/sections/footers.html">Footers</a></li>
-						</ul></li>
-
-					<li class="nav-item dropdown"><a href="#" class="nav-link"
-						data-toggle="dropdown" role="button"> <span
-							class="fas fa-angle-down nav-link-arrow"></span> <span
-							class="nav-link-inner-text">Support</span>
-					</a>
-						<div class="dropdown-menu dropdown-menu-lg">
-							<div class="col-auto px-0" data-dropdown-content>
-								<div class="list-group list-group-flush">
-									<a href="../../docs/introduction.html"
-										class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
-										<span class="icon icon-sm icon-dark"><span
-											class="fas fa-file-alt"></span></span>
-										<div class="ml-4">
-											<span class="text-dark d-block">Documentation</span> <span
-												class="small">Examples and guides</span>
-										</div>
-									</a> <a href="https://themesberg.com/contact" target="_blank"
-										class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
-										<span class="icon icon-sm icon-dark"><span
-											class="fas fa-microphone-alt"></span></span>
-										<div class="ml-4">
-											<span class="text-dark d-block">Support</span> <span
-												class="small">Looking for answers? Ask us!</span>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div></li>
-				</ul>
-			</div>
-			<div class="d-flex align-items-center">
-				<div class="dropdown pl-1">
-					<div class="d-flex align-items-center" id="dropdownMenuButton"
-						data-toggle="dropdown">
-
-						<button
-							class="btn btn-xs btn-circle btn-icon-only btn-soft dropdown-toggle mr-2"
-							aria-label="profile link" type="button" aria-haspopup="true"
-							aria-expanded="false">
-							<span class="fa fa-user"></span>
-						</button>
-
-						<p id="usertype" class="font-small nav-link-inner-text m-0">고객유형
-							: ${member.type}</p>
-						&nbsp; &nbsp;
-
-						<button
-							class="btn btn-xs btn-circle btn-icon-only btn-soft dropdown-toggle mr-2"
-							aria-label="profile link" type="button" aria-haspopup="true"
-							aria-expanded="false">
-							<span class="fa fa-user"></span>
-						</button>
-
-						<p id="username" class="font-small nav-link-inner-text m-0">고객이름
-							: ${member.name}</p>
-
-					</div>
-					<div class="dropdown-menu dropdown-menu-md"
-						aria-labelledby="dropdownMenuButton">
-						<h6 class="dropdown-header">Hi, John Doe</h6>
-						<a class="dropdown-item" href="#">My profile</a> <a
-							class="dropdown-item" href="#">Dashboard</a> <a
-							class="dropdown-item" href="#">Settings</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#"><span
-							class="fas fa-sign-out-alt mr-2"></span>Sign out</a>
-					</div>
-				</div>
-				<button class="navbar-toggler ml-2" type="button"
-					data-toggle="collapse" data-target="#navbar-dark-profile"
-					aria-controls="navbar-dark-profile" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-			</div>
-		</div>
-	</nav>
-
-
+	<jsp:include page="../include/preLoader.jsp" />
 
 
 	<main>
@@ -338,30 +112,33 @@
 
 					<div class="col-sm-12 col-lg-6">
 						<div class="text-center text-lg-left">
-							<h4 class="mt-4 text-gray">1Q Wedding</h4>
-							<h1 class="display-3">신랑 신부 등록</h1>
-							<p class="lead my-4">일반회원에서 신랑 신부 회원으로 전환하시면 1Q Wedding의 축의금
-								송금시스템과 하객관리 시스템을 이용하실 수 있습니다</p>
-
-
+							<h4 class="mt-4 text-gray" style="font-family: hanaM">1Q
+								Wedding</h4>
+							<h1 class="display-3" style="font-family: hanaM">신랑 신부 등록</h1>
+							<p class="lead my-4" style="font-family: hanaM">
+								일반 하객회원에서 신랑 신부 회원으로 전환하시면<br>축의금 송금시스템과 하객관리 시스템을 이용하실 수
+								있습니다
+							</p>
 
 
 							<div class="col-md-4">
 
 								<!-- Button Modal -->
 								<button type="button" class="btn btn-block btn-primary mb-3"
-									data-toggle="modal" data-target="#modal-default">신랑 신부
-									등록하기</button>
+									data-toggle="modal" data-target="#modal-1"
+									style="background-color: #008485; border-color: #008485; width: 190px;">신랑
+									신부 등록하기</button>
 
 
 								<!-- Modal Content -->
-								<div class="modal fade" id="modal-default" tabindex="-1"
-									role="dialog" aria-labelledby="modal-default"
-									aria-hidden="true">
-									<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal fade" id="modal-1" tabindex="-1" role="dialog"
+									aria-labelledby="modal-default" aria-hidden="true">
+									<div class="modal-dialog modal-lg modal-dialog-centered"
+										role="document">
 										<div class="modal-content">
+
 											<div class="modal-header">
-												<h2 class="h6 modal-title">Terms of Service</h2>
+												<h2 class="h6 modal-title">1Q Wedding 신랑 신부 등록하기</h2>
 												<button type="button" class="close" data-dismiss="modal"
 													aria-label="Close">
 													<span aria-hidden="true">&times;</span>
@@ -369,10 +146,7 @@
 											</div>
 
 											<div class="modal-body">
-												<p>With less than a month to go before the European
-													Union enacts new consumer privacy laws for its citizens,
-													companies around the world are updating their terms of
-													service agreements to comply.</p>
+
 												<p>The European Union’s General Data Protection
 													Regulation (G.D.P.R.) goes into effect on May 25 and is
 													meant to ensure a common set of data rights in the European
@@ -380,7 +154,7 @@
 													possible of high-risk data breaches that could personally
 													affect them.</p>
 
-												<div class="section section-lg pt-0">
+												<div class="section section-lg py-0">
 													<div class="container">
 														<div class="row justify-content-center">
 															<div class="col-12 col-lg-8">
@@ -392,28 +166,47 @@
 
 																	<div class="card card-sm card-body border-light mb-0">
 
+
+
 																		<a href="#panel-4" data-target="#panel-4"
 																			class="accordion-panel-header" data-toggle="collapse"
 																			role="button" aria-expanded="false"
 																			aria-controls="panel-1"> <span
 																			class="icon-title h6 mb-0 font-weight-bold"><span
-																				class="fab fa-leanpub"></span>Our Company</span> <span
-																			class="icon"><span class="fas fa-plus"></span></span>
+																				class="fa-solid fa-hand-point-right"></span>신랑 신부 동의
+																				서약서</span> <span class="icon"><span
+																				class="fas fa-plus"></span></span>
 																		</a>
 
 																		<div class="collapse" id="panel-4">
 																			<div class="pt-3">
-																				<p class="mb-0">At Themesberg, our mission has
-																					always been focused on bringing openness and
-																					transparency to the design process. We've always
-																					believed that by providing a space where designers
-																					can share ongoing work not only empowers them to
-																					make better products, it also helps them grow.
-																					We're proud to be a part of creating a more open
-																					culture and to continue building a product that
-																					supports this vision.</p>
+
+																				<p class="mb-0" style="font-family: hanaM">1Q
+																					Wedding의 일반하객 회원에서 신랑 신부 회원으로 등록하기 위해서는 1Q Wedding가
+																					회원님의 개인정보를 수집할 수 있도록 동의해주셔야합니다.</p>
+
+																				<p class="mb-0" style="font-family: hanaM">
+
+																					개인정보수집에 동의하시고 1Q Wedding의 일반하객 회원에서 신랑 신부 회원으로
+																					등록하시면, 하객들의 축의금에 관한 정보를 다각적으로 분석하고 관리할 수 있는 시스템이
+																					제공되고, 하객들의 미디어 축하메시지를 받아보실 수 있습니다.</p>
+
+																				<br>
+
+																				<div class="custom-control custom-switch">
+																					<input type="checkbox" class="custom-control-input"
+																						id="customSwitch1"> <label
+																						class="custom-control-label" for="customSwitch1">
+																						동의하기</label>
+																				</div>
+
+
 																			</div>
+
+
 																		</div>
+
+
 
 																	</div>
 
@@ -424,23 +217,127 @@
 																			role="button" aria-expanded="false"
 																			aria-controls="panel-1"> <span
 																			class="icon-title h6 mb-0 font-weight-bold"><span
-																				class="fas fa-box-open"></span>Pixel Components</span> <span
-																			class="icon"><span class="fas fa-plus"></span></span>
+																				class="fa-solid fa-hand-point-right"></span>결혼식장 위치
+																				선택</span> <span class="icon"><span
+																				class="fas fa-plus"></span></span>
 																		</a>
 
 																		<div class="collapse" id="panel-5">
+
+																			<br>
+
+
+																			<button onclick="sample6_execDaumPostcode()"
+																				class="btn btn-sm btn-secondary" style="background-color: #008485; border-color: #008485; ">
+																				<i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;결혼식장
+																				찾기
+																			</button>
+
 																			<div class="pt-3">
-																				<p class="mb-0">At Themesberg, our mission has
-																					always been focused on bringing openness and
-																					transparency to the design process. We've always
-																					believed that by providing a space where designers
-																					can share ongoing work not only empowers them to
-																					make better products, it also helps them grow.
-																					We're proud to be a part of creating a more open
-																					culture and to continue building a product that
-																					supports this vision.</p>
+
+																				<div class="form-group">
+
+																					<div class="input-group mb-0">
+																						<div class="input-group-prepend">
+																							<span class="input-group-text"><span
+																								class="fa-regular fa-envelope"></span></span>
+																						</div>
+
+																						<input id="sample6_postcode" class="form-control"
+																							id="exampleInputIcon1" placeholder="우편번호"
+																							type="text" aria-label="Input with icon left">
+																					</div>
+																				</div>
+
+
+
+																				<div class="form-group">
+
+																					<div class="input-group mb-0">
+																						<div class="input-group-prepend">
+																							<span class="input-group-text"><span
+																								class="fa-solid fa-map-pin"></span></span>
+																						</div>
+																						<input id="sample6_address" class="form-control"
+																							id="exampleInputIcon1" placeholder=" 주소"
+																							type="text" aria-label="Input with icon left">
+																					</div>
+																				</div>
+
+
+																				<div class="form-group">
+
+																					<div class="input-group mb-0">
+																						<div class="input-group-prepend">
+																							<span class="input-group-text"><span
+																								class="fa-solid fa-reply"></span></span>
+																						</div>
+																						<input id="sample6_detailAddress"
+																							class="form-control" id="exampleInputIcon1"
+																							placeholder="상세주소" type="text"
+																							aria-label="Input with icon left">
+																					</div>
+																				</div>
+
+																				<div class="form-group">
+
+																					<div class="input-group mb-0">
+																						<div class="input-group-prepend">
+																							<span class="input-group-text"><span
+																								class="fa-solid fa-asterisk"></span></span>
+																						</div>
+																						<input id="sample6_extraAddress"
+																							class="form-control" id="exampleInputIcon1"
+																							placeholder="참고항목" type="text"
+																							aria-label="Input with icon left">
+																					</div>
+																				</div>
+
+
+																				<button class="btn btn-block btn-primary mb-3"
+																					data-toggle="modal" data-target="#modal-4" style="background-color: #008485; border-color: #008485; width: 180px;"><i class="fa-regular fa-circle-check"></i>&nbsp;결혼식장 입력완료</button>
+
+																				<!-- Modal Content -->
+																				<div class="modal fade" id="modal-4" tabindex="-1"
+																					role="dialog" aria-labelledby="modal-notification"
+																					aria-hidden="true">
+																					<div
+																						class="modal-dialog modal-info modal-dialog-centered"
+																						role="document">
+																						<div class="modal-content bg-gradient-secondary" style="background-color: #008485 !important">
+																							<div class="modal-header">
+																																																<button id="finalbtn-2" type="button"
+																									class="close" data-dismiss="modal"
+																									aria-label="Close" style="display: none;">
+																									<span aria-hidden="true">×</span>
+																								</button>
+
+																							</div>
+
+																							<div class="modal-body "  >
+																								<div class="py-3 text-center">
+																								
+																								
+																									<span class="modal-icon display-1-lg"><span
+																											class="fa-regular fa-circle-check"></span></span>
+																									<h2 class="h4 modal-title my-3">결혼식장 등록완료</h2>
+																																															</div>
+																							</div>
+																							<div class="modal-footer">
+																								<button id="subModalClose-4" type="button"
+																									class="btn btn-sm btn-white">확인</button>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<!-- End of Modal Content -->
+
+
 																			</div>
+
+
 																		</div>
+
 
 																	</div>
 
@@ -451,9 +348,10 @@
 																			role="button" aria-expanded="false"
 																			aria-controls="panel-1"> <span
 																			class="icon-title h6 mb-0 font-weight-bold"><span
-																				class="fas fa-donate"></span>하객유형설정</span> <span
+																				class="fa-solid fa-hand-point-right"></span>하객유형설정</span> <span
 																			class="icon"><span class="fas fa-plus"></span></span>
 																		</a>
+
 
 																		<div class="collapse" id="panel-6">
 																			<div class="pt-3">
@@ -465,7 +363,7 @@
 																						class="list-group-item d-flex justify-content-between align-items-center border-bottom">
 
 																						<input type="text" class="form-control mb-2"
-																						placeholder="하객 유형 입력(최대3개)" name="group"
+																						placeholder="하객유형입력(최대4개)" name="group"
 																						aria-label="Subscribe form" id="guestGroup"
 																						onkeyup="enter()">
 
@@ -474,15 +372,52 @@
 																				</ul>
 
 																				<div>
-																					<br> <br>
+																					<br>
+
+
+																					<!-- Button Modal -->
 																					<button onclick="guestGroupFinish()"
-																						class="btn btn-sm btn-secondary"
-																						data-dismiss="modal">하객유형입력완료</button>
+																						class="btn btn-block btn-primary mb-3"
+																						data-toggle="modal" data-target="#modal-2" style="background-color: #008485; border-color: #008485; width: 180px;"><i class="fa-regular fa-circle-check"></i>&nbsp;하객유형 입력완료</button>
+
+
+																					<!-- Modal Content -->
+																					<div class="modal fade" id="modal-2" tabindex="-1"
+																						role="dialog" aria-labelledby="modal-notification"
+																						aria-hidden="true">
+																						<div
+																							class="modal-dialog modal-info modal-dialog-centered"
+																							role="document">
+																							<div class="modal-content bg-gradient-secondary">
+																								<div class="modal-header">
+																									
+																									<button id="finalbtn" type="button"
+																										class="close" data-dismiss="modal"
+																										aria-label="Close">
+																										<span aria-hidden="true" style="display: none">×</span>
+																									</button>
+
+																								</div>
+
+																								<div class="modal-body">
+																									<div class="py-3 text-center">
+																										<span class="modal-icon display-1-lg"><span
+																											class="fa-regular fa-circle-check"></span></span>
+																										<h2 class="h4 modal-title my-3">하객유형 등록완료</h2>
+																										
+																									</div>
+																								</div>
+																								<div class="modal-footer">
+																									<button id="subModalClose-2" type="button"
+																										class="btn btn-sm btn-white">확인</button>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<!-- End of Modal Content -->
+
+
 																				</div>
-
-
-
-
 
 																			</div>
 																		</div>
@@ -501,13 +436,42 @@
 											</div>
 
 											<div class="modal-footer">
+<i class="fa-regular fa-person-simple"></i>
+												<button onclick="agreeMarryGroom();"
+													class="btn btn-sm btn-secondary" data-toggle="modal"
+													data-target="#modal-3" style="background-color: #008485; border-color: #008485;"><i class="fa-solid fa-person"></i>&nbsp;신랑등록하기</button>
 
-												<button onclick="agreeMarryGroom()"
-													class="btn btn-sm btn-secondary" data-dismiss="modal">
-													신랑등록하기</button>
+												<button onclick="agreeMarryBride();"
+													class="btn btn-sm btn-secondary" data-toggle="modal"
+													data-target="#modal-3" style="background-color: #008485; border-color: #008485;"><i class="fa-solid fa-child-dress"></i>&nbsp;신부등록하기</button>
 
-												<button onclick="agreeMarryBride()"
-													class="btn btn-sm btn-secondary" data-dismiss="modal">신부등록하기</button>
+												<!-- Modal Content -->
+												<div class="modal fade" id="modal-3" tabindex="-1"
+													role="dialog" aria-labelledby="modal-notification"
+													aria-hidden="true">
+													<div class="modal-dialog modal-info modal-dialog-centered"
+														role="document">
+														<div class="modal-content bg-gradient-secondary">
+
+															<div class="modal-body">
+																<div class="py-3 text-center">
+																	<span class="modal-icon display-1-lg"><span
+																		class="fa-regular fa-circle-check"></span></span>
+																	<h2 class="h4 modal-title my-3">신랑 신부 등록 완료</h2>
+																</div>
+															</div>
+
+															<div class="modal-footer">
+																<button id="subModalClose-3" type="button"
+																	class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
+															</div>
+
+														</div>
+
+													</div>
+												</div>
+												<!-- End of Modal Content -->
+
 
 												<button type="button"
 													class="btn btn-link text-danger ml-auto"
@@ -533,90 +497,199 @@
 		</section>
 	</main>
 
+
+
+	<br>
+
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 	<script>
-    
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+</script>
+
+
+
+	<script>
+	
+	 let list = [];	
+	  
+	  let enter = function(){
+		  
+	  		if(window.event.keyCode == 13){
+	  			
+	  			let group = $('#guestGroup').val()
+	  			
+	  			$('#groupSection').append('<li class="list-group-item d-flex justify-content-between align-items-center"><span class="badge badge-md badge-secondary text-uppercase mb-2 mb-md-0">'+group+'</span></li>')
+	  			    	  			
+	  			$('#guestGroup').val('');
+	  			
+	  			
+	  			list.push(group);
+	  			
+	  		}
+	  	};
+	  
+	  let guestGroupFinish = function(){
+		  
+		  console.log(list);
+		  
+		  $.ajax({
+ 	  		
+ 	  		type : 'post',
+ 	  		url : "/member/guestGroup",		
+ 	  		data:{
+ 	  			guestlist1 : list[0],
+     	  		guestlist2 : list[1],
+     	  		guestlist3 : list[2],
+     	  		guestlist4 : list[3]
+ 	  		},
+ 	  		success:function(result){
+ 	  			console.log(result)
+ 	  		},
+ 	  		error : (e) => {
+ 	  		alert("실패당우" + e)
+ 	  		}
+ 	  		
+ 	  		})
+	  };
+	
+
     	let agreeMarryGroom = function(){
     		
-    		$.ajax({
-    			type : 'post',
-    			url : "/member/marryAgreeGroom?phoneNum="+'${member.phonenumber}',
-    			success :function(result){
-    				
-    				$('#usertype').empty()
-    				$('#usertype').append('고객유형 : '+'${member.type}')
-    				
-    			},
-       			error : (e) => {
-            			alert("실패" + e)
-    			}
-    		})
-    		
+    		if('${member.type}' == "하객"){
+    			
+        		$.ajax({
+        			type : 'post',
+        			url : "/member/marryAgreeGroom",
+        			data: {
+        				phoneNumber : '${member.phonenumber}'
+        			},		
+        			success :function(result){
+        				
+        				$('#usertype').empty()
+        				$('#usertype').append('고객유형 : '+result)
+        				
+        				$.ajax({
+        					type : 'post',
+        					url : "/member/updateGuestGroupType",
+        					data : {
+        						memberType : result,
+        						memberPhoneNumber : '${member.phonenumber}'
+        					},
+        					success:function(result){
+        						console.log("이것도썽공")
+        					},
+        					error: (e) => {
+        						alert("이건씰패~")
+        					}
+        					
+        				})
+        			
+        			},
+           			error : (e) => {
+                			alert("실패" + e)
+        			}
+        		})
+    			
+    		} else {
+    			alert('잘못된 버튼을 선택하셨습니다')
+    		}
+
     	};
     	
     	let agreeMarryBride = function(){
-    		console.log('${member.phonenumber}')
-    		$.ajax({
-    			type : 'post',
-    			url : "/member/marryAgreeBride",
-    			data : {
-    				phonenumber : '${member.phonenumber}',
-    				    				
-    			},
-    			success :function(result){
-    				
-    				$('#usertype').empty()
-    				$('#usertype').append('고객유형 : '+ result)
-    				
- 
-    			},
-       			error : (e) => {
-            			alert("실패" + e)
-    			}
-    		})
     		
+    		if('${member.type}' == "하객"){
+    			    			
+        		$.ajax({
+        			type : 'post',
+        			url : "/member/marryAgreeBride",
+        			data : {
+        				phoneNumber : '${member.phonenumber}',
+        				    				
+        			},
+        			success :function(result){
+        				
+/*         				$('#finalbtn').trigger('click') */
+        				
+        				$('#usertype').empty()
+        				$('#usertype').append('고객유형 : '+result)
+        				
+        				
+        				$.ajax({
+        					type : 'post',
+        					url : "/member/updateGuestGroupType",
+        					data : {
+        						memberType : result,
+        						memberPhoneNumber : '${member.phonenumber}'
+        					},
+        					success:function(result){
+        						console.log("썽엉공")
+        					},
+        					error: (e) => {
+        						alert("씨잂패" + e)
+        					}	        					
+        				})
+        			},
+           			error : (e) => {
+                			alert("실패" + e)
+        			}
+        		})
+    			
+    		} else {
+    			alert('잘못된 버튼을 선택하셨습니다')
+    		}
+
     	};
     	
-    	  let list = [];	
-    	  
-    	  let enter = function(){
-    		  
-    	  		if(window.event.keyCode == 13){
-    	  			
-    	  			let group = $('#guestGroup').val()
-    	  			
-    	  			$('#groupSection').append('<li class="list-group-item d-flex justify-content-between align-items-center">'+group+'</li>')
-    	  			
-    	  			$('#guestGroup').val('');
-    	  			
-    	  			
-    	  			list.push(group);
-    	  			
-    	  		}
-    	  	};
-    	  
-    	  let guestGroupFinish = function(){
-    		  
-    		  console.log(list);
-    		  
-    		  $.ajax({
-      	  		
-      	  		type : 'post',
-      	  		url : "/member/guestGroup",		
-      	  		data:{
-      	  			guestlist1 : list[0],
-	      	  		guestlist2 : list[1],
-	      	  		guestlist3 : list[2],
-      	  		},
-      	  		success:function(result){
-      	  			console.log('success')
-      	  		},
-      	  		error : (e) => {
-          			alert("실패" + e)
-      	  		}
-      	  		
-      	  		})
-    		  
-    	  };
+    	 
     	  
     	
     </script>
@@ -651,7 +724,23 @@
 	<!-- pixel JS -->
 	<script src="js_2/pixel.js"></script>
 
-
+	<script type="text/javascript">
+	$('#subModalClose-2').on('click',function(){
+		$('#modal-2').fadeOut(250)
+	})
+	
+		$('#subModalClose-4').on('click',function(){
+			$('#modal-4').fadeOut(250)
+	})
+	
+	$('#subModalClose-3').on('click',function(){
+		
+		$('#finalbtn').trigger('click')
+		
+		$('#finalbtn-2').trigger('click')
+		
+	})
+	</script>
 </body>
 
 </html>

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.ac.kopo.service.AccountService;
 import kr.ac.kopo.vo.AccountVO;
@@ -148,15 +149,17 @@ public class AccountController {
 
 
 	@PostMapping("/accountTransferProcess")
+	@ResponseBody
 	public String accountTransferProcess(@RequestParam("name") String name, @RequestParam("id") String memberId,
 			@RequestParam("phoneNumber") String phoneNumber,
 			@RequestParam("senderAccountNumber") String senderAccountNumber,
 			@RequestParam("receiverAccountNumber") String receiverAccountNumber,
 			@RequestParam("senderBankCode") String senderBankCode,
 			@RequestParam("receiverBankCode") String receiverBankCode,
-			@RequestParam("transferAmount") int transferAmount, @RequestParam("memberType") String memberType, @RequestParam("guestGroupSelector") String guestGroupSelector) {
+			@RequestParam("transferAmount") int transferAmount, @RequestParam("memberType") String memberType, @RequestParam("guestGroupSelector") String guestGroupSelector) {	
 		
 		accountService.accountTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode, receiverBankCode, transferAmount);
+		
 
 		Map<String,Object>  map = new HashMap<>();
 		
@@ -171,12 +174,69 @@ public class AccountController {
 		map.put("memberType", memberType);
 		map.put("guestGroupSelector", guestGroupSelector);
 		
-		
 		accountService.addTransaction(map);
-		  
-		return "channel/transactionList";
+		
+		return "";
 
 	}
+	
+	@ResponseBody
+	@PostMapping("/accountReTransferProcess")
+	public String accountReTransferProcess(@RequestParam("childsenderName") String name, @RequestParam("childsenderId") String memberId,
+			@RequestParam("childsenderPhoneNumber") String phoneNumber,
+			@RequestParam("childsenderAccountNumber") String senderAccountNumber,
+			@RequestParam("childreceiverAccountNumber") String receiverAccountNumber,
+			@RequestParam("childsenderBankCode") String senderBankCode,
+			@RequestParam("childreceiverBankCode") String receiverBankCode,
+			@RequestParam("childtransferAmount") int transferAmount) {
+		
+		accountService.accountTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode, receiverBankCode, transferAmount);
+		
+		System.out.println("도달하냐?");
+		
+		return "";
+
+	}
+	
+	@GetMapping("/changeRePay")
+	@ResponseBody
+	public void changeRePay(@RequestParam("reDepositAccountNum") String receiverAccountNumber) {
+		
+		accountService.changeRePay(receiverAccountNumber);
+		
+	}
+	
+	@GetMapping("/rePayTransferForm")
+	public String rePayTransferForm(@ModelAttribute TransactionVO transactionVO) {
+		
+		return "account/rePayTransferForm";
+	}
+	
+	
+	/*
+	 * @PostMapping("/accountReTransferProcess") public String
+	 * accountReTransferProcess(@RequestParam("name") String
+	 * name, @RequestParam("id") String memberId,
+	 * 
+	 * @RequestParam("phoneNumber") String phoneNumber,
+	 * 
+	 * @RequestParam("senderAccountNumber") String senderAccountNumber,
+	 * 
+	 * @RequestParam("receiverAccountNumber") String receiverAccountNumber,
+	 * 
+	 * @RequestParam("senderBankCode") String senderBankCode,
+	 * 
+	 * @RequestParam("receiverBankCode") String receiverBankCode,
+	 * 
+	 * @RequestParam("transferAmount") int
+	 * transferAmount, @RequestParam("memberType") String
+	 * memberType, @RequestParam("guestGroupSelector") String guestGroupSelector) {
+	 * 
+	 * accountService.accountTransferProcess(senderAccountNumber,
+	 * receiverAccountNumber, senderBankCode, receiverBankCode, transferAmount);
+	 */
+	
+	
 
 	@GetMapping("/accountTransactionList")
 	public String accountTransactionList() {
@@ -185,20 +245,130 @@ public class AccountController {
 	}
 	
 	
-	@GetMapping("/transactionData")
+	@GetMapping("/transactionBrideData")
 	@ResponseBody
-	public List<TransactionVO> accountTransactionData(@RequestParam("phoneNum") String phoneNumber){
-		
-		System.out.println("된건가? phoneNumber:"+phoneNumber);
-		
-		
+	public List<TransactionVO> accountBrideTransactionData(@RequestParam("phoneNum") String phoneNumber){
 				
-		List<TransactionVO> transactionList =accountService.selectTransactionList(phoneNumber);	
+		List<TransactionVO> transactionList =accountService.selectBrideTransactionList(phoneNumber);	
 		
 		System.out.println("transactionList:"+transactionList);
 		
 		return transactionList;
 	}
+	
+	@GetMapping("/transactionGroomData")
+	@ResponseBody
+	public List<TransactionVO> accountGroomTransactionData(@RequestParam("phoneNum") String phoneNumber){
+		
+		System.out.println("된건가? phoneNumber:"+phoneNumber);
+		
+					
+		List<TransactionVO> transactionList =accountService.selectGroomTransactionList(phoneNumber);	
+		
+		System.out.println("transactionList:"+transactionList);
+		
+		return transactionList;
+	}
+	
+	@GetMapping("/transactionGuestData")
+	@ResponseBody
+	public List<TransactionVO> accountGuestTransactionData(@RequestParam("phoneNum") String phoneNumber){
+		
+		System.out.println("된건가? phoneNumber:"+phoneNumber);
+		
+					
+		List<TransactionVO> transactionList =accountService.selectGuestTransactionList(phoneNumber);	
+		
+		System.out.println("transactionList:"+transactionList);
+		
+		return transactionList;
+	}
+	
+	@GetMapping("/transactionManagerData")
+	@ResponseBody
+	public List<TransactionVO> accountManagerTransactionData(@RequestParam("phoneNum") String phoneNumber){
+		
+		System.out.println("된건가? phoneNumber:"+phoneNumber);
+		
+					
+		List<TransactionVO> transactionList =accountService.selectManagerTransactionList(phoneNumber);	
+		
+		System.out.println("transactionList:"+transactionList);
+		
+		return transactionList;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	@GetMapping("account/guestRePay")
+	@ResponseBody
+	public List<TransactionVO> guestRePay(@RequestParam("accountNumber") String accountNumber) {
+		
+		List<TransactionVO> guestRePayList = accountService.selectGuestRePayList(accountNumber);
+			
+		return guestRePayList;
+		
+	}
+	
+	@GetMapping("/getGroupedGuestCount")
+	
+	public String getGroupedGuestCount(@ModelAttribute TransactionVO transactionVO) {
+		
+
+		return "account/getGroupedGuestCount";
+	}
+	
+	
+	@GetMapping("/getGroupedGuestSum")
+	public String getGroupedGuestSum(@ModelAttribute TransactionVO transactionVO) {
+
+		return "account/getGroupedGuestSum";
+	}
+	
+
+	@GetMapping("/getGroupedGuestDetail")
+	public String getGroupedGuestDetail(@RequestParam("groupName") String groupName, Model model) {
+		
+		model.addAttribute("groupName", groupName);
+
+		return "account/getGroupedGuestDetail";
+	}
+	
+	
+	
+
+	
+	@GetMapping("/guestChatting")
+	
+	public String guestChatting(@ModelAttribute TransactionVO transactionVO) {
+		
+		return "account/getGroupedGuestCount";
+	}
+	
+	
+	@GetMapping("/selectHanaAccount")
+	public String selectHanaAccount() {
+		
+		return "account/selectHanaAccountList";
+	} 
+	
+	@GetMapping("/selectOpenAccount")
+	public String selectOpenAccount() {
+		
+		return "account/selectOpenAccountList";
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -47,7 +47,7 @@
 
 <!-- Fontawesome -->
 <link type="text/css" href="node_modules_2/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-<script src="https://kit.fontawesome.com/530bb32673.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/68941cf0d3.js" crossorigin="anonymous"></script>
 
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css" rel="stylesheet">

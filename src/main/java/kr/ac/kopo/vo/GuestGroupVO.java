@@ -13,6 +13,7 @@ public class GuestGroupVO {
 	private String firstGuestGroup;
 	private String secondGuestGroup;
 	private String thirdGuestGroup;
+	private String fourthGuestGroup;
 	private String lastGuestGroup;
 	
 }

@@ -59,6 +59,8 @@
 <link type="text/css"
 	href="node_modules_2/@fortawesome/fontawesome-free/css/all.min.css"
 	rel="stylesheet">
+<script src="https://kit.fontawesome.com/68941cf0d3.js"
+	crossorigin="anonymous"></script>
 
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css"
@@ -74,290 +76,16 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 
-
 </head>
 
 <body>
 
-	<header class="header-global">
-		<nav id="navbar-main" aria-label="Primary navigation"
-			class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark">
-			<div class="container position-relative">
-				<a class="navbar-brand mr-lg-5" href="../../index.html"> <img
-					class="navbar-brand-dark" src="img_2/brand/light.svg"
-					alt="Logo light"> <img class="navbar-brand-light"
-					src="img_2/brand/dark.svg" alt="Logo dark">
-				</a>
-				<div class="navbar-collapse collapse" id="navbar_global">
-					<div class="navbar-collapse-header">
-						<div class="row">
-							<div class="col-6 collapse-brand">
-								<a href="../../index.html"> <img src="img_2/brand/dark.svg"
-									alt="Themesberg logo">
-								</a>
-							</div>
-							<div class="col-6 collapse-close">
-								<a href="#navbar_global" class="fas fa-times"
-									data-toggle="collapse" data-target="#navbar_global"
-									aria-controls="navbar_global" aria-expanded="false"
-									title="close" aria-label="Toggle navigation"></a>
-							</div>
-						</div>
-					</div>
-					<ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-						<li class="nav-item dropdown"><a href="#" class="nav-link"
-							data-toggle="dropdown"> <span class="nav-link-inner-text">Pages</span>
-								<span class="fas fa-angle-down nav-link-arrow ml-2"></span>
-						</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="#"
-									class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-									aria-haspopup="true" aria-expanded="false">About<span
-										class="fas fa-angle-right nav-link-arrow"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="../../html/pages/about-company.html"
-											class="dropdown-item">About Company</a> <a
-											href="../../html/pages/about-team.html" class="dropdown-item">About
-												Team</a> <a href="../../html/pages/about-me.html"
-											class="dropdown-item">About Me</a></li>
-									</ul></li>
-								<li class="dropdown-submenu"><a href="#"
-									class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-									aria-haspopup="true" aria-expanded="false">Account<span
-										class="fas fa-angle-right nav-link-arrow"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="../../html/pages/my-account.html"
-											class="dropdown-item">My Account</a> <a
-											href="../../html/pages/my-items.html" class="dropdown-item">My
-												items</a> <a href="../../html/pages/edit-item.html"
-											class="dropdown-item">Edit item</a></li>
-									</ul></li>
-								<li class="dropdown-submenu"><a href="#"
-									class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-									aria-haspopup="true" aria-expanded="false">Blog <span
-										class="fas fa-angle-right nav-link-arrow"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="../../html/pages/blog.html"
-											class="dropdown-item">Blog</a> <a
-											href="../../html/pages/blog-post.html" class="dropdown-item">Blog
-												post</a></li>
-									</ul></li>
-								<li class="dropdown-submenu"><a href="#"
-									class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center"
-									aria-haspopup="true" aria-expanded="false">Specials <span
-										class="fas fa-angle-right nav-link-arrow"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="../../html/pages/sign-in.html"
-											class="dropdown-item">Sign in</a> <a
-											href="../../html/pages/sign-up.html" class="dropdown-item">Sign
-												up</a> <a href="../../html/pages/coming-soon.html"
-											class="dropdown-item">Coming Soon</a> <a
-											href="../../html/pages/maintenance.html"
-											class="dropdown-item">Maintenance</a> <a
-											href="../../html/pages/404.html" class="dropdown-item">404
-												Not Found</a> <a href="../../html/pages/500.html"
-											class="dropdown-item">500 Server Error</a></li>
-									</ul></li>
-								<li><a class="dropdown-item"
-									href="../../html/pages/contact.html">Contact</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/pages/pricing.html">Pricing</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/pages/services.html">Services</a></li>
-							</ul></li>
-						<li class="nav-item dropdown"><a href="#" class="nav-link"
-							data-toggle="dropdown"> <span class="nav-link-inner-text">Sections</span>
-								<span class="fas fa-angle-down nav-link-arrow ml-2"></span>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item"
-									href="../../html/sections/about.html">About</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/blog.html">Blog</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/clients.html">Clients</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/contact.html">Contact</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/features.html">Features</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/pricing.html">Pricing</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/team.html">Team</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/testimonials.html">Testimonials</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/navbars.html">Navbars</a></li>
-								<li><a class="dropdown-item"
-									href="../../html/sections/footers.html">Footers</a></li>
-							</ul></li>
-						<li class="nav-item dropdown mega-dropdown"><a href="#"
-							class="nav-link" data-toggle="dropdown"> <span
-								class="nav-link-inner-text">Components</span> <span
-								class="fas fa-angle-down nav-link-arrow ml-2"></span>
-						</a>
-							<div class="dropdown-menu">
-								<div class="row">
-									<div class="col-lg-6 inside-bg d-none d-lg-block">
-										<div class="justify-content-center bg-dark text-white">
-											<div class="px-6 pb-5 pt-3">
-												<img src="img_2/megamenu_image.png" alt="Pixel Components">
-											</div>
-											<div class="z-2 pb-4 text-center">
-												<a href="../../html/components/all.html"
-													class="btn btn-white btn-icon animate-up-2 mb-2 mb-sm-0 mr-3 text-primary">
-													<span class="mr-1"><span class="fas fa-th-large"></span></span>
-													All components
-												</a> <a
-													href="https://themesberg.com/docs/pixel-bootstrap/getting-started/overview/"
-													target="_blank"
-													class="btn btn-outline-white btn-icon animate-up-2 mb-2 mb-sm-0">
-													<span class="mr-1"><span class="fas fa-book"></span></span>
-													Docs v3.1
-												</a>
-											</div>
-										</div>
-									</div>
-									<div class="col pl-0">
-										<ul class="list-style-none">
-											<li><a class="dropdown-item"
-												href="../../html/components/accordions.html">Accordions</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/alerts.html">Alerts</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/badges.html">Badges</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/cards.html">Cards</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/bootstrap-carousels.html">Bootstrap
-													Carousels</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/breadcrumbs.html">Breadcrumbs</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/buttons.html">Buttons</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/counters.html">Counters</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/dropdowns.html">Dropdowns</a></li>
-										</ul>
-									</div>
-									<div class="col pl-0">
-										<ul class="list-style-none">
-											<li><a class="dropdown-item"
-												href="../../html/components/e-commerce.html">E-commerce</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/forms.html">Forms</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/icon-boxes.html">Icon Boxes</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/modals.html">Modals</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/navs.html">Navs</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/owl-carousels.html">Owl
-													Carousels</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/pagination.html">Pagination</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/popovers.html">Popovers</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/progress-bars.html">Progress
-													Bars</a></li>
+	<jsp:include page="../include/transparentTopMenuButton.jsp" />
 
-										</ul>
-									</div>
-									<div class="col pl-0">
-										<ul class="list-style-none">
-											<li><a class="dropdown-item"
-												href="../../html/components/steps.html">Steps</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/tables.html">Tables</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/tabs.html">Tabs</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/toasts.html">Toasts</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/timelines.html">Timelines</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/tooltips.html">Tooltips</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/typography.html">Typography</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/charts.html">Charts</a></li>
-											<li><a class="dropdown-item"
-												href="../../html/components/widgets.html">Widgets</a></li>
-										</ul>
-									</div>
-								</div>
-							</div></li>
-						<li class="nav-item dropdown"><a href="#" class="nav-link"
-							data-toggle="dropdown"> <span class="nav-link-inner-text">Support</span>
-								<span class="fas fa-angle-down nav-link-arrow ml-2"></span>
-						</a>
-							<div class="dropdown-menu dropdown-menu-lg">
-								<div class="col-auto px-0" data-dropdown-content>
-									<div class="list-group list-group-flush">
-										<a
-											href="https://themesberg.com/docs/pixel-bootstrap/getting-started/overview//"
-											target="_blank"
-											class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
-											<span class="icon icon-sm icon-secondary"><span
-												class="fas fa-file-alt"></span></span>
-											<div class="ml-4">
-												<span class="text-dark d-block">Documentation<span
-													class="badge badge-sm badge-secondary ml-2">v3.1</span></span> <span
-													class="small">Examples and guides</span>
-											</div>
-										</a> <a
-											href="https://github.com/themesberg/pixel-pro-bootstrap-ui-kit/issues"
-											target="_blank"
-											class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
-											<span class="icon icon-sm icon-primary"><span
-												class="fas fa-microphone-alt"></span></span>
-											<div class="ml-4">
-												<span class="text-dark d-block">Support</span> <span
-													class="small">Looking for answers? Ask us!</span>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div></li>
-					</ul>
-				</div>
-				<div class="d-flex align-items-center">
-					<span class="d-none d-md-inline"> <a
-						href="https://demo.themesberg.com/pixel-pro/" target="_blank"
-						class="btn btn-tertiary animate-up-2">Upgrade to Pro</a></span> <a
-						href="https://themesberg.com/docs/pixel-bootstrap/getting-started/overview/"
-						target="_blank" class="btn btn-outline-soft ml-md-3 animate-up-2"><span
-						class="fas fa-book mr-2"></span> Docs v3.1</a>
-					<button class="navbar-toggler ml-2" type="button"
-						data-toggle="collapse" data-target="#navbar_global"
-						aria-controls="navbar_global" aria-expanded="false"
-						aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-				</div>
-			</div>
-		</nav>
-	</header>
+	<jsp:include page="../include/heroAccountTransferForm.jsp" />
 
 	<main>
 
-		<!-- Hero -->
-		<div class="section-header pb-2 bg-primary text-white">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-12 col-md-8 text-center">
-						<h1 class="display-3 mb-4">1Q Pay</h1>
-						<p class="lead mb-5">Build responsive ecommerce projects on
-							the web with our popular front-end component library.</p>
-
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End of Hero -->
 
 
 
@@ -383,17 +111,16 @@
 
 								<div class="card-body p-4">
 
-									<form action="/accountTransferProcess" method="post">
+									<form>
 
 										<div class="row justify-content-center">
-											
+
 											<div class="col-12 col-lg-10">
 												<!-- Form -->
 
 												<div class="form-group mb-4">
-													<label for="name">축의대상 : </label><input id="memberType" name="memberType"
-														type="text" class="form-control" 
-														>
+													<label for="name">축의대상 : </label><input id="memberType"
+														name="memberType" type="text" class="form-control">
 												</div>
 												<!-- End of Form -->
 											</div>
@@ -403,7 +130,7 @@
 												<!-- Form -->
 
 												<div class="form-group mb-4">
-													<label for="name">이름 : </label><input name="name"
+													<label for="name">이름 : </label><input id="name" name="name"
 														type="text" class="form-control" placeholder="User Name"
 														value=${member.name}>
 												</div>
@@ -415,11 +142,25 @@
 												<!-- Form -->
 
 												<div class="form-group mb-4">
-													<label for="id">ID :</label> <input name="id"
-														value=${member.id }
-														type="text"
+													<label for="id">ID :</label> <input id="id" name="id"
+														value=${member.id } type="text" class="form-control"
+														placeholder="User ID">
+												</div>
+												<!-- End of Form -->
+											</div>
+
+
+											<div class="col-12 col-lg-10">
+												<!-- Form -->
+
+												<div class="form-group mb-4">
+													<label for="phoneNumber">핸드폰 번호</label><input id="phoneNumber"
+														name="phoneNumber"
+														value=${member.phonenumber
+														} type="text"
 														class="form-control" placeholder="User ID"
-														value=${member.id} required>
+														value=${member.phonenumber
+														} required>
 												</div>
 												<!-- End of Form -->
 											</div>
@@ -429,25 +170,12 @@
 												<!-- Form -->
 
 												<div class="form-group mb-4">
-													<label for="phoneNumber">핸드폰 번호</label><input
-														name="phoneNumber" value=${member.phonenumber}
-														type="text" class="form-control"
-														placeholder="User ID" value=${member.phonenumber} required>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="senderAccountNumber">보내는사람 계좌번호</label> <input
-														name="senderAccountNumber" value=${senderAccountNumber}
-														type="text" class="form-control"
-														placeholder="보내는 사람의 계좌번호를 입력하세요"
-														value=${member.phonenumber}
- required>
+													<label for="senderAccountNumber">보내는사람 계좌번호</label> <input id ="senderAccountNumber"
+														name="senderAccountNumber"
+														value=${senderAccountNumber
+														} type="text"
+														class="form-control" placeholder="보내는 사람의 계좌번호를 입력하세요"
+														required>
 												</div>
 												<!-- End of Form -->
 											</div>
@@ -456,10 +184,13 @@
 												<!-- Form -->
 
 												<div class="form-group mb-4">
-													<label for="senderBankCode">보내는사람 은행코드</label> <input
-														name="senderBankCode" value=${senderBankCode}
-														type="text" class="form-control"
-														placeholder="보내는 사람의 은행코드를 입력하세요" value=${senderBankCode} required>
+													<label for="senderBankCode">보내는사람 은행코드</label> <input id="senderBankCode"
+														name="senderBankCode"
+														value=${senderBankCode
+														} type="text"
+														class="form-control" placeholder="보내는 사람의 은행코드를 입력하세요"
+														value=${senderBankCode
+														} required>
 												</div>
 												<!-- End of Form -->
 											</div>
@@ -468,7 +199,9 @@
 											<div class="col-12 col-lg-10">
 												<!--Form-->
 												<div class="form-group">
-													<label class="my-1 mr-2" for="guestGroupSelector">하객유형</label> <select id="guestGroupSelector" name="guestGroupSelector" class="custom-select my-1 mr-sm-2">
+													<label class="my-1 mr-2" for="guestGroupSelector">하객유형</label>
+													<select id="guestGroupSelector" name="guestGroupSelector"
+														class="custom-select my-1 mr-sm-2">
 														<option selected>하객유형선택</option>
 
 													</select>
@@ -480,7 +213,7 @@
 												<!-- Form -->
 
 												<div class="form-group mb-4">
-													<label for="senderAccountPassword">보내는사람 계좌 비밀번호</label> <input
+													<label for="senderAccountPassword">보내는사람 계좌 비밀번호</label> <input id="senderAccountPassword"
 														name="senderAccountPassword" type="password"
 														class="form-control" placeholder="보내는 사람의 계좌비밀번호를 입력하세요"
 														required>
@@ -488,23 +221,55 @@
 												<!-- End of Form -->
 											</div>
 
+											<c:choose>
+
+												<c:when test="${not empty bride}">
+
+													<div class="col-12 col-lg-10">
+														<!-- Form -->
+
+														<div class="form-group mb-4">
+															<label for="receiverAccountNumber">받는사람 계좌 번호</label> <input id="receiverAccountNumber"
+																name="receiverAccountNumber" type="text"
+																class="form-control" value=${brideAccount.accountNumber
+																} required>
+														</div>
+														<!-- End of Form -->
+													</div>
+
+												</c:when>
+
+												<c:when test="${not empty groom}">
+
+													<div class="col-12 col-lg-10">
+														<!-- Form -->
+
+														<div class="form-group mb-4">
+															<label for="receiverAccountNumber">받는사람 계좌 번호</label> <input id="receiverAccountNumber"
+																name="receiverAccountNumber" type="text"
+																class="form-control" placeholder="받는 사람의 계좌비밀번호를 입력하세요"
+																value=${groomAccount.accountNumber } required>
+														</div>
+														<!-- End of Form -->
+													</div>
+
+												</c:when>
+
+												<c:otherwise>
+
+
+
+												</c:otherwise>
+
+
+											</c:choose>
+
+
 											<div class="col-12 col-lg-10">
 												<!-- Form -->
 
 												<div class="form-group mb-4">
-													<label for="receiverAccountNumber">받는사람 계좌 번호</label> <input
-														name="receiverAccountNumber" type="text"
-														class="form-control" placeholder="받는 사람의 계좌비밀번호를 입력하세요"
-														value="2-103114-23278" required>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="receiverBankCode">받는 사람 은행 코드 :</label> <input
+													<label for="receiverBankCode">받는 사람 은행 코드 :</label> <input id="receiverBankCode"
 														name="receiverBankCode" value="2" type="text"
 														class="form-control" placeholder="받는 사람의 은행코드를 입력하세요"
 														required>
@@ -517,16 +282,17 @@
 												<!-- Form -->
 
 												<div class="form-group mb-4">
-													<label for="transferAmount">이체금액</label> <input
+													<label for="transferAmount">이체금액</label> <input id="transferAmount"
 														name="transferAmount" type="text" class="form-control"
 														placeholder="이체금액을 입력하세요" required>
 												</div>
 												<!-- End of Form -->
 											</div>
 
-											<button type="submit"
-												class="btn btn-block btn-primary mt-4 mb-3">축의금
-												송금하기</button>
+											<button type="button" class="btn btn-block btn-primary mb-3"
+												data-toggle="modal" data-target="#modal-notification">송금하기</button>
+
+
 
 										</div>
 
@@ -544,54 +310,7 @@
 
 	</main>
 
-	<jsp:include page="../include/footer.jsp" />    
-
-
-
-	<script>
-	
-	$(document).ready(function(){
-		
-		$.ajax({
-			
-			type : 'post',
-			url : "/member/getGuestGroup",
-			data : {
-				phonenumber : '01088888888'
-			},
-			success:
-				function(result){
-					console.log(result);
-					
-					for(let i = 0; i < result.length; i++){
-						let guestGroup = result[i];
-						let memberType = guestGroup.memberType;
-						let memberName = guestGroup.membetName;
-						let memberId = guestGroup.membetId;
-						let memberPhoneNumber = guestGroup.memberPhoneNumber;
-						let firstGuestGroup = guestGroup.firstGuestGroup;
-						let secondGuestGroup = guestGroup.secondGuestGroup;
-						let thirdGuestGroup = guestGroup.thirdGuestGroup;
-						let lastGuestGroup = guestGroup.lastGuestGroup;
-						
-						$('#guestGroupSelector').append('<option value='+firstGuestGroup+'>'+firstGuestGroup+'</option>')
-						$('#guestGroupSelector').append('<option value='+secondGuestGroup+'>'+secondGuestGroup+'</option>')
-						$('#guestGroupSelector').append('<option value='+thirdGuestGroup+'>'+thirdGuestGroup+'</option>')
-						$('#guestGroupSelector').append('<option value='+lastGuestGroup+'>'+lastGuestGroup+'</option>')
-						
-					
-						$('#memberType').val(memberType);
-						
-					}
-								
-			},
-			error : function () {
-                 alert('실패');
-             }
-		})
-	})
-
-	</script>
+	<jsp:include page="../include/footer.jsp" />
 
 
 	<!-- Core -->
@@ -623,6 +342,300 @@
 
 	<!-- pixel JS -->
 	<script src="js_2/pixel.js"></script>
+
+
+
+
+
+
+	<script>
+	
+	$(document).ready(function(){
+		
+		if('${member.type}' == "하객" && '${bride}' != ''){
+			
+			$.ajax({
+				
+				type : 'post',
+				url : "/member/getGuestGroup",
+				data : {
+					phonenumber : '${bride.phonenumber}'
+				},
+				success:
+					function(result){
+						console.log(result);
+						
+						for(let i = 0; i < result.length; i++){
+							let guestGroup = result[i];
+							let memberType = guestGroup.memberType;
+							let memberName = guestGroup.membetName;
+							let memberId = guestGroup.membetId;
+							let memberPhoneNumber = guestGroup.memberPhoneNumber;
+							let firstGuestGroup = guestGroup.firstGuestGroup;
+							let secondGuestGroup = guestGroup.secondGuestGroup;
+							let thirdGuestGroup = guestGroup.thirdGuestGroup;
+							let fourthGuestGroup = guestGroup.fourthGuestGroup;
+							let lastGuestGroup = guestGroup.lastGuestGroup;
+							
+							$('#guestGroupSelector').append('<option value='+firstGuestGroup+'>'+firstGuestGroup+'</option>')
+							$('#guestGroupSelector').append('<option value='+secondGuestGroup+'>'+secondGuestGroup+'</option>')
+							$('#guestGroupSelector').append('<option value='+thirdGuestGroup+'>'+thirdGuestGroup+'</option>')
+							$('#guestGroupSelector').append('<option value='+fourthGuestGroup+'>'+fourthGuestGroup+'</option>')
+							$('#guestGroupSelector').append('<option value='+lastGuestGroup+'>'+lastGuestGroup+'</option>')
+							
+						
+							$('#memberType').val(memberType);
+							
+						}
+									
+				},
+				error : function () {
+	                 alert('실패');
+	             }
+			})
+			
+		} else {
+			
+			$.ajax({
+				
+				type : 'post',
+				url : "/member/getGuestGroup",
+				data : {
+					phonenumber : '${groom.phonenumber}'
+				},
+				success:
+					function(result){
+						console.log(result);
+						
+						for(let i = 0; i < result.length; i++){
+							let guestGroup = result[i];
+							let memberType = guestGroup.memberType;
+							let memberName = guestGroup.membetName;
+							let memberId = guestGroup.membetId;
+							let memberPhoneNumber = guestGroup.memberPhoneNumber;
+							let firstGuestGroup = guestGroup.firstGuestGroup;
+							let secondGuestGroup = guestGroup.secondGuestGroup;
+							let thirdGuestGroup = guestGroup.thirdGuestGroup;
+							let fourthGuestGroup = guestGroup.fourthGuestGroup;
+							let lastGuestGroup = guestGroup.lastGuestGroup;
+							
+							$('#guestGroupSelector').append('<option value='+firstGuestGroup+'>'+firstGuestGroup+'</option>')
+							$('#guestGroupSelector').append('<option value='+secondGuestGroup+'>'+secondGuestGroup+'</option>')
+							$('#guestGroupSelector').append('<option value='+thirdGuestGroup+'>'+thirdGuestGroup+'</option>')
+							$('#guestGroupSelector').append('<option value='+fourthGuestGroup+'>'+fourthGuestGroup+'</option>')
+							$('#guestGroupSelector').append('<option value='+lastGuestGroup+'>'+lastGuestGroup+'</option>')
+							
+						
+							$('#memberType').val(memberType);
+							
+						}
+									
+				},
+				error : function () {
+	                 alert('실패');
+	             }
+			})
+			
+		}
+	})
+	
+	
+	let selectVideoMessage = function(){
+		
+		let name = document.getElementById("name").value;
+		let id = document.getElementById("id").value;
+		let phoneNumber = document.getElementById("phoneNumber").value;
+		let senderAccountNumber = document.getElementById("senderAccountNumber").value;
+		let receiverAccountNumber = document.getElementById("receiverAccountNumber").value;
+		let senderBankCode = document.getElementById("senderBankCode").value;
+		let receiverBankCode = document.getElementById("receiverBankCode").value;
+		let transferAmount = document.getElementById("transferAmount").value;
+		let memberType = document.getElementById("memberType").value;
+		let guestGroupSelector = document.getElementById("guestGroupSelector").value;
+		
+		console.log(guestGroupSelector);
+		
+		
+		$.ajax({
+		
+			type : 'post',
+			url : "/selectVideoMessage",
+			data : {
+				phonenumber : '${member.phonenumber}'
+			},
+			success:()=>{
+				
+				console.log("쉬부레")
+				
+				console.log(name);
+				
+				console.log(senderAccountNumber);
+
+				$.ajax({
+					type : 'post',
+					url : "/accountTransferProcess",
+					data : {
+						
+						name : name,
+						id : id,
+						phoneNumber : phoneNumber,
+						senderAccountNumber : senderAccountNumber,
+						receiverAccountNumber : receiverAccountNumber,
+						senderBankCode : senderBankCode,
+						receiverBankCode : receiverBankCode,
+						transferAmount : transferAmount,
+						memberType : memberType,
+						guestGroupSelector : guestGroupSelector
+						
+					},
+					success: ()=>{
+						location.href = "https://hana-1q-wedding.vercel.app/#recorder-section";
+					},
+						
+					error: () =>{
+						console.log("안됐다ㅜ")
+					}
+						
+				})
+				
+			},
+			error:()=>{
+				console.log("최종실패임")	
+			}						
+		})
+		
+	}
+	
+	
+	let selectImageMessage = function(){
+		
+		let name = document.getElementById("name").value;
+		let id = document.getElementById("id").value;
+		let phoneNumber = document.getElementById("phoneNumber").value;
+		let senderAccountNumber = document.getElementById("senderAccountNumber").value;
+		let receiverAccountNumber = document.getElementById("receiverAccountNumber").value;
+		let senderBankCode = document.getElementById("senderBankCode").value;
+		let receiverBankCode = document.getElementById("receiverBankCode").value;
+		let transferAmount = document.getElementById("transferAmount").value;
+		let memberType = document.getElementById("memberType").value;
+		let guestGroupSelector = document.getElementById("guestGroupSelector").value;
+		
+		console.log(guestGroupSelector);
+		
+		
+		$.ajax({
+		
+			type : 'post',
+			url : "/selectImageMessage",
+			data : {
+				phonenumber : '${member.phonenumber}'
+			},
+			success:()=>{
+			
+				$.ajax({
+					type : 'post',
+					url : "/accountTransferProcess",
+					data : {
+						
+						name : name,
+						id : id,
+						phoneNumber : phoneNumber,
+						senderAccountNumber : senderAccountNumber,
+						receiverAccountNumber : receiverAccountNumber,
+						senderBankCode : senderBankCode,
+						receiverBankCode : receiverBankCode,
+						transferAmount : transferAmount,
+						memberType : memberType,
+						guestGroupSelector : guestGroupSelector
+						
+					},
+					success: ()=>{
+						location.href = "https://hana-1q-wedding.vercel.app/#canvas-section";
+					},
+						
+					error: () =>{
+						console.log("안됐다ㅜ22")
+					}
+						
+				})
+				
+			},
+			error:()=>{
+				console.log("최종실패임222")	
+			}						
+		})
+		
+	}
+	
+	
+	
+
+	</script>
+
+
+
+
+
+	<!-- modal -->
+
+
+	<div class="modal fade" id="modal-notification" tabindex="-1"
+		role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+		<div class="modal-dialog modal-info modal-dialog-centered"
+			role="document">
+			<div class="modal-content bg-gradient-secondary">
+				<div class="modal-header">
+					<button id=finalbtn type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="py-3 text-center">
+						<span class="modal-icon display-1-lg"><span
+							class="far fa-envelope-open"></span></span>
+						<h2 class="h4 modal-title my-3">축의금 송금이 완료되었습니다!</h2>
+
+						<h2 class="h4 modal-title my-3">신랑 신부에게 동영상 축하메시지를 보내시면</h2>
+						<h2 class="h4 modal-title my-3">축의금의 2%</h2>
+						<h2 class="h4 modal-title my-3">자필 축하메시지를 보내시면 축의금의 1%를</h2>
+						<h2 class="h4 modal-title my-3">하나포인트로 환급해드립니다</h2>
+
+
+					</div>
+				</div>
+
+				<div class="modal-footer">
+
+					<button id=subModal style="background-color: #04515C; border-color: #04515C; width: 180px"
+								type="button" class="btn btn-primary" onclick="selectImageMessage()">
+						자필 축하메시지 보내기	
+					</button> 
+						
+						<button id=subModal style="background-color: #04515C; border-color: #04515C; width: 180px"
+								type="button" class="btn btn-primary" onclick="selectVideoMessage()">
+						동영상 축하메시지 보내기
+						
+						</button>
+						
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- End of Modal Content -->
+	
+<script>
+
+$('#subModal').on('click', function(){
+	$('#finalbtn').trigger('click')
+})
+
+</script>
+
+
+
+
 
 
 </body>
