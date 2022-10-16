@@ -51,10 +51,24 @@ public interface MemberDAO {
 	
 	public MemberVO hanaPointVideo(String phonenumber);
 	
+	public MemberVO hanaPointImage(String phonenumber);
+	
+	
+	
+	
+	
+	
 	public void hanaPointUpdate(MemberVO memberVO);
 	
 	
+	public void hanaPointUpdateAccount(MemberVO memberVO);
 	
+	
+	
+	public void updateAgreeOpenBanking(String phonenumber);
+	
+	
+	public MemberVO myPageMemberInfo(String phonenumber);
 	
 	
 	

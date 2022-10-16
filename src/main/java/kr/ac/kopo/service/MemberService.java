@@ -121,12 +121,43 @@ public class MemberService {
 		return memberDao.hanaPointVideo(phoneNumber); 
 	}
 	
+
+	
+	public MemberVO hanaPointImage(String phoneNumber) {
+		
+		return memberDao.hanaPointImage(phoneNumber); 
+	
+	}
+	
+	
+	
+	
 	
 	public void hanaPointUpdate(MemberVO memberVO) {
 		
 		memberDao.hanaPointUpdate(memberVO);
 		
 	}
+	
+	public void hanaPointUpdateAccount(MemberVO memberVO) {
+		
+		memberDao.hanaPointUpdateAccount(memberVO);
+		
+	}
+	
+	public void updateAgreeOpenBanking(String phonenumber) {
+		
+		memberDao.updateAgreeOpenBanking(phonenumber);
+		
+	}
+	
+
+	public MemberVO myPageMemberInfo(String phonenumber) {
+		
+		return memberDao.myPageMemberInfo(phonenumber);
+		
+	}
+	
 	
 	
 	

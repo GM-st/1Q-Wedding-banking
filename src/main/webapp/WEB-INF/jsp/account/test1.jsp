@@ -8,12 +8,24 @@
 
 <head>
 
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Primary Meta Tags -->
-<title>Pixel Pro Components - E-commerce</title>
+<title>Pixel Pro Components - Tables</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="title" content="Pixel Pro Components - E-commerce">
+<meta name="title" content="Pixel Pro Components - Tables">
 <meta name="author" content="Themesberg">
 <meta name="description"
 	content="Premium Bootstrap 4 UI Kit featuring over 1k components and 17 example pages.">
@@ -25,7 +37,7 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://demo.themesberg.com/pixel-pro">
-<meta property="og:title" content="Pixel Pro Components - E-commerce">
+<meta property="og:title" content="Pixel Pro Components - Tables">
 <meta property="og:description"
 	content="Premium Bootstrap 4 UI Kit featuring over 1k components and 17 example pages.">
 <meta property="og:image"
@@ -35,8 +47,7 @@
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url"
 	content="https://demo.themesberg.com/pixel-pro">
-<meta property="twitter:title"
-	content="Pixel Pro Components - E-commerce">
+<meta property="twitter:title" content="Pixel Pro Components - Tables">
 <meta property="twitter:description"
 	content="Premium Bootstrap 4 UI Kit featuring over 1k components and 17 example pages.">
 <meta property="twitter:image"
@@ -69,252 +80,173 @@
 <!-- Pixel CSS -->
 <link type="text/css" href="css_2/pixel.css" rel="stylesheet">
 
-<!-- ajax -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<link type="text/css" href="css_2/chart.css" rel="stylesheet">
 
 
 </head>
 
+
 <body>
 
-	<jsp:include page="../include/transparentTopMenuButton.jsp" />
-
-	<jsp:include page="../include/heroAccountTransferForm.jsp" />
-
-	<main>
-
-
-
-
-
+	<section
+		class="min-vh-100 d-flex align-items-center justify-content-center">
 		<div class="container">
 
-			<div class="row mt-5 justify-content-center">
 
-				<div class="col-12 col-md-7 col-lg-8">
+			<div class="row">
 
-					<div class="tab-content mt-4 mt-lg-5" id="nav-tabContent-ecommerce">
-
-
-						<div class="tab-pane fade show active" id="nav-credit-card"
-							role="tabpanel" aria-labelledby="nav-credit-card-tab">
-
-
-							<div class="card border-light p-3 mb-4">
-
-								<div class="card-header border-light p-3">
-									<h3 class="h5 mb-0">1Q Pay 축의금 송금</h3>
-								</div>
-
-								<div class="card-body p-4">
-
-									<form>
-
-										<div class="row justify-content-center">
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="name">축의대상 : </label><input id="memberType"
-														name="memberType" type="text" class="form-control">
-												</div>
-												<!-- End of Form -->
-											</div>
-
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="name">이름 : </label><input id="name" name="name" 
-														type="text" class="form-control" placeholder="User Name"
-														value=${member.name}>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="id">ID :</label> <input id="id" name="id"
-														value=${member.id } type="text" class="form-control"
-														placeholder="User ID">
-												</div>
-												<!-- End of Form -->
-											</div>
-
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="phoneNumber">핸드폰 번호</label><input id="phoneNumber"
-														name="phoneNumber"
-														value=${member.phonenumber
-														} type="text"
-														class="form-control" placeholder="User ID"
-														value=${member.phonenumber
-														} required>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="senderAccountNumber">보내는사람 계좌번호</label> <input id="senderAccountNumber"
-														name="senderAccountNumber"
-														value=${senderAccountNumber
-														} type="text"
-														class="form-control" placeholder="보내는 사람의 계좌번호를 입력하세요"
-														required>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="senderBankCode">보내는사람 은행코드</label> <input id="senderBankCode"
-														name="senderBankCode"
-														value=${senderBankCode
-														} type="text"
-														class="form-control" placeholder="보내는 사람의 은행코드를 입력하세요"
-														value=${senderBankCode
-														} required>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-
-											<div class="col-12 col-lg-10">
-												<!--Form-->
-												<div class="form-group">
-													<label class="my-1 mr-2" for="guestGroupSelector">하객유형</label>
-													<select id="guestGroupSelector" name="guestGroupSelector"
-														class="custom-select my-1 mr-sm-2">
-														<option selected>하객유형선택</option>
-
-													</select>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="senderAccountPassword">보내는사람 계좌 비밀번호</label> <input
-														name="senderAccountPassword" type="password"
-														class="form-control" placeholder="보내는 사람의 계좌비밀번호를 입력하세요"
-														required>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-											<c:choose>
-
-												<c:when test="${not empty bride}">
-
-													<div class="col-12 col-lg-10">
-														<!-- Form -->
-
-														<div class="form-group mb-4">
-															<label for="receiverAccountNumber">받는사람 계좌 번호</label> <input id="receiverAccountNumber"
-																name="receiverAccountNumber" type="text"
-																class="form-control" value=${brideAccount.accountNumber
-																} required>
-														</div>
-														<!-- End of Form -->
-													</div>
-
-												</c:when>
-
-												<c:when test="${not empty groom}">
-
-													<div class="col-12 col-lg-10">
-														<!-- Form -->
-
-														<div class="form-group mb-4">
-															<label for="receiverAccountNumber">받는사람 계좌 번호</label> <input id="receiverAccountNumber"
-																name="receiverAccountNumber" type="text"
-																class="form-control" placeholder="받는 사람의 계좌비밀번호를 입력하세요"
-																value=${groomAccount.accountNumber } required>
-														</div>
-														<!-- End of Form -->
-													</div>
-
-												</c:when>
-
-												<c:otherwise>
+				<div class="col-6 text-center">
+					<a href="./../index.html"><img class="img-fluid w-100"
+						src="img_2/illustrations/groomstar.png"></a>
+				</div>
+				<div class="col-6 text-center">
+					<a href="./../index.html"><img class="img-fluid w-100"
+						src="img_2/illustrations/bridestar.png"></a>
+				</div>
 
 
 
-												</c:otherwise>
+				<div
+					class="col-12 text-center text-dark d-flex align-items-center justify-content-center">
+					<div>
 
 
-											</c:choose>
+						<h1 class="mt-4">
+							<span class="font-weight-bolder text-primary">하나포인트<span></span>
+								발급완료
+							</span>
+						</h1>
 
 
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
+						<p class="lead my-4 px-lg-11">지금 마이페이지로 이동하시면 축의금에 대해 발급된
+							하나포인트를 확인하실 수 있습니다</p>
 
-												<div class="form-group mb-4">
-													<label for="receiverBankCode">받는 사람 은행 코드 :</label> <input id="receiverBankCode"
-														name="receiverBankCode" value="2" type="text"
-														class="form-control" placeholder="받는 사람의 은행코드를 입력하세요"
-														required>
-												</div>
-												<!-- End of Form -->
-											</div>
+						<a class="btn btn-primary animate-hover" href="/hanaMyPage"><span
+							class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></span>마이페이지</a>
 
-
-											<div class="col-12 col-lg-10">
-												<!-- Form -->
-
-												<div class="form-group mb-4">
-													<label for="transferAmount">이체금액</label> <input id="transferAmount"
-														name="transferAmount" type="text" class="form-control"
-														placeholder="이체금액을 입력하세요" required>
-												</div>
-												<!-- End of Form -->
-											</div>
-
-											<button type="submit" class="btn btn-block btn-primary mb-3"
-												data-toggle="modal" data-target="#modal-notification">송금하기</button>
+						<a class="btn btn-primary animate-hover" href="/"><span
+							class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></span>메인페이지</a>
 
 
 
+<!-- 동영상 축하메시지 포인트 발급  -->
+
+
+						<button id="videoPointModalButton"
+							class="btn btn-sm btn-secondary" data-toggle="modal"
+							data-target="#videoPointModal"
+							style="background-color: #008485; border-color: #008485;">
+							<i class="fa-solid fa-child-dress"></i>&nbsp;동영상 축하메시지 포인트
+						</button>
+
+
+
+						<!-- Modal Content -->
+						<div class="modal fade" id="videoPointModal" tabindex="-1" role="dialog"
+							aria-labelledby="modal-notification" aria-hidden="true">
+							<div class="modal-dialog modal-info modal-dialog-centered"
+								role="document">
+								<div class="modal-content bg-gradient-secondary">
+
+									<div class="modal-body">
+										<div class="py-3 text-center">
+											<span class="modal-icon display-1-lg"><span
+												class="fa-regular fa-circle-check"></span></span>
+											<h2 class="h4 modal-title my-3">동영상 촬영 포인트 발급완료</h2>
 										</div>
+									</div>
 
-									</form>
+									<div class="modal-footer">
+										<button id="subModalClose-3" type="button"
+											class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
+									</div>
 
 								</div>
-							</div>
 
+							</div>
 						</div>
+						<!-- End of Modal Content -->
+
+
+
+<!-- 자필 축하메시지 포인트 발급  -->
+
+
+						<button id="imagePointModalButton"
+							class="btn btn-sm btn-secondary" data-toggle="modal"
+							data-target="#imagePointModal"
+							style="background-color: #008485; border-color: #008485;">
+							<i class="fa-solid fa-child-dress"></i>&nbsp;자필 축하메시지 포인트
+						</button>
+
+
+						<!-- Modal Content -->
+						<div class="modal fade" id="imagePointModal" tabindex="-1" role="dialog"
+							aria-labelledby="modal-notification" aria-hidden="true">
+							<div class="modal-dialog modal-info modal-dialog-centered"
+								role="document">
+								<div class="modal-content bg-gradient-secondary">
+
+									<div class="modal-body">
+										<div class="py-3 text-center">
+											<span class="modal-icon display-1-lg"><span
+												class="fa-regular fa-circle-check"></span></span>
+											<h2 class="h4 modal-title my-3">포인트 발급완료</h2>
+										</div>
+									</div>
+
+									<div class="modal-footer">
+										<button id="subModalClose-3" type="button"
+											class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+						<!-- End of Modal Content -->
+
+
+
 
 					</div>
 				</div>
+
+
+
 			</div>
 		</div>
+	</section>
 
-	</main>
 
-	<jsp:include page="../include/footer.jsp" />
 
+
+
+
+
+
+
+	<!--,하이차트  -->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+	<script
+		src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script
+		src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
 	<!-- Core -->
-	<script src="node_modules_2/jquery/dist/jquery.min.js"></script>
+
 	<script src="node_modules_2/popper.js/dist/umd/popper.min.js"></script>
 	<script src="node_modules_2/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="node_modules_2/headroom.js/dist/headroom.min.js"></script>
@@ -345,194 +277,62 @@
 
 
 
-
-
-
 	<script>
 	
 	$(document).ready(function(){
-		
-		if('${member.type}' == "하객" && '${bride}' != ''){
+	
+		if('${member.video}' == 'Y'){
 			
 			$.ajax({
 				
-				type : 'post',
-				url : "/member/getGuestGroup",
+				type: 'post',
+				url : "/hanaPointVideo",
 				data : {
-					phonenumber : '${bride.phonenumber}'
+					phoneNumber : '${member.phonenumber}'
 				},
-				success:
-					function(result){
-						console.log(result);
+				success : (result) => {
+					
+					memberVO = result;
+					
+					console.log("memberVO:"+memberVO)
+					
+					$.ajax({
 						
-						for(let i = 0; i < result.length; i++){
-							let guestGroup = result[i];
-							let memberType = guestGroup.memberType;
-							let memberName = guestGroup.membetName;
-							let memberId = guestGroup.membetId;
-							let memberPhoneNumber = guestGroup.memberPhoneNumber;
-							let firstGuestGroup = guestGroup.firstGuestGroup;
-							let secondGuestGroup = guestGroup.secondGuestGroup;
-							let thirdGuestGroup = guestGroup.thirdGuestGroup;
-							let fourthGuestGroup = guestGroup.fourthGuestGroup;
-							let lastGuestGroup = guestGroup.lastGuestGroup;
-							
-							$('#guestGroupSelector').append('<option value='+firstGuestGroup+'>'+firstGuestGroup+'</option>')
-							$('#guestGroupSelector').append('<option value='+secondGuestGroup+'>'+secondGuestGroup+'</option>')
-							$('#guestGroupSelector').append('<option value='+thirdGuestGroup+'>'+thirdGuestGroup+'</option>')
-							$('#guestGroupSelector').append('<option value='+fourthGuestGroup+'>'+fourthGuestGroup+'</option>')
-							$('#guestGroupSelector').append('<option value='+lastGuestGroup+'>'+lastGuestGroup+'</option>')
-							
-						
-							$('#memberType').val(memberType);
-							
+						type: 'post',
+						url : "/hanaPointUpdate",
+						data : {
+							hanapoint : memberVO.hanapoint,
+							phonenumber : memberVO.phonenumber
+						},
+						success : ()=>{
+							console.log("썽꽁2")
+						},
+						error: () => {
+							console.log("쓀패2")
 						}
-									
+						
+					})
+
 				},
-				error : function () {
-	                 alert('실패');
-	             }
-			})
-			
-		} else {
-			
-			$.ajax({
+				error : ()=>{
+					console.log("쓀패")
+				}
 				
-				type : 'post',
-				url : "/member/getGuestGroup",
-				data : {
-					phonenumber : '${groom.phonenumber}'
-				},
-				success:
-					function(result){
-						console.log(result);
-						
-						for(let i = 0; i < result.length; i++){
-							let guestGroup = result[i];
-							let memberType = guestGroup.memberType;
-							let memberName = guestGroup.membetName;
-							let memberId = guestGroup.membetId;
-							let memberPhoneNumber = guestGroup.memberPhoneNumber;
-							let firstGuestGroup = guestGroup.firstGuestGroup;
-							let secondGuestGroup = guestGroup.secondGuestGroup;
-							let thirdGuestGroup = guestGroup.thirdGuestGroup;
-							let fourthGuestGroup = guestGroup.fourthGuestGroup;
-							let lastGuestGroup = guestGroup.lastGuestGroup;
-							
-							$('#guestGroupSelector').append('<option value='+firstGuestGroup+'>'+firstGuestGroup+'</option>')
-							$('#guestGroupSelector').append('<option value='+secondGuestGroup+'>'+secondGuestGroup+'</option>')
-							$('#guestGroupSelector').append('<option value='+thirdGuestGroup+'>'+thirdGuestGroup+'</option>')
-							$('#guestGroupSelector').append('<option value='+fourthGuestGroup+'>'+fourthGuestGroup+'</option>')
-							$('#guestGroupSelector').append('<option value='+lastGuestGroup+'>'+lastGuestGroup+'</option>')
-							
-						
-							$('#memberType').val(memberType);
-							
-						}
-									
-				},
-				error : function () {
-	                 alert('실패');
-	             }
 			})
 			
 		}
+		
 	})
 	
 	
-	let selectVideoMessage = function(){
-		
-		$.ajax({
-		
-			type : 'post',
-			url : "/selectVideoMessage",
-			data : {
-				phonenumber : '${member.phonenumber}'
-			},
-			success:
-				$.ajax({
-					type : 'post',
-					url : "/accountTransferProcess",
-					data : {
-						
-						name : ,
-						id : ,
-						phoneNumber : ,
-						senderAccountNumber : ,
-						receiverAccountNumber : ,
-						senderBankCode : ,
-						receiverBankCode : ,
-						transferAmount : ,
-						memberType : ,
-						guestGroupSelector :
-						
-					}
-				})
+	
 			
-			
-		})
-		
-		
-		
-	}
 	
 	
-	
-
 	</script>
 
 
 
-
-
-	<!-- modal -->
-
-
-	<div class="modal fade" id="modal-notification" tabindex="-1"
-		role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
-		<div class="modal-dialog modal-info modal-dialog-centered"
-			role="document">
-			<div class="modal-content bg-gradient-secondary">
-				<div class="modal-header">
-					<p class="modal-title" id="modal-title-notification">A new
-						experience, personalized for you.</p>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="py-3 text-center">
-						<span class="modal-icon display-1-lg"><span
-							class="far fa-envelope-open"></span></span>
-						<h2 class="h4 modal-title my-3">축의금 송금이 완료되었습니다!</h2>
-
-						<h2 class="h4 modal-title my-3">신랑 신부에게 동영상 축하메시지를 보내시면</h2>
-						<h2 class="h4 modal-title my-3">축의금의 2%</h2>
-						<h2 class="h4 modal-title my-3">자필 축하메시지를 보내시면 축의금의 1%를</h2>
-						<h2 class="h4 modal-title my-3">하나포인트로 환급해드립니다</h2>
-
-
-
-
-						<!-- <p>Do you know that you can assign status and relation to a company right in the visit list?.</p> -->
-					</div>
-				</div>
-
-				<div class="modal-footer">
-
-					<a class="btn btn-sm btn-white"
-						href="https://hana-1q-wedding.vercel.app/#canvas-section"> 자필
-						축하메시지 보내기 </a> <a class="btn btn-sm btn-white"
-						href="https://hana-1q-wedding.vercel.app/#recorder-section">
-						동영상 축하메시지 보내기 </a>
-
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<!-- End of Modal Content -->
 
 
 
@@ -540,5 +340,9 @@
 
 
 </body>
+
+
+
+
 
 </html>

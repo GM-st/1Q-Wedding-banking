@@ -4,6 +4,7 @@
 <mapper namespace="kr.ac.kopo.dao.AccountDAO">
 
 	<resultMap type="kr.ac.kopo.vo.AccountVO" id="accountMap">
+
 		<result column="PHONE_NUMBER" property="phoneNumber"/>
 		<result column="ACCOUNT_NUMBER" property="accountNumber"/>
 		<result column="ACCOUNT_PASSWORD" property="accountPassword"/>
@@ -13,6 +14,9 @@
 		<result column="BANK_ALIAS" property="bankAlias"/>
 		<result column="TRANSFER_LIMIT" property="transferLimit"/>
 		<result column="NEW_SUBSCRIBE" property="newSubscribe"/>
+		<result column="HANA_POINT" property="hanaPoint"/>
+		<result column="OPEN_BANKING" property="openBanking"/>
+
 	</resultMap>
 	
 	<resultMap type="kr.ac.kopo.vo.TransactionVO" id="transactionMap">
@@ -241,6 +245,15 @@ from FINAL_TRANSACTION_HISTORY
 		where WITHDRAWAL_ACCOUNT_NUM = '${receiverAccountNumber}'
 	
 	</update>
+	
+	
+	<select id="myPageAccount" parameterType="String" resultMap="accountMap">
+	
+		select * from FINAL_ACCOUNT 
+		where PHONE_NUMBER = '${phoneNumber}'
+	
+	</select>
+	
 	
 	
 

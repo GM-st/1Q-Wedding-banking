@@ -23,6 +23,7 @@ import kr.ac.kopo.vo.GuestGroupVO;
 import kr.ac.kopo.vo.MemberVO;
 import kr.ac.kopo.vo.TransactionVO;
 import lombok.RequiredArgsConstructor;
+import oracle.ucp.proxy.annotation.Post;
 
 @Controller
 @RequiredArgsConstructor
@@ -53,15 +54,12 @@ public class MemberController {
 	
 	
 	
-	
-	
-	
 	@GetMapping("/hanaLogin")
 	public String login(Model model) {
 		return "member/hanaLogin";
 	}
 	
-	@PostMapping("/member/hanaLogin")
+	@PostMapping("/hanaLogin")
 	public String loginProcess(@ModelAttribute MemberVO memberVO, Model model, HttpSession session) {
 		
 	MemberVO member = memberService.login(memberVO);
@@ -136,18 +134,13 @@ public class MemberController {
 		} else {
 		
 			session.setAttribute("manager", member);
-			
-			session.setAttribute("managerAccount", accountVO);
 
 			MemberVO memManager = (MemberVO)session.getAttribute("manager");
 			
-			AccountVO managerAccount = (AccountVO)session.getAttribute("managerAccount");
-			
 			System.out.println("나는 Manager 입니다:"+memManager);
 			
-			System.out.println("나의 계좌는:"+managerAccount);
-			
-			return "redirect:/";
+
+			return "member/managerPage";
 
 		}
 		
@@ -177,7 +170,7 @@ public class MemberController {
 			
 			memberService.agreeOpenBanking(phoneNumber);
 			
-			return "";
+			return "동의";
 		}
 	
 	@PostMapping("/member/marryAgreeGroom")
@@ -412,10 +405,14 @@ public class MemberController {
 
 	@PostMapping("/selectImageMessage")
 	@ResponseBody
-	public String selectImageMessage(@RequestParam("phonenumber") String phonenumber) {
+	public String selectImageMessage(@RequestParam("phonenumber") String phonenumber,HttpSession session) {
 			
-	memberService.selectVideoMessage(phonenumber);
-		
+	memberService.selectImageMessage(phonenumber);
+	
+	MemberVO memberVO = memberService.getMember(phonenumber);
+	
+	session.setAttribute("member", memberVO);
+	
 		return "";
 	}
 	
@@ -424,6 +421,8 @@ public class MemberController {
 		
 		return "/member/hanaPoint";
 	}
+	
+	
 	
 	@PostMapping("/hanaPointVideo")
 	@ResponseBody
@@ -436,19 +435,40 @@ public class MemberController {
 		return memberVO;
 	}
 	
+	
+	
+	@PostMapping("/hanaPointImage")
+	@ResponseBody
+	public MemberVO hanaPointImage(String phoneNumber) {
+		
+		System.out.println("일단여기2");
+		
+		MemberVO memberVO = memberService.hanaPointImage(phoneNumber);
+		
+		return memberVO;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@PostMapping("/hanaPointUpdate")
 	@ResponseBody
 	public String hanaPointInsert(
 MemberVO memberVO) {
-		joim
-		System.out.println("memberVO:"+memberVO);
-		
-		System.out.println("그리고여기2");
 		
 		memberService.hanaPointUpdate(memberVO);
 		
-		System.out.println("그리고같은여기2");
+		memberService.hanaPointUpdateAccount(memberVO);
 		
+			
 		return "";
 	}
 	
@@ -463,6 +483,49 @@ MemberVO memberVO) {
 		
 		
 		return "member/myPage";
+	}
+	
+	
+	@PostMapping("/myPageAccount")
+	@ResponseBody
+	public AccountVO myPageAccount(@RequestParam("phonenumber") String phonenumber) {
+		
+		AccountVO accountVO = new AccountVO();
+		
+		accountVO = accountService.myPageAccount(phonenumber);
+		
+		return accountVO;
+		
+	}
+	
+	
+	@PostMapping("/myPageMemberInfo")
+	@ResponseBody
+	public MemberVO myPageMemberInfo(@RequestParam("phonenumber") String phonenumber) {
+		
+		MemberVO memberVO = new MemberVO();
+		
+		memberVO = memberService.myPageMemberInfo(phonenumber);
+		
+		return memberVO;
+	}
+	
+	
+	
+	
+	
+	@PostMapping("/updateAgreeOpenBanking")
+	@ResponseBody
+	public String updateAgreeOpenBanking(@RequestParam("phonenumber") String phonenumber, @RequestParam("openbanking") String openbanking) {
+
+		
+		memberService.updateAgreeOpenBanking(phonenumber);
+		
+		openbanking = "동의";
+		
+		System.out.println("openbanking:"+openbanking);
+		
+		return openbanking;
 	}
 	
 	

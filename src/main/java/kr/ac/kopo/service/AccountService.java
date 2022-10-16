@@ -291,17 +291,6 @@ public List<TransactionVO> selectManagerTransactionList(String phoneNumber){
 
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public List<TransactionVO> selectGuestRePayList(String accountNumber){
 		
 		List<TransactionVO> guestRePayList = new ArrayList<>();
@@ -316,6 +305,11 @@ public List<TransactionVO> selectManagerTransactionList(String phoneNumber){
 		
 		accountDao.updateRePay(receiverAccountNumber);
 		
+	}
+	
+	public AccountVO myPageAccount(String phonenumber) {
+		
+		return accountDao.myPageAccount(phonenumber);
 	}
 	
 	

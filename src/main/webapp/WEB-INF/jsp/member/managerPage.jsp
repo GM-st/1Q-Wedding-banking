@@ -88,135 +88,106 @@
 
 <body>
 
+	<jsp:include page="../include/transparentTopMenuButton.jsp" />
+
+
+	<jsp:include page="../include/heroManager.jsp" />
+
+	<%-- 	<jsp:include page="./include/preLoader.jsp" />
+	 --%>
+	<br>
+
 	<section
-		class="min-vh-100 d-flex align-items-center justify-content-center">
+		class="min-vh-0 d-flex align-items-center section-image overlay-soft-dark">
+
+	</section>
+	<!-- Section -->
+
+
+	<!-- Section -->
+	<section class="section section-md">
 		<div class="container">
-
-
-			<div class="row">
-
-				<div class="col-6 text-center">
-					<a href="./../index.html"><img class="img-fluid w-100"
-						src="img_2/illustrations/groomstar.png"></a>
+			
+			<div class="row mb-2">
+				<div class="col-md-12 text-center">
+					<span class="h1">관리자 페이지</span>
 				</div>
-				<div class="col-6 text-center">
-					<a href="./../index.html"><img class="img-fluid w-100"
-						src="img_2/illustrations/bridestar.png"></a>
-				</div>
-
-
-
-				<div
-					class="col-12 text-center text-dark d-flex align-items-center justify-content-center">
-					<div>
-
-
-						<h1 class="mt-4">
-							<span class="font-weight-bolder text-primary">하나포인트<span></span>
-								발급완료
-							</span>
-						</h1>
-
-
-						<p class="lead my-4 px-lg-11">지금 마이페이지로 이동하시면 축의금에 대해 발급된
-							하나포인트를 확인하실 수 있습니다</p>
-
-						<a class="btn btn-primary animate-hover" href="/hanaMyPage"><span
-							class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></span>마이페이지</a>
-
-						<a class="btn btn-primary animate-hover" href="/"><span
-							class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></span>메인페이지</a>
-
-
-
-<!-- 동영상 축하메시지 포인트 발급  -->
-
-
-						<button id="videoPointModalButton"
-							class="btn btn-sm btn-secondary" data-toggle="modal"
-							data-target="#videoPointModal"
-							style="background-color: #008485; border-color: #008485;">
-							<i class="fa-solid fa-child-dress"></i>&nbsp;동영상 축하메시지 포인트
-						</button>
-
-
-
-						<!-- Modal Content -->
-						<div class="modal fade" id="videoPointModal" tabindex="-1" role="dialog"
-							aria-labelledby="modal-notification" aria-hidden="true">
-							<div class="modal-dialog modal-info modal-dialog-centered"
-								role="document">
-								<div class="modal-content bg-gradient-secondary">
-
-									<div class="modal-body">
-										<div class="py-3 text-center">
-											<span class="modal-icon display-1-lg"><span
-												class="fa-regular fa-circle-check"></span></span>
-											<h2 class="h4 modal-title my-3">포인트 발급완료</h2>
-										</div>
-									</div>
-
-									<div class="modal-footer">
-										<button id="subModalClose-3" type="button"
-											class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
-									</div>
-
-								</div>
-
-							</div>
+			</div>
+			
+			<div class="row align-items-center justify-content-around">
+			
+				<div class="col-12 col-lg-4">
+					<!-- Icon Box -->
+					<div class="icon-box text-center mb-5">
+						<div
+							class="icon icon-shape icon-shape-secondary rounded-circle mb-4">
+							<span class="far fa-lightbulb"></span>
 						</div>
-						<!-- End of Modal Content -->
-
-
-
-<!-- 자필 축하메시지 포인트 발급  -->
-
-
-						<button id="imagePointModalButton"
-							class="btn btn-sm btn-secondary" data-toggle="modal"
-							data-target="#imagePointModal"
-							style="background-color: #008485; border-color: #008485;">
-							<i class="fa-solid fa-child-dress"></i>&nbsp;자필 축하메시지 포인트
-						</button>
-
-
-						<!-- Modal Content -->
-						<div class="modal fade" id="imagePointModal" tabindex="-1" role="dialog"
-							aria-labelledby="modal-notification" aria-hidden="true">
-							<div class="modal-dialog modal-info modal-dialog-centered"
-								role="document">
-								<div class="modal-content bg-gradient-secondary">
-
-									<div class="modal-body">
-										<div class="py-3 text-center">
-											<span class="modal-icon display-1-lg"><span
-												class="fa-regular fa-circle-check"></span></span>
-											<h2 class="h4 modal-title my-3">포인트 발급완료</h2>
-										</div>
-									</div>
-
-									<div class="modal-footer">
-										<button id="subModalClose-3" type="button"
-											class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
-									</div>
-
-								</div>
-
-							</div>
-						</div>
-						<!-- End of Modal Content -->
-
-
-
-
+						<h3 class="h5">모든 거래내역 조회</h3>
+						<p class="icon-box-text">We work to figure out ways to help
+							your business grow through all platforms.</p>
+						<a href="#" class="btn btn-white btn-sm border-light">Learn
+							more</a>
 					</div>
+					<!-- End of Icon Box -->
+					
+					<!-- Icon Box -->
+					<div class="icon-box text-center mb-5 mb-lg-0">
+						<div
+							class="icon icon-shape icon-shape-secondary rounded-circle mb-4">
+							<span class="fas fa-fingerprint"></span>
+						</div>
+						<h3 class="h5">모든 계좌내역 조회</h3>
+						<p class="icon-box-text">We work to figure out ways to help
+							your business grow through all platforms.</p>
+						<a href="#" class="btn btn-white btn-sm border-light">Learn
+							more</a>
+					</div>
+					<!-- End of Icon Box -->
 				</div>
-
-
-
+				
+				<div class="col-md-6 col-lg-4">
+					<!-- Illustration -->
+					<img class="d-none d-lg-block"
+						src="img_2/hanalogo.png"
+						alt="illustration">
+					<!-- / Illustration -->
+				</div>
+				
+				<div class="col-12 col-lg-4">
+					<!-- Icon Box -->
+					<div class="icon-box text-center mb-5">
+						<div
+							class="icon icon-shape icon-shape-secondary rounded-circle mb-4">
+							<span class="fas fa-code"></span>
+						</div>
+						<h3 class="h5">모든 회원목록 조회</h3>
+						<p class="icon-box-text">We work to figure out ways to help
+							your business grow through all platforms.</p>
+						<a href="#" class="btn btn-white btn-sm border-light">Learn
+							more</a>
+					</div>
+					<!-- End of Icon Box -->
+					
+					<!-- Icon Box -->
+					<div class="icon-box text-center mb-5 mb-lg-0">
+						<div
+							class="icon icon-shape icon-shape-secondary rounded-circle mb-4">
+							<span class="far fa-grin-stars"></span>
+						</div>
+						<h3 class="h5">모든 축하메시지 조회</h3>
+						<p class="icon-box-text">We work to figure out ways to help
+							your business grow through all platforms.</p>
+						<a href="#" class="btn btn-white btn-sm border-light">Learn
+							more</a>
+					</div>
+					<!-- End of Icon Box -->
+					
+				</div>
 			</div>
 		</div>
 	</section>
+	<!-- End of section -->
 
 
 
@@ -274,120 +245,6 @@
 
 	<!-- pixel JS -->
 	<script src="js_2/pixel.js"></script>
-
-
-
-	<script>
-	
-	$(document).ready(function(){
-		
-		console.log('${member}')
-	
-		if('${member.video}' == 'Y'){
-			
-			$.ajax({
-				
-				type: 'post',
-				url : "/hanaPointVideo",
-				data : {
-					phoneNumber : '${member.phonenumber}'
-				},
-				success : (result) => {
-					
-					memberVO = result;
-					
-					console.log("memberVO:"+memberVO)
-					
-					$.ajax({
-						
-						type: 'post',
-						url : "/hanaPointUpdate",
-						data : {
-							hanapoint : memberVO.hanapoint,
-							phonenumber : memberVO.phonenumber
-						},
-						success : ()=>{
-							
-							console.log("썽꽁2 비디오 모달")
-							
-							$('#videoPointModalButton').trigger('click')
-							
-						},
-						error: () => {
-							console.log("쓀패2")
-						}
-						
-					})
-
-				},
-				error : ()=>{
-					console.log("쓀패")
-				}
-				
-			})
-			
-		} else if('${member.image}' == 'Y'){
-			
-			console.log("여기는오니??")
-			
-			$.ajax({
-				
-				type: 'post',
-				url : "/hanaPointImage",
-				data : {
-					phoneNumber : '${member.phonenumber}'
-				},
-				success : (result) => {
-					
-					memberVO = result;
-					
-					console.log("memberVO:"+memberVO)
-					
-					$.ajax({
-						
-						type: 'post',
-						url : "/hanaPointUpdate",
-						data : {
-							hanapoint : memberVO.hanapoint,
-							phonenumber : memberVO.phonenumber
-						},
-						success : ()=>{
-							
-							console.log("썽꽁 이미지 모달")
-							
-							$('#imagePointModalButton').trigger('click')
-							
-						},
-						error: () => {
-							console.log("쓀패2")
-						}
-						
-					})
-
-				},
-				error : ()=>{
-					console.log("쓀패")
-				}
-				
-			})
-			
-		}
-		
-	})
-	
-	
-	
-			
-	
-	
-	</script>
-
-
-
-
-
-
-
 
 
 </body>

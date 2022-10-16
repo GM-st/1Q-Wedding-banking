@@ -69,7 +69,8 @@
 <link type="text/css"
 	href="node_modules_2/@fortawesome/fontawesome-free/css/all.min.css"
 	rel="stylesheet">
-<script src="https://kit.fontawesome.com/530bb32673.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/530bb32673.js"
+	crossorigin="anonymous"></script>
 
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css"
@@ -84,31 +85,34 @@
 
 <body>
 
-	
-	
+
 	<jsp:include page="../include/transparentTopMenu.jsp" />
-<%-- 
-	<jsp:include page="../include/preLoader.jsp" /> --%>
 	
+	<%-- 
+	<jsp:include page="../include/preLoader.jsp" /> --%>
+
 
 	<main>
-	
-	        <!-- Section -->
-        <section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark" data-background="img_2/pages/hanati.png">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 d-flex align-items-center justify-content-center">
-                        <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500"  style="
-    background-color: #ffffff !important;
-    background-color: rgba(255, 255, 255, 0.95) !important;">
-                        
-                            <div class="text-center text-md-center mb-4 mt-md-0">
-                                <h1 class="mb-0 h3">Log In</h1>
-                            </div>
-                            
-                            <form action="/member/hanaLogin"  method="post" class="mt-4">
-                                
-                                <!-- Form -->
+
+		<!-- Section -->
+		<section
+			class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark"
+			data-background="img_2/pages/hanati.png">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div
+						class="col-12 d-flex align-items-center justify-content-center">
+						<div
+							class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500"
+							style="background-color: #ffffff !important; background-color: rgba(255, 255, 255, 0.95) !important;">
+
+							<div class="text-center text-md-center mb-4 mt-md-0">
+								<h1 class="mb-0 h3">Log In</h1>
+							</div>
+
+							<form action="/hanaLogin" method="post" class="mt-4">
+
+								<!-- Form -->
 								<div class="form-group">
 
 									<div class="input-group mb-4">
@@ -120,69 +124,69 @@
 											placeholder="ID" type="text" aria-label="email adress">
 									</div>
 								</div>
-                                
-                                
-									<div class="form-group">
 
-										<div class="input-group mb-4">
-											<div class="input-group-prepend">
-												<span class="input-group-text"><span
-													class="fas fa-unlock-alt" style="color: #008485;"></span></span>
-											</div>
-											<input class="form-control" name="password"
-												id="exampleInputPassword7" placeholder="Password"
-												type="password" aria-label="Password" required>
+
+								<div class="form-group">
+
+									<div class="input-group mb-4">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><span
+												class="fas fa-unlock-alt" style="color: #008485;"></span></span>
 										</div>
+										<input class="form-control" name="password"
+											id="exampleInputPassword7" placeholder="Password"
+											type="password" aria-label="Password" required>
 									</div>
-									<!-- End of Form -->
-									
+								</div>
+								<!-- End of Form -->
+
 								<button id="joinbtn" type="submit"
 									class="btn btn-block btn-primary">Sign in</button>
-                            
-                            </form>
 
-                            <div class="mt-3 mb-4 text-center">
-                                <span class="font-weight-normal">or login with</span>
-                            </div>
+							</form>
 
-                            <div class="btn-wrapper my-4 text-center">
-                                <button class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2" type="button" aria-label="facebook button" title="facebook button">
-                                    <span aria-hidden="true" class="fab fa-facebook-f"></span>
-                                </button>
-                                <button class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2" type="button" aria-label="twitter button" title="twitter button">
-                                    <span aria-hidden="true" class="fab fa-twitter"></span>
-                                </button>
-                                <button class="btn btn-icon-only btn-pill btn-outline-light text-facebook" type="button" aria-label="github button" title="github button">
-                                    <span aria-hidden="true" class="fab fa-github"></span>
-                                </button>
-                            </div>
-                            
-                            <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
-                                <span class="font-weight-normal">
-                                    Not registered?
-                                    <a href="./sign-up.html" class="font-weight-bold">Create account</a>
-                                </span>
-                            </div>
-             
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-	
+							
+
+							<div class="btn-wrapper my-4 text-center">
+								<button
+									class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2"
+									type="button" aria-label="facebook button"
+									title="facebook button">
+									<span aria-hidden="true" class="fab fa-facebook-f"></span>
+								</button>
+								<button
+									class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2"
+									type="button" aria-label="twitter button"
+									title="twitter button">
+									<span aria-hidden="true" class="fab fa-twitter"></span>
+								</button>
+								<button
+									class="btn btn-icon-only btn-pill btn-outline-light text-facebook"
+									type="button" aria-label="github button" title="github button">
+									<span aria-hidden="true" class="fab fa-github"></span>
+								</button>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 
 	</main>
 
 	<jsp:include page="../include/footer.jsp" />
 
-	
-		<script>
+<!-- 
+	<script>
                                             function loginHandler(){
                                             	   const userName = document.getElementById("id").value;
                                             	   const userPassword = document.getElementById("password").value;
 
                                             	   $.ajax({
-                                            	      url : "/member/hanaLogin",
+                                            	      url : "/hanaLogin",
                                             	      method : "post",
                                             	      data : {
                                             	         id : userName,
@@ -194,9 +198,11 @@
                                             	      }
                                             	   })
                                             	};
-                                            </script>
+    
+                                            	
+                                 	</script>
 
-
+ -->
 
 	<!--,하이차트  -->
 	<script src="https://code.highcharts.com/highcharts.js"></script>
@@ -247,7 +253,7 @@
 	<!-- pixel JS -->
 	<script src="js_2/pixel.js"></script>
 
-	
+
 
 </body>
 

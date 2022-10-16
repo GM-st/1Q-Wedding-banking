@@ -489,7 +489,10 @@
 						
 					},
 					success: ()=>{
-						location.href = "https://hana-1q-wedding.vercel.app/#recorder-section";
+						
+						console.log("비디오촬영완료!!!Y")
+						
+						/* location.href = "https://hana-1q-wedding.vercel.app/#recorder-section"; */
 					},
 						
 					error: () =>{
@@ -522,7 +525,6 @@
 		
 		console.log(guestGroupSelector);
 		
-		
 		$.ajax({
 		
 			type : 'post',
@@ -531,6 +533,8 @@
 				phonenumber : '${member.phonenumber}'
 			},
 			success:()=>{
+				
+				console.log('${member}');
 			
 				$.ajax({
 					type : 'post',
@@ -550,7 +554,10 @@
 						
 					},
 					success: ()=>{
-						location.href = "https://hana-1q-wedding.vercel.app/#canvas-section";
+						
+						console.log("이미지작성완료!!!Y")
+						
+/* 						location.href = "https://hana-1q-wedding.vercel.app/#canvas-section"; */
 					},
 						
 					error: () =>{

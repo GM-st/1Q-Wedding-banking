@@ -117,10 +117,13 @@
       $.ajax({
          type : 'post',
          url : "/member/openBanking?phoneNum="+'${member.phonenumber}',
-         success : function(){
+         success : function(result){
+        	 
+        	 console.log("result:요김당"+result)
+        	 
         	 $('#userpoint').empty()
-				$('#userpoint').append('오픈뱅킹'+'${member.name}')
-				
+			   $('#userpoint').append('오픈뱅킹 :'+result)
+     	
 				withdrawalBankName = value;
         	 
         	 console.log(withdrawalBankName);
@@ -143,9 +146,34 @@
          }
       })
    };
+   
+   
+   let updateAgreeOpenBanking = function(){
+	   
+	   $.ajax({
+			
+		   type : 'post',
+		   url : '/updateAgreeOpenBanking',
+		   data : {
+			   phonenumber : '${member.phonenumber}',
+			   openbanking : '${member.openbanking}'
+		   },
+		   success : () => {
+			   
+			   
+		   },
+		   error: () => {
+			   console.log("송패!@")
+		   }
+	   	   
+	   })
+	   
+   }
+   
+   
 
        
-          let selectBoxChange = function(value){
+          /* let selectBoxChange = function(value){
              
              console.log(value);
              
@@ -185,8 +213,10 @@
                 })
              }
           }
-          
-          function callhana(result){
+  */         
+      
+  
+  		/* function callhana(result){
              
              console.log(result);
              
@@ -208,7 +238,9 @@
 
              }
                                        
-          }
+          } */
+          
+          
           
           function callother(result) {
              

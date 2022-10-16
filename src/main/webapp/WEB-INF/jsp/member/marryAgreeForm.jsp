@@ -124,6 +124,7 @@
 							<div class="col-md-4">
 
 								<!-- Button Modal -->
+								
 								<button type="button" class="btn btn-block btn-primary mb-3"
 									data-toggle="modal" data-target="#modal-1"
 									style="background-color: #008485; border-color: #008485; width: 190px;">신랑

@@ -16,4 +16,5 @@ public class AccountVO {
 		private int transferLimit;
 		private int hanaPoint;
 		private String newSubscribe;
+		private String openBanking;
 }

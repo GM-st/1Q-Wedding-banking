@@ -75,5 +75,11 @@ public interface AccountDAO {
 	public void updateRePay(String receiverAccountNumber);
 	
 	
+	public AccountVO myPageAccount(String phonenumber);
+	
+	
+	
+	
+	
 	
 }

@@ -91,7 +91,7 @@
 
 	<!-- Section -->
 	<section class="section section-md"
-		style="padding-top: 2rem; padding-bottom: 0rem">
+		style="padding-top: 2rem; padding-bottom: 1rem">
 		<div class="container">
 
 			<div class="row justify-content-between mt-4">
@@ -110,9 +110,11 @@
 							time. Responsive design means that the layout of a website
 							automatically adapts to the screen dimensions.</p>
 
-						<a href="#" class="btn btn-sm btn-primary animate-up-1"> <span
-							class="far fa-eye"></span> <span class="ml-1">계좌정보확인</span>
-						</a>
+						<button class="btn btn-sm btn-primary animate-up-1"
+							style="background-color: #008485; border-color: #008485; color: white"
+							onclick="confirmAccount()">
+							<span class="far fa-eye"></span> <span class="ml-1">계좌정보확인</span>
+						</button>
 
 					</div>
 					<!-- End of Icon Box -->
@@ -131,167 +133,39 @@
 						<p class="my-3">The amount of mobile users (who in general
 							have slow connections) has increased, and the speed of wired
 							connections hasn’t significantly increased either.</p>
-						<a href="#" class="btn btn-sm btn-primary animate-up-1"> <span
-							class="far fa-eye"></span> <span class="ml-1">회원정보확인</span>
-						</a>
+
+						<button class="btn btn-sm btn-primary animate-up-1"
+							style="background-color: #008485; border-color: #008485; color: white"
+							onclick="confirmMemberInfo()">
+							<span class="far fa-eye"></span> <span class="ml-1">회원정보확인</span>
+						</button>
+
 					</div>
 					<!-- End of Icon Box -->
 				</div>
 
-
-
 			</div>
 		</div>
 	</section>
 	<!-- End of section -->
 
 
+	<div id="myAccountInfo"></div>
 
 
-	<!-- Section -->
-	<section class="section section-md"
-		style="padding-top: 3rem; padding-bottom: 0rem">
-		<div class="container">
 
+	<div id="myMemberInfo"></div>
 
 
 
-			<div class="row align-items-center justify-content-between">
 
-				<c:choose>
 
-					<c:when test="${member.sex  eq '남'}">
 
-						<div class="col-12 col-md-6">
-							<img class="img-fluid" src="img_2/illustrations/groomstar.png"
-								alt="illustration">
-						</div>
 
-					</c:when>
 
-					<c:otherwise>
 
-						<div class="col-12 col-md-6">
-							<img class="img-fluid" src="img_2/illustrations/bridestar.png"
-								alt="illustration">
-						</div>
 
-					</c:otherwise>
 
-
-				</c:choose>
-
-
-				<!-- card -->
-				<div class="col-12 col-md-6 text-center text-md-left">
-					<div class="card border-light"
-						style="width: 500px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-
-
-
-
-
-
-
-						<div class="card-footer border-top border-light p-4">
-
-							<h2 class="h1 mb-1 mt-1 mt-sm-0" style="font-family: hanaM">계좌잔액</h2>
-
-							<div class="card-header bg-white p-3">
-
-								<span class="d-block"> <span
-									class="display-1 text-dark font-weight-bold"> <span
-										class="align-top font-large">\ </span>199
-
-								</span>
-
-								</span>
-
-							</div>
-
-							<div class="progress">
-								<div class="progress-bar bg-primary" role="progressbar"
-									aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-
-
-							<h2 class="h1 mb-1 mt-1 mt-sm-0" style="font-family: hanaM">하나포인트</h2>
-
-							<div class="card-header bg-white p-3">
-
-								<span class="d-block"> <span
-									class="display-1 text-dark font-weight-bold">199 <span
-										class="align-top font-large">P </span>
-
-								</span>
-
-								</span>
-
-							</div>
-							<div class="progress">
-								<div class="progress-bar bg-primary" role="progressbar"
-									aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-
-
-							<div class="progress-wrapper mt-5">
-
-								<div class="progress-info">
-									<div class="progress-label">
-										<span>계좌번호</span> <span></span>
-									</div>
-								</div>
-
-								<div class="progress">
-									<div class="progress-bar bg-primary" role="progressbar"
-										aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-
-							</div>
-
-
-
-							<div class="progress-wrapper">
-								<div class="progress-info">
-									<div class="progress-label">
-										<span>오픈뱅킹 동의여부</span>
-									</div>
-								</div>
-								<div class="progress">
-									<div class="progress-bar bg-primary" role="progressbar"
-										aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-
-
-
-
-						</div>
-					</div>
-					<!-- card -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				</div>
-			</div>
-
-
-
-		</div>
-	</section>
-	<!-- End of section -->
 
 
 
@@ -342,6 +216,431 @@
 
 	<!-- pixel JS -->
 	<script src="js_2/pixel.js"></script>
+
+	<script type="text/javascript">
+	
+
+		let confirmAccount = function(){
+			
+			$.ajax({
+				
+				type :'post',
+				url : "/myPageAccount",
+				data : {
+					phonenumber : '${member.phonenumber}'
+				},
+				success : (result) => {
+					
+					console.log("result:"+result);
+					
+					$('#myAccountInfo').empty();
+					
+					let accountVO = result;
+					let balance = accountVO.balance;
+					
+					let calBalance = balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+					
+					let hanaPoint = accountVO.hanaPoint;
+					let accountNumber = accountVO.accountNumber;
+					let bankAlias = accountVO.bankAlias;
+					let openBanking = accountVO.openBanking;
+					
+					
+					let name = accountVO.name;
+					
+					$('#myAccountInfo').append(`
+							
+							
+						<div class="row justify-content-center text-center">
+							<div class="col-sm-6 col-md-6">
+								<h2 class="h1 font-weight-light mb-4 mt-7" style="font-family: hanaM; line-height: 60px;">
+									소중한 <span class="font-weight-bold">`+name+`</span> 고객님의<br><span style="font-family: hanaM; line-height: 60px;background-color:#008485;border-radius: 1em;color: white; width: 100%">하나금융</span> 계좌 정보 입니다
+								</h2>
+								<p class="lead">This is your Hana Financial account information</p>
+							</div>
+						</div>
+							
+							
+							<!-- Section -->
+							<section class="section section-md"
+								style="padding-top: 3rem; padding-bottom: 3rem">
+								<div class="container">
+
+									<div class="row align-items-center justify-content-between">
+
+										<c:choose>
+
+											<c:when test="${member.sex  eq '남'}">
+
+												<div class="col-12 col-md-6">
+													<img class="img-fluid" src="img_2/illustrations/groomstar.png"
+														alt="illustration">
+												</div>
+
+											</c:when>
+
+											<c:otherwise>
+
+												<div class="col-12 col-md-6">
+													<img class="img-fluid" src="img_2/illustrations/bridestar.png"
+														alt="illustration">
+												</div>
+
+											</c:otherwise>
+
+
+										</c:choose>
+
+
+										<!-- card -->
+										<div class="col-12 col-md-6 text-center text-md-left">
+											<div class="card border-light"
+												style="width: 500px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+												<div class="card-footer border-top border-light p-4">
+
+													<button class="btn btn-pill btn-outline-success" type="button"
+														style="background-color: #008485; border-color: #008485; color: white">계좌잔액</button>
+
+													<div class="card-header bg-white p-1">
+
+														<span class="d-block"> <span
+															class="display-4 text-dark font-weight-bold"> <span
+																class="align-top font-large">\\ </span>`+calBalance+`
+
+														</span>
+
+														</span>
+
+													</div>
+
+													<div class="progress">
+														<div class="progress-bar bg-primary" role="progressbar"
+															aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+													</div>
+
+
+													<button class="btn btn-pill btn-outline-success" type="button"
+														style="background-color: #008485; border-color: #008485; color: white">하나포인트</button>
+
+													<div class="card-header bg-white p-1">
+
+														<span class="d-block"> <span
+															class="display-4 text-dark font-weight-bold">`+hanaPoint+`<span
+																class="align-top font-large">P </span>
+
+														</span>
+
+														</span>
+
+													</div>
+
+													<div class="progress">
+														<div class="progress-bar bg-primary" role="progressbar"
+															aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+													</div>
+
+
+													<button class="btn btn-pill btn-outline-success" type="button"
+														style="background-color: #008485; border-color: #008485; color: white">계좌번호</button>
+
+													<div class="card-header bg-white p-1">
+
+														<span class="d-block"> <span
+															class="display-4 text-dark font-weight-bold">`+accountNumber+`
+
+														</span>
+
+														</span>
+
+													</div>
+
+													<div class="progress">
+														<div class="progress-bar bg-primary" role="progressbar"
+															aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+													</div>
+
+
+													<button class="btn btn-pill btn-outline-success" type="button"
+														style="background-color: #008485; border-color: #008485; color: white">통장명칭</button>
+
+
+													<div class="card-header bg-white p-1">
+
+														<span class="d-block">
+															<h2 class="h4 mb-1 mt-0 mt-sm-0" style="font-family: hanaM">`+bankAlias+`</h2>
+
+														</span>
+
+													</div>
+
+													<div class="progress">
+														<div class="progress-bar bg-primary" role="progressbar"
+															aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+													</div>
+													
+													
+													<button class="btn btn-pill btn-outline-success" type="button"
+														style="background-color: #008485; border-color: #008485; color: white">오픈뱅킹 동의여부</button>
+
+													<div class="card-header bg-white p-1">
+
+														<span class="d-block"> <span
+															class="display-4 text-dark font-weight-bold">`+openBanking+`
+
+														</span>
+
+														</span>
+
+													</div>
+
+													<div class="progress">
+														<div class="progress-bar bg-primary" role="progressbar"
+															aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+													</div>
+													
+													
+
+												</div>
+											</div>
+											<!-- card -->
+
+										</div>
+									</div>
+
+								</div>
+							</section>
+							<!-- End of section -->
+
+							`)
+
+				},
+				error : () => {
+					console.log("쉬ㅣ팰");
+				}
+				
+			})
+			
+		}
+		
+		
+let confirmMemberInfo = function(){
+			
+			$.ajax({
+				
+				type :'post',
+				url : "/myPageMemberInfo",
+				data : {
+					phonenumber : '${member.phonenumber}'
+				},
+				success : (result) => {
+					
+					console.log("result:"+result);
+					
+					$('#myMemberInfo').empty();
+					
+					let memberVO = result;
+					
+					let name = memberVO.name;
+					
+					let id = memberVO.id;
+					
+					let type = memberVO.type;
+					
+					let sex = memberVO.sex;
+					
+					let phonenumber = memberVO.phonenumber
+
+					
+					$('#myAccountInfo').append(`
+							
+							<div class="row justify-content-center text-center">
+							<div class="col-sm-6 col-md-6">
+								<h2 class="h1 font-weight-light mb-4 mt-7"
+									style="font-family: hanaM; line-height: 60px;">
+									소중한 <span class="font-weight-bold">`+name+`</span> 고객님의<br>
+									<span
+										style="font-family: hanaM; line-height: 60px; background-color: #008485; border-radius: 1em; color: white; width: 100%">하나금융</span>
+									회원 정보 입니다
+								</h2>
+								<p class="lead">This is your Hana Financial account information</p>
+							</div>
+						</div>
+
+
+						<!-- Section -->
+						<section class="section section-md"
+							style="padding-top: 3rem; padding-bottom: 3rem">
+							<div class="container">
+
+								<div class="row align-items-center justify-content-between">
+
+									<c:choose>
+
+										<c:when test="${member.sex  eq '남'}">
+
+											<div class="col-12 col-md-6">
+												<img class="img-fluid" src="img_2/illustrations/groomstar.png"
+													alt="illustration">
+											</div>
+
+										</c:when>
+
+										<c:otherwise>
+
+											<div class="col-12 col-md-6">
+												<img class="img-fluid" src="img_2/illustrations/bridestar.png"
+													alt="illustration">
+											</div>
+
+										</c:otherwise>
+
+
+									</c:choose>
+
+
+									<!-- card -->
+									<div class="col-12 col-md-6 text-center text-md-left">
+										<div class="card border-light"
+											style="width: 500px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+											<div class="card-footer border-top border-light p-4">
+
+												<button class="btn btn-pill btn-outline-success" type="button"
+													style="background-color: #008485; border-color: #008485; color: white">회원이름</button>
+
+												<div class="card-header bg-white p-1">
+
+													<span class="d-block pt-2"> <span
+														class="display-4 text-dark font-weight-lighter"
+														style="font-size: 27px">`+name+`</span>
+
+													</span>
+
+												</div>
+
+												<div class="progress">
+													<div class="progress-bar bg-primary" role="progressbar"
+														aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+														style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+												</div>
+
+
+												<button class="btn btn-pill btn-outline-success" type="button"
+													style="background-color: #008485; border-color: #008485; color: white">아이디</button>
+
+												<div class="card-header bg-white p-1">
+
+													<span class="d-block pt-2"> <span
+														class="display-4 text-dark font-weight-lighter"
+														style="font-size: 27px">`+id+`</span>
+
+													</span>
+
+												</div>
+
+												<div class="progress">
+													<div class="progress-bar bg-primary" role="progressbar"
+														aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+														style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+												</div>
+
+
+												<button class="btn btn-pill btn-outline-success" type="button"
+													style="background-color: #008485; border-color: #008485; color: white">회원유형</button>
+
+												<div class="card-header bg-white p-1">
+
+													<span class="d-block pt-2"> <span
+														class="display-4 text-dark font-weight-lighter"
+														style="font-size: 27px">`+type+`</span>
+
+													</span>
+
+												</div>
+
+												<div class="progress">
+													<div class="progress-bar bg-primary" role="progressbar"
+														aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+														style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+												</div>
+
+
+												<button class="btn btn-pill btn-outline-success" type="button"
+													style="background-color: #008485; border-color: #008485; color: white">휴대전화</button>
+
+
+												<div class="card-header bg-white p-1">
+
+													<span class="d-block pt-2"> <span
+														class="display-4 text-dark font-weight-lighter"
+														style="font-size: 27px">`+phonenumber+`</span>
+
+													</span>
+
+												</div>
+
+												<div class="progress">
+													<div class="progress-bar bg-primary" role="progressbar"
+														aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+														style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+												</div>
+
+
+												<button class="btn btn-pill btn-outline-success" type="button"
+													style="background-color: #008485; border-color: #008485; color: white">성별</button>
+
+												<div class="card-header bg-white p-1">
+
+													<span class="d-block pt-2"> <span
+														class="display-4 text-dark font-weight-lighter"
+														style="font-size: 27px">`+sex+`</span>
+
+													</span>
+
+												</div>
+
+												<div class="progress">
+													<div class="progress-bar bg-primary" role="progressbar"
+														aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+														style="width: 100%; animation: 3s ease 0s 1 normal none running animate-positive; opacity: 1;"></div>
+												</div>
+
+
+
+											</div>
+										</div>
+										<!-- card -->
+
+									</div>
+								</div>
+
+							</div>
+						</section>
+						<!-- End of section -->
+
+
+							`)
+
+				},
+				error : () => {
+					console.log("쉬ㅣ팰22");
+				}
+				
+			})
+			
+		}
+	
+	
+	</script>
+
+
+
+
+
+
+
+
 
 
 </body>
