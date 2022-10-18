@@ -248,13 +248,16 @@ public class AccountController {
 	@GetMapping("/transactionBrideData")
 	@ResponseBody
 	public List<TransactionVO> accountBrideTransactionData(@RequestParam("phoneNum") String phoneNumber){
-				
+		
+		System.out.println("여기도안찍한다?");
+		
 		List<TransactionVO> transactionList =accountService.selectBrideTransactionList(phoneNumber);	
 		
 		System.out.println("transactionList:"+transactionList);
 		
 		return transactionList;
 	}
+	
 	
 	@GetMapping("/transactionGroomData")
 	@ResponseBody
@@ -270,6 +273,8 @@ public class AccountController {
 		return transactionList;
 	}
 	
+	
+	
 	@GetMapping("/transactionGuestData")
 	@ResponseBody
 	public List<TransactionVO> accountGuestTransactionData(@RequestParam("phoneNum") String phoneNumber){
@@ -284,14 +289,13 @@ public class AccountController {
 		return transactionList;
 	}
 	
+	
 	@GetMapping("/transactionManagerData")
 	@ResponseBody
-	public List<TransactionVO> accountManagerTransactionData(@RequestParam("phoneNum") String phoneNumber){
+	public List<TransactionVO> accountManagerTransactionData(){
 		
-		System.out.println("된건가? phoneNumber:"+phoneNumber);
-		
-					
-		List<TransactionVO> transactionList =accountService.selectManagerTransactionList(phoneNumber);	
+	
+		List<TransactionVO> transactionList =accountService.selectManagerTransactionList();	
 		
 		System.out.println("transactionList:"+transactionList);
 		
@@ -299,10 +303,7 @@ public class AccountController {
 	}
 	
 	
-	
-	
-	
-	
+
 	
 	
 	@GetMapping("account/guestRePay")
@@ -364,6 +365,11 @@ public class AccountController {
 	}
 	
 	
+	@GetMapping("/unHanaTransactionListPage")
+	public String unHanaTransactionListPage() {
+		
+		return "account/unHanaTransactionList";
+	}
 	
 	
 	

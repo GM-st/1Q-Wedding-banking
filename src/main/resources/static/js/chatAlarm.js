@@ -16,7 +16,7 @@ let i = 0;
 
 ws = new WebSocket("ws://localhost:8080/chatt");
 ws.onmessage = function(msg){
-
+	console.log("넘엉오나?");
 
 	chatAlarm.innerText = ++i;
 

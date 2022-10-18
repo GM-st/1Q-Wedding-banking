@@ -36,7 +36,7 @@
 				<li class="nav-item dropdown"><a href="#" class="nav-link"
 					data-toggle="dropdown" role="button"> <span
 						class="fas fa-angle-down nav-link-arrow"></span> <span
-						class="nav-link-inner-text" style="font-size: 20px; font-weight: 700">나의 결혼식 관리</span>
+						class="nav-link-inner-text" style="font-size: 20px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">나의 결혼식 관리</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-lg">
@@ -48,7 +48,7 @@
 									<span class="icon icon-sm icon-dark"><span
 										class="fas fa-file-alt"></span></span>
 									<div class="ml-4">
-										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700">신랑신부등록</span>
+										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">신랑신부등록</span>
 									</div>
 								</a>
 								
@@ -58,7 +58,7 @@
 									<span class="icon icon-sm icon-dark"><span
 										class="fas fa-microphone-alt"></span></span>
 									<div class="ml-4">
-										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700">내 결혼식 축의금 관리 시스템</span> 
+										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">내 결혼식 축의금 관리 시스템</span> 
 									</div>
 								</a>
 							</div>
@@ -71,7 +71,7 @@
 				<li class="nav-item dropdown"><a href="#" class="nav-link"
 					data-toggle="dropdown" role="button"> <span
 						class="fas fa-angle-down nav-link-arrow"></span> <span
-						class="nav-link-inner-text" style="font-size: 20px; font-weight: 700">나의 하객 방문 관리</span>
+						class="nav-link-inner-text" style="font-size: 20px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">나의 하객 방문 관리</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-lg">
@@ -83,7 +83,7 @@
 									<span class="icon icon-sm icon-dark"><span
 										class="fas fa-file-alt"></span></span>
 									<div class="ml-4">
-										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700">내가 보낸 축의금 관리 </span> 
+										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">내가 보낸 축의금 관리 </span> 
 									</div>
 								</a> 
 								
@@ -99,7 +99,7 @@
 				<li class="nav-item dropdown"><a href="#" class="nav-link"
 					data-toggle="dropdown" role="button"> <span
 						class="fas fa-angle-down nav-link-arrow"></span> <span
-						class="nav-link-inner-text" style="font-size: 20px; font-weight: 700">계좌관리</span>
+						class="nav-link-inner-text" style="font-size: 20px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">계좌관리</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-lg">
@@ -111,7 +111,7 @@
 									<span class="icon icon-sm icon-dark"><span
 										class="fas fa-microphone-alt"></span></span>
 									<div class="ml-4">
-										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700">계좌개설</span> 
+										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">계좌개설</span> 
 									</div>
 								</a>
 								
@@ -121,7 +121,7 @@
 									<span class="icon icon-sm icon-dark"><span
 										class="fas fa-file-alt"></span></span>
 									<div class="ml-4">
-										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700">하나은행 계좌조회</span> 
+										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">하나은행 계좌조회</span> 
 									</div>
 								</a>
 								
@@ -130,7 +130,7 @@
 									<span class="icon icon-sm icon-dark"><span
 										class="fas fa-file-alt"></span></span>
 									<div class="ml-4">
-										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700">오픈뱅킹 계좌조회</span> 
+										<span class="text-dark d-block" style="font-size: 18px; font-weight: 700;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">오픈뱅킹 계좌조회</span> 
 									</div>
 								</a>
 								
@@ -166,7 +166,7 @@
 
 
 					<button id="usertype" style="background-color: #008485;
-	border-color: #008485; width: 180px" type="button" class="btn btn-primary"><span class="fa fa-user"></span>
+	border-color: #008485; width: 180px;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)" type="button" class="btn btn-primary"><span class="fa fa-user"></span>
 						고객유형 : ${member.type} <span id="chatAlarm" class="badge badge-pill badge-tertiary"></span>
 						</button>
 						
@@ -174,7 +174,7 @@
 					
 						
 					<button id="username" style="background-color: #008485;
-	border-color: #008485; width: 180px" type="button" class="btn btn-primary"><span class="fa fa-user"></span>
+	border-color: #008485; width: 180px;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)" type="button" class="btn btn-primary"><span class="fa fa-user"></span>
 						고객이름 : ${member.name} <span id="chatAlarm" class="badge badge-pill badge-tertiary"></span>
 						</button>
 						
@@ -182,7 +182,7 @@
 											
 												
 						<button style="background-color: #008485;
-	border-color: #008485; width: 130px" type="button" class="btn btn-primary" ><span class="fa fa-user"></span>
+	border-color: #008485; width: 130px;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)" type="button" class="btn btn-primary" ><span class="fa fa-user"></span>
 						&nbsp; 채팅하기 <span id="chatAlarm" class="badge badge-pill badge-tertiary"></span>
 						
 					</button>
@@ -190,7 +190,7 @@
 					&nbsp; &nbsp;&nbsp; &nbsp;
 					
 					<button style="background-color: #008485;
-	border-color: #008485; width: 130px" type="button" class="btn btn-primary" onclick="location.href='/member/logout'"><span class="fa fa-user"></span>
+	border-color: #008485; width: 130px;text-shadow: 1px 1px 1px #aaa;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2)" type="button" class="btn btn-primary" onclick="location.href='/member/logout'"><span class="fa fa-user"></span>
 						&nbsp; 로그아웃 <span id="chatAlarm" class="badge badge-pill badge-tertiary"></span>
 						
 					</button>

@@ -111,11 +111,11 @@
 					<div>
 
 
-						<h1 class="mt-4">
-							<span class="font-weight-bolder text-primary">하나포인트<span></span>
-								발급완료
-							</span>
+						<h1 class="mt-4" style="font-family: hanaM;">
+							<span class="font-weight-bolder text-primary">하나포인트 발급완료 </span>
 						</h1>
+
+
 
 
 						<p class="lead my-4 px-lg-11">지금 마이페이지로 이동하시면 축의금에 대해 발급된
@@ -129,7 +129,7 @@
 
 
 
-<!-- 동영상 축하메시지 포인트 발급  -->
+						<!-- 동영상 축하메시지 포인트 발급  -->
 
 
 						<button id="videoPointModalButton"
@@ -142,8 +142,9 @@
 
 
 						<!-- Modal Content -->
-						<div class="modal fade" id="videoPointModal" tabindex="-1" role="dialog"
-							aria-labelledby="modal-notification" aria-hidden="true">
+						<div class="modal fade" id="videoPointModal" tabindex="-1"
+							role="dialog" aria-labelledby="modal-notification"
+							aria-hidden="true">
 							<div class="modal-dialog modal-info modal-dialog-centered"
 								role="document">
 								<div class="modal-content bg-gradient-secondary">
@@ -169,7 +170,7 @@
 
 
 
-<!-- 자필 축하메시지 포인트 발급  -->
+						<!-- 자필 축하메시지 포인트 발급  -->
 
 
 						<button id="imagePointModalButton"
@@ -181,8 +182,9 @@
 
 
 						<!-- Modal Content -->
-						<div class="modal fade" id="imagePointModal" tabindex="-1" role="dialog"
-							aria-labelledby="modal-notification" aria-hidden="true">
+						<div class="modal fade" id="imagePointModal" tabindex="-1"
+							role="dialog" aria-labelledby="modal-notification"
+							aria-hidden="true">
 							<div class="modal-dialog modal-info modal-dialog-centered"
 								role="document">
 								<div class="modal-content bg-gradient-secondary">

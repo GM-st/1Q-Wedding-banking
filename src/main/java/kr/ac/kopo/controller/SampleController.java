@@ -28,6 +28,8 @@ public class SampleController {
     public String kakaoPay() {
         log.info("kakaoPay post............................................");
         
+        System.out.println(kakaopay.kakaoPayReady());
+        
         return "redirect:" + kakaopay.kakaoPayReady();
  
     }
@@ -39,8 +41,23 @@ public class SampleController {
         
         model.addAttribute("info", kakaopay.kakaoPayInfo(pg_token));
         
+        System.out.println("info:"+kakaopay.kakaoPayInfo(pg_token));
+        
         return "/account/kakaoPaySuccess";
     }
+    
+    
+    @GetMapping("/sampleKakaoPaySuccess")
+    public String sampleKakaoPaySuccess() {
+
+        return "/account/kakaoPaySuccess";
+    }
+    
+    
+    
+    
+    
+    
     
     @GetMapping("/kakaoPayConnect")
     public String kakaoPayConnnect() {

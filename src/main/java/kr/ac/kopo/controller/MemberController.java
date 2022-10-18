@@ -512,8 +512,6 @@ MemberVO memberVO) {
 	
 	
 	
-	
-	
 	@PostMapping("/updateAgreeOpenBanking")
 	@ResponseBody
 	public String updateAgreeOpenBanking(@RequestParam("phonenumber") String phonenumber, @RequestParam("openbanking") String openbanking) {
@@ -530,12 +528,52 @@ MemberVO memberVO) {
 	
 	
 	
+	@GetMapping("/managerTransactionList")
+	public String managerTransactionList() {
+		
+		
+		return "member/managerTransactionList";
+	}
+	
+
+	
+	
+	
+	
+	@GetMapping("/phoneCheck")
+	@ResponseBody
+	public String sendSMS() { // 휴대폰 문자보내기
+		
+		int randomNumber = (int)((Math.random()* (9999 - 1000 + 1)) + 1000);//난수 생성
+
+		memberService.certifiedPhoneNumber(randomNumber);
+		
+		return Integer.toString(randomNumber);
+	
+	}
+	
+	
+	@GetMapping("/unHanaTransactionList")
+	@ResponseBody
+	public List<TransactionVO> unHanaTransactionList() {
+		
+		System.out.println("여기부터889");
+		
+		List<TransactionVO> unHanaTransactionList = new ArrayList<>();
+		
+		unHanaTransactionList = memberService.unHanaTransactionList();
+		
+		return unHanaTransactionList;
+	}
 	
 	
 	
 	
 	
 	
+	
+	
+
 
 	
 }

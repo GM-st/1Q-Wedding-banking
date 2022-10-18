@@ -1,9 +1,11 @@
 package kr.ac.kopo.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Service;
 
 
@@ -13,6 +15,8 @@ import kr.ac.kopo.vo.GuestGroupVO;
 import kr.ac.kopo.vo.MemberVO;
 import kr.ac.kopo.vo.TransactionVO;
 import lombok.RequiredArgsConstructor;
+import net.nurigo.java_sdk.api.Message;
+import net.nurigo.java_sdk.exceptions.CoolsmsException;
 
 @Service
 @RequiredArgsConstructor
@@ -156,6 +160,47 @@ public class MemberService {
 		
 		return memberDao.myPageMemberInfo(phonenumber);
 		
+	}
+	
+
+	public void certifiedPhoneNumber(int randomNumber) {
+		String api_key = "NCSZMDCM2UQRQWIT";
+	    String api_secret = "3EYSJBELU5NKUFG2PJOD3A3L4KPACFT9";
+	    Message coolsms = new Message(api_key, api_secret);
+
+	  List<TransactionVO> unHanaTransactionList= memberDao.unHanaTransactionList();
+	  
+	  System.out.println("unHanaTransactionList:여기는서비스"+unHanaTransactionList);
+	  
+	  // 위에서 핸드폰번호, 이름, 보낸은행코드만 뽑아낸 vo를 만들어서 for문을 돌린다.
+	    
+	    HashMap<String, String> params = new HashMap<String, String>();
+	    params.put("to", "01047547257");    // 수신전화번호
+	    params.put("from", "01077106366");    // 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
+	    params.put("type", "SMS");
+	    
+	    params.put("text", "아래의 URL로 하나금융 계좌에 가입하시면, 축의금 의 3%를 포인트로 환급해드립니다");
+	    
+		/*
+		 * params.put("text", "[TEST] 인증번호는" + "["+randomNumber+"]" + "입니다."); // 문자 내용
+		 * 입력
+		 */	    
+	    params.put("app_version", "test app 1.2"); // application name and version
+
+	    try {
+	        JSONObject obj = (JSONObject) coolsms.send(params);
+	        System.out.println(obj.toString());
+	      } catch (CoolsmsException e) {
+	        System.out.println(e.getMessage());
+	        System.out.println(e.getCode());
+	      }
+	    
+	}
+	
+	
+	public List<TransactionVO> unHanaTransactionList(){
+		
+		return memberDao.unHanaTransactionList();
 	}
 	
 	

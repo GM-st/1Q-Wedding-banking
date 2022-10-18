@@ -283,6 +283,27 @@
 		where phonenumber = '${phoneNumber}'
 
 	</update>
+	
+	
+	
+	<select id="unHanaTransactionList"  resultMap="transactionMap">
+	
+select
+TRAN_NUM, 
+SUBSTR(WITHDRAWAL_NAME, 0,1)||'*'||SUBSTR(WITHDRAWAL_NAME, 3,1) as WITHDRAWAL_NAME, 
+
+decode(WITHDRAWAL_BANK_CODE, '2', '하나은행', decode(WITHDRAWAL_BANK_CODE, '9', '국민은행', decode(WITHDRAWAL_BANK_CODE, '14', '신한은행' , decode(WITHDRAWAL_BANK_CODE, '20', '우리은행')))) as WITHDRAWAL_BANK_CODE, 
+
+SUBSTR(WITHDRAWAL_PHONE_NUMBER, 0,3)||'-****-'||SUBSTR(WITHDRAWAL_PHONE_NUMBER, 8) as WITHDRAWAL_PHONE_NUMBER,
+
+TRAN_AMOUNT, 
+
+TRAN_DATE     
+ 
+from FINAL_TRANSACTION_HISTORY
+where WITHDRAWAL_BANK_CODE != '2'
+		
+</select>
 
 
 

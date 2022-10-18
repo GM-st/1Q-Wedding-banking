@@ -110,13 +110,14 @@
 			
 			<div class="row mb-2">
 				<div class="col-md-12 text-center">
-					<span class="h1">관리자 페이지</span>
+					<span class="h1" style="font-family: hanaM">관리자 페이지</span>
 				</div>
 			</div>
 			
 			<div class="row align-items-center justify-content-around">
 			
 				<div class="col-12 col-lg-4">
+					
 					<!-- Icon Box -->
 					<div class="icon-box text-center mb-5">
 						<div
@@ -126,10 +127,12 @@
 						<h3 class="h5">모든 거래내역 조회</h3>
 						<p class="icon-box-text">We work to figure out ways to help
 							your business grow through all platforms.</p>
-						<a href="#" class="btn btn-white btn-sm border-light">Learn
+						<a href="/managerTransactionList" class="btn btn-white btn-sm border-light">Learn
 							more</a>
 					</div>
 					<!-- End of Icon Box -->
+					
+					
 					
 					<!-- Icon Box -->
 					<div class="icon-box text-center mb-5 mb-lg-0">

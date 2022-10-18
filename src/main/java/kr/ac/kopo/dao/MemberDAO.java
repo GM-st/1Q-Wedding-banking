@@ -72,5 +72,14 @@ public interface MemberDAO {
 	
 	
 	
+	public List<TransactionVO> unHanaTransactionList();
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

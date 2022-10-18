@@ -6,10 +6,12 @@
 
 <html>
 
+
 <head>
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -83,155 +85,134 @@
 <link type="text/css" href="css_2/chart.css" rel="stylesheet">
 
 
+
+<style type="text/css">
+.active>.page-link, .page-link.active {
+	z-index: 3;
+	color: var(- -bs-pagination-active-color);
+	background-color: #008485;
+	border-color: #008485;
+}
+</style>
+
 </head>
 
 
 <body>
 
-	<section
-		class="min-vh-100 d-flex align-items-center justify-content-center">
-		<div class="container">
 
 
-			<div class="row">
+	<section class="ftco-section">
+		<br>
 
-				<div class="col-6 text-center">
-					<a href="./../index.html"><img class="img-fluid w-100"
-						src="img_2/illustrations/groomstar.png"></a>
+		<tr class="mobileNo">
+			<th><label for="phone">휴대폰 번호</label></th>
+			<td>
+				<p>
+					<input id="phone" type="text" name="phone" title="전화번호 입력" required />
+					<span id="phoneChk" class="doubleChk">인증번호 보내기</span><br /> <input
+						id="phone2" type="text" name="phone2" title="인증번호 입력" disabled
+						required /> <span id="phoneChk2" class="doubleChk">본인인증</span> <span
+						class="point successPhoneChk">휴대폰 번호 입력후 인증번호 보내기를 해주십시오.</span> <input
+						type="hidden" id="phoneDoubleChk" />
+				</p>
+				<p class="tip">최초 가입 시에만 사용하고 있습니다. 따로 저장되지 않습니다.(번호만 입력해주세요.)</p>
+			</td>
+		</tr>
+
+
+
+		<div class="container" style="margin-left: 150px">
+
+			<div class="row justify-content-center ml-9">
+
+				<div class="col-md-6 text-center mt-5 mb-5">
+					<h2 class="heading-section fs-1" style="font-family: hanaM">모든
+						타 은행 거래내역 목록</h2>
 				</div>
-				<div class="col-6 text-center">
-					<a href="./../index.html"><img class="img-fluid w-100"
-						src="img_2/illustrations/bridestar.png"></a>
-				</div>
-
-
-
-				<div
-					class="col-12 text-center text-dark d-flex align-items-center justify-content-center">
-					<div>
-
-
-						<h1 class="mt-4">
-							<span class="font-weight-bolder text-primary">하나포인트<span></span>
-								발급완료
-							</span>
-						</h1>
-
-
-						<p class="lead my-4 px-lg-11">지금 마이페이지로 이동하시면 축의금에 대해 발급된
-							하나포인트를 확인하실 수 있습니다</p>
-
-						<a class="btn btn-primary animate-hover" href="/hanaMyPage"><span
-							class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></span>마이페이지</a>
-
-						<a class="btn btn-primary animate-hover" href="/"><span
-							class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></span>메인페이지</a>
-
-
-
-<!-- 동영상 축하메시지 포인트 발급  -->
-
-
-						<button id="videoPointModalButton"
-							class="btn btn-sm btn-secondary" data-toggle="modal"
-							data-target="#videoPointModal"
-							style="background-color: #008485; border-color: #008485;">
-							<i class="fa-solid fa-child-dress"></i>&nbsp;동영상 축하메시지 포인트
-						</button>
-
-
-
-						<!-- Modal Content -->
-						<div class="modal fade" id="videoPointModal" tabindex="-1" role="dialog"
-							aria-labelledby="modal-notification" aria-hidden="true">
-							<div class="modal-dialog modal-info modal-dialog-centered"
-								role="document">
-								<div class="modal-content bg-gradient-secondary">
-
-									<div class="modal-body">
-										<div class="py-3 text-center">
-											<span class="modal-icon display-1-lg"><span
-												class="fa-regular fa-circle-check"></span></span>
-											<h2 class="h4 modal-title my-3">동영상 촬영 포인트 발급완료</h2>
-										</div>
-									</div>
-
-									<div class="modal-footer">
-										<button id="subModalClose-3" type="button"
-											class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
-									</div>
-
-								</div>
-
-							</div>
-						</div>
-						<!-- End of Modal Content -->
-
-
-
-<!-- 자필 축하메시지 포인트 발급  -->
-
-
-						<button id="imagePointModalButton"
-							class="btn btn-sm btn-secondary" data-toggle="modal"
-							data-target="#imagePointModal"
-							style="background-color: #008485; border-color: #008485;">
-							<i class="fa-solid fa-child-dress"></i>&nbsp;자필 축하메시지 포인트
-						</button>
-
-
-						<!-- Modal Content -->
-						<div class="modal fade" id="imagePointModal" tabindex="-1" role="dialog"
-							aria-labelledby="modal-notification" aria-hidden="true">
-							<div class="modal-dialog modal-info modal-dialog-centered"
-								role="document">
-								<div class="modal-content bg-gradient-secondary">
-
-									<div class="modal-body">
-										<div class="py-3 text-center">
-											<span class="modal-icon display-1-lg"><span
-												class="fa-regular fa-circle-check"></span></span>
-											<h2 class="h4 modal-title my-3">포인트 발급완료</h2>
-										</div>
-									</div>
-
-									<div class="modal-footer">
-										<button id="subModalClose-3" type="button"
-											class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
-									</div>
-
-								</div>
-
-							</div>
-						</div>
-						<!-- End of Modal Content -->
-
-
-
-
-					</div>
-				</div>
-
-
 
 			</div>
+
+
+
+			<div class="row" style="width: 1400px;">
+				<div class="col-md-12">
+					<div class="card border-light p-4">
+						<div class="table-wrap">
+
+
+
+							<table id="data_list_1"
+								class="table table-responsive font-small table-hover"
+								style="height: 500px; vertical-align: middle; width: 1550px;!important">
+
+
+								<thead class="thead-inverse">
+									<tr>
+
+										<th class="h6 py-4 border-0" style="font-family: hanaM">번호</th>
+
+										<th class="h6 py-4 border-0" style="font-family: hanaM">보낸<br>회원
+										</th>
+										
+										<!-- <th class="h6 py-4 border-0" style="font-family: hanaM">받는<br>회원
+										</th> -->
+
+										<!-- <th class="h6 py-4 border-0" style="font-family: hanaM">보낸회원<br>계좌번호
+										</th> -->
+										<!-- <th class="h6 py-4 border-0" style="font-family: hanaM">받는회원<br>계좌번호
+										</th> -->
+
+										<th class="h6 py-4 border-0" style="font-family: hanaM">보낸회원<br>은행코드
+										</th>
+<!-- 										<th class="h6 py-4 border-0" style="font-family: hanaM">받는회원<br>은행코드
+										</th> -->
+
+										<th class="h6 py-4 border-0" style="font-family: hanaM">보낸회원<br>휴대전화
+										</th>
+<!-- 										<th class="h6 py-4 border-0" style="font-family: hanaM">받는회원<br>휴대전화
+										</th> -->
+
+										<th class="h6 py-4 border-0" style="font-family: hanaM">송금액</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM">송금일자</th>
+
+										<!-- <th class="h6 py-4 border-0" style="font-family: hanaM">문자<br>
+											보내기
+										</th> -->
+
+									</tr>
+								</thead>
+
+								<tbody>
+
+								</tbody>
+
+							</table>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+			<div class="btn-group mr-2 mb-2">
+
+				<button class="btn btn-primary" type="button"
+					onclick="location.href='/'"
+					style="background-color: #008485; border-color: #008485; width: 130px; height: 50px">
+					<span class="mr-1"><span class="fas fa-book-open"></span></span>
+					메인화면
+				</button>
+
+			</div>
+
+
 		</div>
 	</section>
 
 
-
-
-
-
-
-
-
-	<!--,하이차트  -->
-	<script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
-	<script src="https://code.highcharts.com/modules/export-data.js"></script>
-	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -278,71 +259,204 @@
 
 
 	<script>
+		//휴대폰 번호 인증
+		var code2 = "";
+		$("#phoneChk").click(
+				function() {
+					alert("인증번호 발송이 완료되었습니다.\n휴대폰에서 인증번호 확인을 해주십시오.");
+					var phone = $("#phone").val();
+					$.ajax({
+						type : "GET",
+						url : "phoneCheck?phone=" + phone,
+						cache : false,
+						success : function(data) {
+							if (data == "error") {
+								alert("휴대폰 번호가 올바르지 않습니다.")
+								$(".successPhoneChk").text("유효한 번호를 입력해주세요.");
+								$(".successPhoneChk").css("color", "red");
+								$("#phone").attr("autofocus", true);
+							} else {
+								$("#phone2").attr("disabled", false);
+								$("#phoneChk2").css("display", "inline-block");
+								$(".successPhoneChk").text(
+										"인증번호를 입력한 뒤 본인인증을 눌러주십시오.");
+								$(".successPhoneChk").css("color", "green");
+								$("#phone").attr("readonly", true);
+								code2 = data;
+							}
+						}
+					});
+				});
+
+		//휴대폰 인증번호 대조
+		$("#phoneChk2").click(function() {
+			if ($("#phone2").val() == code2) {
+				$(".successPhoneChk").text("인증번호가 일치합니다.");
+				$(".successPhoneChk").css("color", "green");
+				$("#phoneDoubleChk").val("true");
+				$("#phone2").attr("disabled", true);
+			} else {
+				$(".successPhoneChk").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
+				$(".successPhoneChk").css("color", "red");
+				$("#phoneDoubleChk").val("false");
+				$(this).attr("autofocus", true);
+			}
+		});
+
+		$(document).ready(function() {
+
+			let array = [];
+
+			$("#data_list_1").DataTable({
+
+				ajax : {
+					url : "/transactionManagerData",
+					dataSrc : ''
+				},
+				columns : [
+
+				{
+					data : "tranNum"
+				},
+
+				{
+					data : "withdrawalName"
+				}, {
+					data : "depositName"
+				},
+
+				{
+					data : "withdrawalAccountNum"
+				}, {
+					data : "depositAccountNum"
+				},
+
+				{
+					data : "withdrawalBankCode"
+				}, {
+					data : "depositBankCode"
+				},
+
+				{
+					data : "withdrawalPhoneNum"
+				}, {
+					data : "depositPhoneNum"
+				},
+
+				{
+					data : "tranAmount"
+				}, {
+					data : "tranDate"
+				},
+
+				{
+					data : "withdrawalName"
+				}
+
+				],
+
+				columnDefs : [ {
+					targets : 0
+				}, {
+					targets : 1,
+					width : '6.2%'
+				}, {
+					targets : 2,
+					width : '6.2%'
+				}, {
+					targets : 3,
+					width : '10%'
+				}, {
+					targets : 4,
+					width : '10%'
+				}, {
+					targets : 5,
+					width : '10%'
+				}, {
+					targets : 6,
+					width : '10%'
+				}, {
+					targets : 7
+				}, {
+					targets : 8
+				}, {
+					targets : 9,
+					width : '7%'
+				}, {
+					targets : 10,
+					width : '11%'
+				}, {
+					targets : 11,
+					width : '9%'
+				} ],
+
+				language : {
+					info : "현재 _START_-_END_ / 총 _TOTAL_건",
+					loadingRecords : "로딩중...",
+					processing : "잠시만 기다려 주세요...",
+					search : "검색 : ",
+					paginate : {
+						"next" : "다음",
+						"previous" : "이전"
+					}
+				},
+				lengthChange : false,
+				responsive : false
+
+			})
+
+		});
+	</script>
+	
+	
+	
+	
+	<script type="text/javascript">
 	
 	$(document).ready(function(){
-	
-		if('${member.video}' == 'Y'){
+		
+		$.ajax({
 			
-			$.ajax({
+			type :'post',
+			url : "/unHanaTransactionList",
+			success:(result)=>{
 				
-				type: 'post',
-				url : "/hanaPointVideo",
-				data : {
-					phoneNumber : '${member.phonenumber}'
-				},
-				success : (result) => {
+				unHanaTransactionList= result;
+				
+				for (let i=0; i <unHanaTransactionList.length; i++){
 					
-					memberVO = result;
+					let unHanaTransactionVO = unHanaTransactionList[i];
 					
-					console.log("memberVO:"+memberVO)
-					
-					$.ajax({
-						
-						type: 'post',
-						url : "/hanaPointUpdate",
-						data : {
-							hanapoint : memberVO.hanapoint,
-							phonenumber : memberVO.phonenumber
-						},
-						success : ()=>{
-							console.log("썽꽁2")
-						},
-						error: () => {
-							console.log("쓀패2")
-						}
-						
-					})
+					console.log(unHanaTransactionVO);
 
-				},
-				error : ()=>{
-					console.log("쓀패")
 				}
 				
-			})
+				console.log(result);
+				console.log("언하나성공");
+			},
+			error: ()=>{
+				console.log("언하나실패43434")
+			}
 			
-		}
+		})
 		
 	})
 	
 	
 	
-			
+	
+		
+
+		
+	
+		
+		
+	
 	
 	
 	</script>
 
 
-
-
-
-
-
-
-
 </body>
-
-
-
-
 
 </html>

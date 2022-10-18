@@ -3,8 +3,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
@@ -67,6 +70,8 @@
 <link type="text/css"
 	href="node_modules_2/@fortawesome/fontawesome-free/css/all.min.css"
 	rel="stylesheet">
+<script src="https://kit.fontawesome.com/68941cf0d3.js"
+	crossorigin="anonymous"></script>
 
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css"
@@ -78,31 +83,144 @@
 <link type="text/css" href="css_2/chart.css" rel="stylesheet">
 
 
-<style type="text/css">
-.active>.page-link, .page-link.active {
-	z-index: 3;
-	color: var(- -bs-pagination-active-color);
-	background-color: #008485;
-	border-color: #008485;
-}
-</style>
-
-
-
-
 </head>
 
 
-
-
 <body>
- 
-<div>결제일시: ${info.approved_at}</div>
-<div>주문번호: ${info.partner_order_id}</div>
-<div>상풍명: ${info.item_name}</div>
-<div>상품수량: ${info.quantity}</div>
-<div>결제금액: ${info.amount.total}</div>
-<div>결제방법: ${info.payment_method_type}</div>
+
+	<jsp:include page="../include/coloredTopMenu.jsp" />
+	
+
+	<section
+		class="min-vh-100 d-flex align-items-center justify-content-center">
+		<div class="container">
+
+
+			<div class="row mt-5">
+
+				<div class="col-12 text-center">
+					<a href="./../index.html"><img class="img-fluid w-30"
+						src="img_2/oneQwedding_green.png"  style="height: 400px"></a>
+				</div>
+				
+				<div
+					class="col-12 text-center text-dark d-flex align-items-center justify-content-center">
+					<div>
+
+
+						<h1 class="mt-3 mb-5">
+							<span class="font-weight-bolder text-primary">축의금
+								송금완료
+							</span>
+						</h1>
+						
+
+<!-- 동영상 축하메시지 포인트 발급  -->
+
+
+						<button id="videoPointModalButton"
+							class="btn btn-sm btn-secondary" data-toggle="modal"
+							data-target="#videoPointModal"
+							style="background-color: #008485; border-color: #008485; height: 50px;font-size:20px!important">
+							<i class="fa-solid fa-video"></i>&nbsp;동영상 축하메시지 보내기
+						</button>
+
+
+
+						<!-- Modal Content -->
+						<div class="modal fade" id="videoPointModal" tabindex="-1" role="dialog"
+							aria-labelledby="modal-notification" aria-hidden="true">
+							<div class="modal-dialog modal-info modal-dialog-centered"
+								role="document">
+								<div class="modal-content bg-gradient-secondary">
+
+									<div class="modal-body">
+										<div class="py-3 text-center">
+											<span class="modal-icon display-1-lg"><span
+												class="fa-regular fa-circle-check"></span></span>
+											<h2 class="h4 modal-title my-1" style="color: white; font-family: hanaM">동영상 축하메시지를 보내시면</h2><br>
+											
+											<h2 class="h4 modal-title my-1" style="color: white; font-family: hanaM">축의금의 2%를</h2><br>
+											
+											<h2 class="h4 modal-title my-1" style="color: white; font-family: hanaM">하나포인트로 환급해드립니다</h2>
+											
+										</div>
+									</div>
+
+									<div class="modal-footer">
+										<button id="subModalClose-3" type="button"
+											class="btn btn-sm btn-white" data-dismiss="modal">동영상 축하메시지 보내기</button>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+						<!-- End of Modal Content -->
+
+
+
+<!-- 자필 축하메시지 포인트 발급  -->
+
+
+						<button id="imagePointModalButton"
+							class="btn btn-sm btn-secondary" data-toggle="modal"
+							data-target="#imagePointModal"
+							style="background-color: #008485; border-color: #008485;height: 50px;font-size:20px!important">
+							<i class="fa-solid fa-pen"></i>&nbsp;자필 축하메시지 보내기
+						</button>
+
+
+						<!-- Modal Content -->
+						<div class="modal fade" id="imagePointModal" tabindex="-1" role="dialog"
+							aria-labelledby="modal-notification" aria-hidden="true">
+							<div class="modal-dialog modal-info modal-dialog-centered"
+								role="document">
+								<div class="modal-content bg-gradient-secondary">
+
+									<div class="modal-body">
+										<div class="py-3 text-center">
+											<span class="modal-icon display-1-lg"><span
+												class="fa-regular fa-circle-check"></span></span>
+											<h2 class="h4 modal-title my-1" style="color: white; font-family: hanaM">자필 축하메시지를 보내시면</h2><br>
+											
+											<h2 class="h4 modal-title my-1" style="color: white; font-family: hanaM">축의금의 1%를</h2><br>
+											
+											<h2 class="h4 modal-title my-1" style="color: white; font-family: hanaM">하나포인트로 환급해드립니다</h2>
+											
+										</div>
+									</div>
+
+									<div class="modal-footer">
+										<button id="subModalClose-3" type="button"
+											class="btn btn-sm btn-white" data-dismiss="modal">자필 축하메시지 보내기</button>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+						<!-- End of Modal Content -->
+
+
+
+
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
 
 	<!--,하이차트  -->
 	<script src="https://code.highcharts.com/highcharts.js"></script>
@@ -155,17 +273,69 @@
 
 
 
-
-
-<script type="text/javascript">
-
-$(document).ready(function(){
+	<script>
 	
-	location.href = "https://hana-1q-wedding.vercel.app/recorder";
 	
-})
+let selectVideoMessage = function(){
+		
+		$.ajax({
+		
+			type : 'post',
+			url : "/selectVideoMessage",
+			data : {
+				phonenumber : '${member.phonenumber}'
+			},
+			success:()=>{
+				
+				console.log("송공")
+	
+				/* 동영상 촬영 페이지로 이동해야한다. location.href = "https://hana-1q-wedding.vercel.app/#recorder-section"; */
+	
+			},
+			error:()=>{
+				console.log("최종실패임")	
+			}						
+		})
+		
+	}
+	
+	
+let selectImageMessage = function(){
+	
+	$.ajax({
+	
+		type : 'post',
+		url : "/selectImageMessage",
+		data : {
+			phonenumber : '${member.phonenumber}'
+		},
+		success:()=>{
+			
+			console.log("송공2")
 
-</script>
+			/* 웹 드로잉 페이지로 이동해야한다. location.href = "https://hana-1q-wedding.vercel.app/#recorder-section"; */
+
+		},
+		error:()=>{
+			console.log("최종실패임")	
+		}						
+	})
+	
+}
+	
+	
+	
+
+	
+	
+	
+			
+	
+	
+	</script>
+
+
+
 
 
 
@@ -173,4 +343,9 @@ $(document).ready(function(){
 
 
 </body>
+
+
+
+
+
 </html>

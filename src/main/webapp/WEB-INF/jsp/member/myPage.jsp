@@ -160,25 +160,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<script type="text/javascript"
 		src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript"
@@ -232,6 +213,8 @@
 				success : (result) => {
 					
 					console.log("result:"+result);
+					
+					$('#myMemberInfo').empty();
 					
 					$('#myAccountInfo').empty();
 					
@@ -304,8 +287,8 @@
 
 													<div class="card-header bg-white p-1">
 
-														<span class="d-block"> <span
-															class="display-4 text-dark font-weight-bold"> <span
+														<span class="d-block pt-2"> <span
+															class="display-4 text-dark font-weight-lighter"> <span
 																class="align-top font-large">\\ </span>`+calBalance+`
 
 														</span>
@@ -325,8 +308,8 @@
 
 													<div class="card-header bg-white p-1">
 
-														<span class="d-block"> <span
-															class="display-4 text-dark font-weight-bold">`+hanaPoint+`<span
+														<span class="d-block pt-2"> <span
+															class="display-4 text-dark font-weight-lighter">`+hanaPoint+`<span
 																class="align-top font-large">P </span>
 
 														</span>
@@ -346,8 +329,8 @@
 
 													<div class="card-header bg-white p-1">
 
-														<span class="d-block"> <span
-															class="display-4 text-dark font-weight-bold">`+accountNumber+`
+														<span class="d-block pt-2"> <span
+															class="display-4 text-dark font-weight-lighter">`+accountNumber+`
 
 														</span>
 
@@ -367,7 +350,7 @@
 
 													<div class="card-header bg-white p-1">
 
-														<span class="d-block">
+														<span class="d-block pt-2">
 															<h2 class="h4 mb-1 mt-0 mt-sm-0" style="font-family: hanaM">`+bankAlias+`</h2>
 
 														</span>
@@ -385,8 +368,8 @@
 
 													<div class="card-header bg-white p-1">
 
-														<span class="d-block"> <span
-															class="display-4 text-dark font-weight-bold">`+openBanking+`
+														<span class="d-block pt-2"> <span
+															class="display-4 text-dark font-weight-lighter">`+openBanking+`
 
 														</span>
 
@@ -438,6 +421,8 @@ let confirmMemberInfo = function(){
 					console.log("result:"+result);
 					
 					$('#myMemberInfo').empty();
+					
+					$('#myAccountInfo').empty();
 					
 					let memberVO = result;
 					

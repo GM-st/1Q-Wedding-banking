@@ -161,13 +161,10 @@
 															<div class="col-12 col-lg-8">
 
 
-
 																<!--Accordion-->
 																<div class="accordion">
 
 																	<div class="card card-sm card-body border-light mb-0">
-
-
 
 																		<a href="#panel-4" data-target="#panel-4"
 																			class="accordion-panel-header" data-toggle="collapse"

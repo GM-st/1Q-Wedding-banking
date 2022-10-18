@@ -87,9 +87,6 @@
 	<main>
 
 
-
-
-
 		<div class="container">
 
 			<div class="row mt-5 justify-content-center">
@@ -293,7 +290,6 @@
 												data-toggle="modal" data-target="#modal-notification">송금하기</button>
 
 
-
 										</div>
 
 									</form>
@@ -454,7 +450,6 @@
 		let guestGroupSelector = document.getElementById("guestGroupSelector").value;
 		
 		console.log(guestGroupSelector);
-		
 		
 		$.ajax({
 		

@@ -99,13 +99,14 @@
 
 
 
-<body>5
+<body>
 
+	<jsp:include page="../include/coloredTopMenu.jsp" />
+	
+	
 
-	<jsp:include page="../include/topMenu.jsp" />
-
-	<section class="ftco-section">
-		<div class="container">
+	<section class="ftco-section" style="margin-top: 200px;">
+		<div class="container" style="max-width: 1340px;!important">
 
 			<div class="row justify-content-center">
 
@@ -114,28 +115,23 @@
 				</div>
 
 			</div>
-
-
-			<div class="row" style="width: 1350px;">
-				<div class="col-md-12">
-					<div class="card border-light p-4">
-						<div class="table-wrap">
-
+			
+			
 <c:choose>
 
 	<c:when test="${member.type eq '신랑' || member.type eq '신부' || member.type eq '관리자' }">
 	
 								<div class="btn-group mr-2 mb-2">
 
-								<button class="btn btn-primary" type="button">
-									<span class="mr-1"><span class="fas fa-book-open"></span></span>
+								<button class="btn btn-primary" type="button"  style="background-color: #008485; border-color: #008485; width: 130px; height: 50px">
+									
 									차트보기
 								</button>
 
 								<button type="button"
 									class="btn btn-primary dropdown-toggle dropdown-toggle-split"
 									data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">
+									aria-expanded="false" style="background-color: #008485; border-color: #008485;">
 									<span class="fas fa-angle-down dropdown-arrow"></span> <span
 										class="sr-only">Toggle Dropdown</span>
 								</button>
@@ -144,8 +140,12 @@
 
 									<a
 										class="dropdown-item" href="#" onclick="getGroupedGuestSum()">그룹별
-										축의금 차트보기</a> <a class="dropdown-item" href="#"
-										onclick="getGroupedGuestCount()">그룹별 하객수 차트보기</a>
+										축의금 차트보기
+									</a> 
+									
+									<a class="dropdown-item" href="#"
+										onclick="getGroupedGuestCount()">그룹별 하객수 차트보기
+									</a>
 
 								</div>
 
@@ -154,8 +154,9 @@
 							<div class="btn-group mr-2 mb-2">
 
 								<select class="btn btn-primary" id="groupSelect"
-									onchange="sangu2(this.value);"><span class="mr-1"><span
+									onchange="sangu2(this.value);" style="background-color: #008485; border-color: #008485; width: 150px; height: 50px"><span class="mr-1"><span
 										class="fas fa-book-open"></span></span>
+										
 									<option selected>세부차트보기</option>
 
 								</select>
@@ -165,14 +166,22 @@
 	</c:when>
 
 
-</c:choose>
+</c:choose>			
+
+
+			<div class="row" style="width: 1400px;">
+				<div class="col-md-12">
+					<div class="card border-light p-4">
+						<div class="table-wrap">
+
+
 
 							<c:choose>
 								<c:when test="${member.type eq '하객'}">
 
 									<table id="data_list"
-										class="table table-responsive font-small table-hover"
-										style="height: 500px; vertical-align: middle;">
+										class="table font-small table-hover"
+										style="height: 500px; vertical-align: middle; width:1550px;!important">
 										<thead class="thead-inverse">
 											<tr>
 												<th class="h6 py-4 border-0">축의 대상</th>
@@ -207,9 +216,9 @@
 								<thead class="thead-inverse">
 									<tr>
 										<th class="h6 py-4 border-0">축의 대상</th>
-										<th class="h6 py-4 border-0">하객 계좌번호</th>
+										<th class="h6 py-4 border-0">하객 계좌</th>
 										<th class="h6 py-4 border-0">하객 이름</th>
-										<th class="h6 py-4 border-0">하객 은행코드</th>
+										<th class="h6 py-4 border-0">은행 이름</th>
 										<th class="h6 py-4 border-0">하객 핸드폰번호</th>
 										<th class="h6 py-4 border-0">하객 소속</th>
 										<th class="h6 py-4 border-0">축의금액</th>
@@ -245,7 +254,7 @@
 			<div class="btn-group mr-2 mb-2">
 
 				<button class="btn btn-primary" type="button"
-					onclick="location.href='/'">
+					onclick="location.href='/'" style="background-color: #008485; border-color: #008485; width: 130px; height: 50px">
 					<span class="mr-1"><span class="fas fa-book-open"></span></span>
 					메인화면
 				</button>
@@ -626,6 +635,8 @@
 		    $("#data_list").DataTable({
 		        ajax:{url:"/transactionBrideData?phoneNum="
 					+ '${bride.phonenumber}',dataSrc:''},
+					scroller: false,
+					
 		        columns:[
 		           {data:"memberType"},
 		           {data:"withdrawalAccountNum"},
@@ -746,6 +757,8 @@
 	},1500)
 			
  		 } else if ('${member.type}' == "신랑"){
+ 			 
+ 			 console.log("여기가안되나?")
  			 
   			let array = [];
 			 

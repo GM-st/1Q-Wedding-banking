@@ -64,8 +64,8 @@ public interface AccountDAO {
 	public List<TransactionVO> selectBrideTransactionList(String phoneNumber);
 	public List<TransactionVO> selectGroomTransactionList(String phoneNumber);
 	public List<TransactionVO> selectGuestTransactionList(String phoneNumber);
-	public List<TransactionVO> selectManagerTransactionList(String phoneNumber);
 	
+	public List<TransactionVO> selectManagerTransactionList();
 	
 	
 	

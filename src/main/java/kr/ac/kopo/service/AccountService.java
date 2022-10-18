@@ -271,6 +271,9 @@ public List<TransactionVO> selectGroomTransactionList(String phoneNumber){
 		return transactionList;
 	}
 
+
+
+
 public List<TransactionVO> selectGuestTransactionList(String phoneNumber){
 	
 	List<TransactionVO> transactionList = new ArrayList<>();
@@ -284,7 +287,7 @@ public List<TransactionVO> selectManagerTransactionList(String phoneNumber){
 	
 	List<TransactionVO> transactionList = new ArrayList<>();
 	
-	transactionList = accountDao.selectManagerTransactionList(phoneNumber);
+	transactionList = accountDao.selectManagerTransactionList();
 	
 	return transactionList;
 }
@@ -310,6 +313,12 @@ public List<TransactionVO> selectManagerTransactionList(String phoneNumber){
 	public AccountVO myPageAccount(String phonenumber) {
 		
 		return accountDao.myPageAccount(phonenumber);
+	}
+	
+	public List<TransactionVO> selectManagerTransactionList(){
+		
+		return accountDao.selectManagerTransactionList();
+		
 	}
 	
 	
