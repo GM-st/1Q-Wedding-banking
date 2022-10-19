@@ -83,6 +83,20 @@
 
 <link type="text/css" href="css_2/chart.css" rel="stylesheet">
 
+<style>
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #008485 !important;
+  color: #008485!important;
+  border-radius: 4px;
+  border: 1px solid #008485;
+}
+
+.page-item.active .page-link{
+	background-color: #008485;
+    border-color: #008485;
+}
+
+</style>
 
 
 <style type="text/css">
@@ -91,8 +105,12 @@
 	color: var(- -bs-pagination-active-color);
 	background-color: #008485;
 	border-color: #008485;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
+
+
+
 
 
 </head>
@@ -110,7 +128,7 @@
 
 			<div class="row justify-content-center">
 
-				<div class="col-md-6 text-center mb-5">
+				<div class="col-md-6 text-center mt-1 mb-3">
 					<h2 class="heading-section fs-1" style="font-family: hanaM">축의금 관리 시스템</h2>
 				</div>
 
@@ -123,7 +141,7 @@
 	
 								<div class="btn-group mr-2 mb-2">
 
-								<button class="btn btn-primary" type="button"  style="background-color: #008485; border-color: #008485; width: 130px; height: 50px">
+								<button class="btn btn-primary" type="button"  style="background-color: #008485; border-color: #008485; width: 200px; height: 50px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 									
 									차트보기
 								</button>
@@ -139,12 +157,12 @@
 								<div class="dropdown-menu">
 
 									<a
-										class="dropdown-item" href="#" onclick="getGroupedGuestSum()">그룹별
+										class="dropdown-item" href="#" onclick="getGroupedGuestSum()">소속별
 										축의금 차트보기
 									</a> 
 									
 									<a class="dropdown-item" href="#"
-										onclick="getGroupedGuestCount()">그룹별 하객수 차트보기
+										onclick="getGroupedGuestCount()">소속별 하객수 차트보기
 									</a>
 
 								</div>
@@ -154,7 +172,7 @@
 							<div class="btn-group mr-2 mb-2">
 
 								<select class="btn btn-primary" id="groupSelect"
-									onchange="sangu2(this.value);" style="background-color: #008485; border-color: #008485; width: 150px; height: 50px"><span class="mr-1"><span
+									onchange="sangu2(this.value);" style="background-color: #008485; border-color: #008485; width: 200px; height: 50px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"><span class="mr-1"><span
 										class="fas fa-book-open"></span></span>
 										
 									<option selected>세부차트보기</option>
@@ -171,8 +189,8 @@
 
 			<div class="row" style="width: 1400px;">
 				<div class="col-md-12">
-					<div class="card border-light p-4">
-						<div class="table-wrap">
+					<div class="card border-light p-4" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+						<div class="table-wrap" >
 
 
 
@@ -181,7 +199,7 @@
 
 									<table id="data_list"
 										class="table font-small table-hover"
-										style="height: 500px; vertical-align: middle; width:1550px;!important">
+										style="height: 900px; vertical-align: middle; width:1300px;!important">
 										<thead class="thead-inverse">
 											<tr>
 												<th class="h6 py-4 border-0">축의 대상</th>
@@ -211,22 +229,22 @@
 								<c:when test="${member.type eq '신랑' || member.type eq '신부' }">
 								
 								<table id="data_list"
-								class="table table-responsive font-small table-hover"
+								class="table font-small table-hover"
 								style="height: 500px; vertical-align: middle;">
 								<thead class="thead-inverse">
 									<tr>
-										<th class="h6 py-4 border-0">축의 대상</th>
-										<th class="h6 py-4 border-0">하객 계좌</th>
-										<th class="h6 py-4 border-0">하객 이름</th>
-										<th class="h6 py-4 border-0">은행 이름</th>
-										<th class="h6 py-4 border-0">하객 핸드폰번호</th>
-										<th class="h6 py-4 border-0">하객 소속</th>
-										<th class="h6 py-4 border-0">축의금액</th>
-										<th class="h6 py-4 border-0">축의금 송금일자</th>
-										<th class="h6 py-4 border-0">축의금 환송여부</th>
-										<th class="h6 py-4 border-0">축의금 환송하기</th>
-										<th class="h6 py-4 border-0">채팅하기</th>
-										<th class="h6 py-4 border-0">축하메시지보기</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">축의<br>대상</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">하객<br>계좌</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">하객<br>이름</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">은행<br>이름</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">하객<br>휴대전화</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">하객<br>소속</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">축의<br>금액</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">축의금<br>송금일자</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">축의금<br>환송여부</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">축의금<br>환송하기</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">채팅<br>하기</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">축하<br>메시지</th>
 
 									</tr>
 								</thead>
@@ -254,7 +272,7 @@
 			<div class="btn-group mr-2 mb-2">
 
 				<button class="btn btn-primary" type="button"
-					onclick="location.href='/'" style="background-color: #008485; border-color: #008485; width: 130px; height: 50px">
+					onclick="location.href='/'" style="background-color: #008485; border-color: #008485; width: 200px; height: 50px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 					<span class="mr-1"><span class="fas fa-book-open"></span></span>
 					메인화면
 				</button>
@@ -262,7 +280,7 @@
 			</div>
 
 
-			<figure class="highcharts-figure">
+			<!-- <figure class="highcharts-figure">
 				<div id="container"></div>
 				<p class="highcharts-description"></p>
 			</figure>
@@ -284,7 +302,7 @@
 					difference between 0 and null in a 3D column chart. A null point
 					represents missing data, while 0 is a valid value.</p>
 			</figure>
-
+ -->
 
 			<div style="display: none;">
 				<label for="parentname">이름 : </label><input id="parentsenderName"
@@ -382,7 +400,7 @@
 	function sangu2(input){
 		
 		let href = "/getGroupedGuestDetail?groupName="+input;
-        let options = 'top=250, left=250, width=450, height=600, status=no, menubar=no, toolbar=no';
+        let options = 'top=130, left=540, width=700, height=480, status=no, menubar=no, toolbar=no';
         
         //팝업창 생성
         var popup = window.open(href,'popup',options);
@@ -477,14 +495,13 @@
 		let getGroupedGuestCount =  function(){
 			
 					 let href = "/getGroupedGuestCount";
-			         let options = 'top=250, left=250, width=450, height=600, status=no, menubar=no, toolbar=no';
+					 let options = 'top=100, left=390, width=700, height=480, status=no, menubar=no, toolbar=no';
 			         
 			         //팝업창 생성
 			         var popup = window.open(href,'popup',options);
 			         
 			         //기본이벤트 제거
 			         event.preventDefault();
-
 
 			}
 		
@@ -493,7 +510,7 @@
 			
 			
 			 let href = "/getGroupedGuestSum";
-	         let options = 'top=250, left=250, width=450, height=600, status=no, menubar=no, toolbar=no';
+	         let options = 'top=100, left=390, width=840, height=490, status=no, menubar=no, toolbar=no';
 	         
 	         //팝업창 생성
 	         var popup = window.open(href,'popup',options);
@@ -736,6 +753,7 @@
 		     })
 		     
      setTimeout(()=>{
+    	     	 
     	 for(let i=0; i<$('.sangu').length;i++){
     		 if(i==0){
     		 	array.push($('.sangu')[i].defaultValue);
@@ -746,20 +764,21 @@
     				array.push($('.sangu')[i].defaultValue);  		    		 		 
     			 }
     		 }    		 
-    	 }	
+    	 }
+    	 
+    	 console.log("array:"+array)
 
-     },1000)
+     },12000)
 
 	setTimeout(()=>{
 	    	 for(let i=0;i<array.length;i++){
 	    	    	$('#groupSelect').append('<option value='+array[i]+'>'+array[i]+'</option>') 	
 	    	    }	 
-	},1500)
+	},14000)
 			
  		 } else if ('${member.type}' == "신랑"){
  			 
- 			 console.log("여기가안되나?")
- 			 
+ 
   			let array = [];
 			 
 		    $("#data_list").DataTable({
@@ -780,18 +799,18 @@
 		           {data:"withdrawalName"}
 		        ],
 		        columnDefs : [
-		            { targets: 0, width: '250px',},
-		            { targets: 1, width: '300px',
+		            { targets: 0, width: '100px',},
+		            { targets: 1, width: '350px',
 		            	render:
 		            		function (data,type,row)
 		            		{
 		            			return "<input class=test12 name="+data+" value="+data+" style='display:none;'>"+data;
 		            		}
 		            },
-		            { targets: 2, width: '200px',},
+		            { targets: 2, width: '150px',},
 		            { targets: 3, width: '200px',},
 		            { targets: 4, width: '200px',},
-		            { targets: 5, width: '300px', className:"guestGroup", 
+		            { targets: 5, width: '400px', className:"guestGroup", 
 		            	render: 
 		            		function (data, type, row) 
 		            		{ 
@@ -799,7 +818,7 @@
 		            		}
 		            },
 
-		            { targets: 6, width: '200px',},
+		            { targets: 6, width: '100px',},
 		            { targets: 7, width: '200px',},
 		            { targets: 8, width: '250px',
 		            	render:
@@ -809,7 +828,7 @@
 		            			return `<button class="btn btn-danger" type="button">미완료</button>`
 		            		} else {
 		            			
-		            			return `<button class="btn btn-info" type="button">환송완료</button>`
+		            			return `<button class="btn btn-info" type="button">환송<br>완료</button>`
 		            		}
 		            		
 		            		
@@ -822,10 +841,10 @@
 		            		{
 		            			if (row.rePay == '완료'){
 		            				
-		            				return `<button class="btn btn-primary"  type=button style="display:none" onclick=openRePayTransferForm('`+data+`')>환송하기</button>`
+		            				return `<button class="btn btn-primary"  type=button style="display:none" onclick=openRePayTransferForm('`+data+`')>환송<br>하기</button>`
 		            			} else {
 		            				
-		            				return `<button class="btn btn-primary"  type=button onclick=openRePayTransferForm('`+data+`')>환송하기</button>`
+		            				return `<button class="btn btn-primary"  type=button onclick=openRePayTransferForm('`+data+`')>환송<br>하기</button>`
 		            				
 		            			}
 		            	}
@@ -834,14 +853,14 @@
 		            	render:
 		            		function(data,type,row){
 		            		
-		            		return `<button class="btn btn-primary"  type=button onclick=guestChatting('`+data+`')>채팅하기</button>`
+		            		return `<button class="btn btn-primary"  type=button onclick=guestChatting('`+data+`')>채팅<br>하기</button>`
 		            	}
 		            },
 		            { targets: 11, width: '250px',
 		            	render:
 							function(data,type,row){
 		            		
-		            		return `<button class="btn btn-primary"  type=button onclick=guestChatting('`+data+`')>축하메시지보기</button>`
+		            		return `<button class="btn btn-primary"  type=button onclick=guestChatting('`+data+`')>축하<br>메시지</button>`
 		            	}
 		            		
 		            }
@@ -864,6 +883,9 @@
 		     })
 		     
      setTimeout(()=>{
+    	 
+    	 console.log($('.sangu').length);
+    	 
     	 for(let i=0; i<$('.sangu').length;i++){
     		 if(i==0){
     		 	array.push($('.sangu')[i].defaultValue);
@@ -876,13 +898,15 @@
     		 }    		 
     	 }	
 
-     },1000)
+     },	12000)
+     
+     console.log("신랑array:"+array);
 
 	setTimeout(()=>{
 	    	 for(let i=0;i<array.length;i++){
 	    	    	$('#groupSelect').append('<option value='+array[i]+'>'+array[i]+'</option>') 	
 	    	    }	 
-	},1500)
+	},14000)
 	
  		 } else if ('${member.type}' == "하객"){
  			 
@@ -913,7 +937,7 @@
 		            { targets: 4, width: '200px',},
 		            { targets: 5, width: '200px',},
 		            { targets: 6, width: '200px',},
-		            { targets: 7, width: '250px',
+		            { targets: 7, width: '150px',
 		            	render:
 		            		function(data,type,row){
 		            		
@@ -1062,13 +1086,13 @@
     		 }    		 
     	 }	
 
-     },1000)
+     },12000)
 
 	setTimeout(()=>{
 	    	 for(let i=0;i<array.length;i++){
 	    	    	$('#groupSelect').append('<option value='+array[i]+'>'+array[i]+'</option>') 	
 	    	    }	 
-	},1500)
+	},14000)
  			 
  			 
  		 }

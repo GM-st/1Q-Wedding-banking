@@ -131,8 +131,8 @@
 
 			<div class="row justify-content-center ml-9">
 
-				<div class="col-md-6 text-center mt-3 mb-2">
-					<h2 class="heading-section fs-1" style="font-family: hanaM">모든
+				<div class="col-md-6 text-center mt-6 mb-2">
+					<h2 class="heading-section fs-1" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa">모든
 						거래내역 조회</h2>
 				</div>
 
@@ -153,8 +153,6 @@
 
 
 
-
-
 							<table id="data_list_1"
 								class="table font-small table-hover"
 								style="height: 900px; vertical-align: middle; width: 1300px;">
@@ -163,7 +161,7 @@
 								<thead class="thead-inverse">
 									<tr>
 
-										<th class="h6 py-4 border-0" style="font-family: hanaM">번호</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM">번<br>호</th>
 
 										<th class="h6 py-4 border-0" style="font-family: hanaM">보낸<br>회원
 										</th>
@@ -186,10 +184,10 @@
 										</th>
 
 										<th class="h6 py-4 border-0" style="font-family: hanaM">송금액</th>
-										<th class="h6 py-4 border-0" style="font-family: hanaM">송금일자</th>
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">송금일자</th>
 
-										<th class="h6 py-4 border-0" style="font-family: hanaM">문자<br>
-											보내기
+										<th class="h6 py-4 border-0" style="font-family: hanaM;text-align: center;">SMS<br>
+											전송
 										</th>
 
 									</tr>
@@ -200,7 +198,6 @@
 								</tbody>
 
 							</table>
-
 
 						</div>
 					</div>
@@ -383,10 +380,10 @@
 					width : '10%'
 				}, {
 					targets : 5,
-					width : '10%'
+					width : '8%'
 				}, {
 					targets : 6,
-					width : '10%'
+					width : '8%'
 				}, {
 					targets : 7
 				}, {
@@ -396,10 +393,15 @@
 					width : '7%'
 				}, {
 					targets : 10,
-					width : '11%'
+					width : '9%'
 				}, {
 					targets : 11,
-					width : '9%'
+					width : '6%',
+					render:
+						function(data, type, row){
+						return `<button class="btn btn-primary"  type=button style="background-color: #008485; border-color: #008485; width: 100px; height: 50px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >SMS 전송</button>
+						`
+					}
 				} ],
 
 				language : {
@@ -428,7 +430,7 @@
 	let unHanaTransactionListPage = function() {
 		
 		let href = "/unHanaTransactionListPage;"
-        let options = 'top=330, left=450, width=700, height=800, status=no, menubar=no, toolbar=no';
+        let options = 'top=350, left=450, width=700, height=680, status=no, menubar=no, toolbar=no';
         
         //팝업창 생성
         var popup = window.open(href,'popup',options);

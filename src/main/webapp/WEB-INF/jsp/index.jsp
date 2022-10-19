@@ -144,7 +144,7 @@
 										</div>
 
 
-										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700">하나은행 계좌를 갖고 계신 경우<br>축의금을 송금하고 하나포인트를 환급받으실 수 있습니다</p>
+										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 0.5px 0.5px 0.5px #aaa; font-weight: 700">하나은행 계좌를 갖고 계신 경우<br>축의금을 송금하고 하나포인트를 환급받으실 수 있습니다</p>
 										<form method="get" action="/selectHanaAccount">
 											<button
 												style="background-color: #008485; border-color: #008485; width: 180px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700"
@@ -189,7 +189,7 @@
 										</div>
 
 
-										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700">오픈뱅킹 서비스에 동의하시면<br>타 은행의 계좌로 축의금을 송금하실 수 있습니다</p>
+										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 0.5px 0.5px 0.5px #aaa; font-weight: 700">오픈뱅킹 서비스에 동의하시면<br>타 은행의 계좌로 축의금을 송금하실 수 있습니다</p>
 										<form method="get" action="/selectOpenAccount">
 											<button
 												style="background-color: #008485; border-color: #008485; width: 180px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700"
@@ -237,7 +237,7 @@
 										</div>
 
 
-										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700">핀테크 계좌를 활용하여<br>간편 송금 시스템으로 축의금을 송금하실 수 있습니다</p>
+										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 0.5px 0.5px 0.5px #aaa; font-weight: 700">핀테크 계좌를 활용하여<br>간편 송금 시스템으로 축의금을 송금하실 수 있습니다</p>
 
 										<form method="post" action="/kakaoPay">
 											<button

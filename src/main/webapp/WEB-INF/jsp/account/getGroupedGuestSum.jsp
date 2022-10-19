@@ -124,27 +124,49 @@
 
 <link type="text/css" href="css_2/chart.css" rel="stylesheet">
 
+
+<style type="text/css">
+	.highcharts-root {
+		height: 430px;
+	}
+</style>
+
+
+
 </head>
 
 <body>
 
 
+	<section class="ftco-section" style="margin-top: 50px;">
 
-		<figure class="highcharts-figure">
-				<div id="container3"></div>
-				<p class="highcharts-description">Chart designed to show the
-					difference between 0 and null in a 3D column chart. A null point
-					represents missing data, while 0 is a valid value.</p>
-			</figure>
-	
+		<div class="container" style="margin-left: 70px">
+
+			<div class="row" style="width: 900px; height: 560px">
+				<div class="col-md-12">
+					<div class="card border-light p-4"
+						style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-width: 3px; border-radius: 50px;">
+						<div class="table-wrap">
+
+							<figure class="highcharts-figure">
+								<div id="container3"></div>
+							</figure>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</section>
 
 
 
 
-
-
-
-<!--,하이차트  -->
+	<!--,하이차트  -->
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -192,8 +214,8 @@
 
 	<!-- pixel JS -->
 	<script src="js_2/pixel.js"></script>
-	
-<script>
+
+	<script>
 
 
 	let groupedGuestSumNameList = [];
@@ -222,16 +244,16 @@
 			            alpha: 10,
 			            beta: 25,
 			            depth: 70
-			        }
+			        },
+			        height:400,
+			        backgroundColor: 'rgba(255,255,255,0.5)',
+			        shadow: false
 			    },
 			    title: {
-			        text: 'External trade in goods by country, Norway 2021'
+			        text: `<h3 class="h3 card-title mt-3"
+						style="font-family: hanaM; font-size: 35px;text-shadow: 2px 2px 2px #aaa; font-weight: 700">소속별 하객 축의금 총합</h3>`
 			    },
-			    subtitle: {
-			        text: 'Source: ' +
-			            '<a href="https://www.ssb.no/en/statbank/table/08804/"' +
-			            'target="_blank">SSB</a>'
-			    },
+			    
 			    plotOptions: {
 			        column: {
 			            depth: 25
@@ -242,21 +264,39 @@
 			        labels: {
 			            skew3d: true,
 			            style: {
-			                fontSize: '16px'
+			                fontSize: '16px',
+			                color:"#008485"
 			            }
 			        }
 			    },
 			    yAxis: {
 			        title: {
-			            text: 'NOK (million)',
-			            margin: 20
+			            text: '축의금 총합',
+			            margin: 20,
+			            color: '#008485',
+			            fontWeight : 'bold',
+			            fontSize: '12px',
+			            fontFamily : 'hanaM'
+			            
+			        },
+			        labels: {
+			            formatter: function() {
+			                return this.value  + '원';
+			            },
+			         lang:{
+			        	 thousandsSep: ','
+			         },
+			         color : "#008485",
+			         
 			        }
+			        
+			        
 			    },
 			    tooltip: {
-			        valueSuffix: ' MNOK'
+			        valueSuffix: '원'
 			    },
 			    series: [{
-			        name: 'Total imports',
+			        name: '축의금액',
 			        data: groupedGuestSumValueList
 			    }]
 			});
@@ -267,11 +307,6 @@
 
 
 </script>
-	
-		
-	
-
-
 
 
 

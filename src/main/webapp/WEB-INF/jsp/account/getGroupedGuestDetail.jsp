@@ -124,15 +124,52 @@
 
 <link type="text/css" href="css_2/chart.css" rel="stylesheet">
 
+
+<style type="text/css">
+	.highcharts-root {
+		height: 430px;
+	}
+</style>
+
+
+
 </head>
 
 <body>
 
 
+<section class="ftco-section" style="margin-top: 50px;">
+
+		<div class="container" style="margin-left: 70px">
+
+			<div class="row" style="width: 750px; height: 550px">
+				<div class="col-md-12">
+					<div class="card border-light p-4"
+						style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-width: 3px; border-radius: 50px;">
+						<div class="table-wrap">
+
+			<figure class="highcharts-figure">
+				<div id="container" style="width: 600px; height: 400px; overflow: hidden;"></div>
+				<p class="highcharts-description"></p>
+			</figure>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+
+
+<!-- 
 			<figure class="highcharts-figure">
 				<div id="container"></div>
 				<p class="highcharts-description"></p>
-			</figure>
+			</figure> -->
 	
 
 
@@ -233,13 +270,11 @@
 			        }
 			    },
 			    title: {
-			        text: 'External trade in goods by country, Norway 2021'
+			        text: `<h3 class="h3 card-title mt-3"
+					style="font-family: hanaM; font-size: 35px;text-shadow: 2px 2px 2px #aaa; font-weight: 700;color:#000080">`+groupName+` 하객별 축의금 현황</h3>`
+			        	
 			    },
-			    subtitle: {
-			        text: 'Source: ' +
-			            '<a href="https://www.ssb.no/en/statbank/table/08804/"' +
-			            'target="_blank">SSB</a>'
-			    },
+			    
 			    plotOptions: {
 			        column: {
 			            depth: 25
@@ -256,12 +291,22 @@
 			    },
 			    yAxis: {
 			        title: {
-			            text: 'NOK (million)',
+			            text: '축의금액',
 			            margin: 20
+			        },
+			        labels: {
+			            formatter: function() {
+			                return this.value  + '원';
+			            },
+			         lang:{
+			        	 thousandsSep: ','
+			         },
+			         color : "#008485",
+			         
 			        }
 			    },
 			    tooltip: {
-			        valueSuffix: ' MNOK'
+			        valueSuffix: ' 원'
 			    },
 			    series:transactionList
 			});

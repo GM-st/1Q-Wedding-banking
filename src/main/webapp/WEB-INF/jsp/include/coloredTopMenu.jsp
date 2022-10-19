@@ -9,13 +9,11 @@
 
 	<nav id="navbar-main" aria-label="Primary navigation"
 		class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark"
-		style="background: #008485;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">
+		style="background: #008485;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);height: 140px">
 		<div class="container position-relative" style="max-width: 1700px">
 			<a class="navbar-brand mr-lg-5" href="/"> <img
-				class="navbar-brand-dark" src="img_2/oneQwedding_pink_white.png"
-				alt="Pixel Logo" style="width: 70px; height: 80px;"> <img class="navbar-brand-light"
-				src="img_2/oneQwedding_pink_white.png" alt="Pixel Logo Dark"
-				style="width: 80px; height: 100px;">
+				class="navbar-brand-dark mt-3" src="img_2/bk19weddingwhite.png"
+				 style="width: 180px; height: 120px;"> 
 			</a>
 
 			<div class="navbar-collapse collapse" id="navbar_global">

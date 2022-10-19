@@ -124,27 +124,50 @@
 
 <link type="text/css" href="css_2/chart.css" rel="stylesheet">
 
+
+<style type="text/css">
+.highcharts-root {
+	height: 430px;
+}
+</style>
+
+
+
 </head>
 
 <body>
 
+	<section class="ftco-section" style="margin-top: 50px;">
+
+		<div class="container" style="margin-left: 70px">
+
+			<div class="row" style="width: 750px; height: 550px">
+				<div class="col-md-12">
+					<div class="card border-light p-4"
+						style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-width: 3px; border-radius: 50px;">
+						<div class="table-wrap">
+
+							<figure class="highcharts-figure">
+								<div id="container2"
+									style="width: 600px; height: 400px; overflow: hidden;"></div>
+
+							</figure>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
 
 
 
 
-			<figure class="highcharts-figure">
-				<div id="container2" style="width:600px; height:700px"></div>
-				
-			</figure>
-	
 
-
-
-
-
-
-
-<!--,하이차트  -->
+	<!--,하이차트  -->
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -193,8 +216,8 @@
 	<!-- pixel JS -->
 	<script src="js_2/pixel.js"></script>
 
-	
-	
+
+
 	<script>
 	let finalGroupedGuestCountList = [];
 	
@@ -223,13 +246,23 @@
 		        type: 'pie',
 		        options3d: {
 		            enabled: true,
-		            alpha: 45
+		            alpha: 45,
+		            style: {
+		                fontFamily: 'hanaM',
+		                color : "#008485"
+		            }
 		        }
 		    },
 		    title: {
-		        text: '그룹별 하객 수 현황',
+		        text: `<h3 class="h3 card-title mt-3"
+					style="font-family: hanaM; font-size: 35px;text-shadow: 2px 2px 2px #aaa; font-weight: 700;color:#000080">소속별 하객 수 총합</h3>`,
+					color : '#000080',
 		        style: {
-		        	fontSize : '25px'
+		        	fontSize : '25px',
+		        	fontFamily: 'hanaM',
+		        	/* color : "#008485", */
+		        	fontWeight: 'bold'
+		        	
 		        }
 		    },
 
@@ -240,12 +273,15 @@
 		        }
 		    },
 		    series: [{
-		        name: 'Medals',
+		        name: '하객수',
 		        data: finalGroupedGuestCountList,
 		        fontSize: '50px',
 	        	dataLabels: {
 	                style: {
-	                    fontSize: 20   
+	                    fontSize: 20,
+	                    fontFamily: 'hanaM',
+	                    color: "#000080"
+	                    
 	                }
 	            },
 	         
@@ -258,7 +294,7 @@
 	
 	
 	</script>
-	
+
 
 
 

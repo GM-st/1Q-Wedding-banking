@@ -248,9 +248,7 @@ public class AccountController {
 	@GetMapping("/transactionBrideData")
 	@ResponseBody
 	public List<TransactionVO> accountBrideTransactionData(@RequestParam("phoneNum") String phoneNumber){
-		
-		System.out.println("여기도안찍한다?");
-		
+				
 		List<TransactionVO> transactionList =accountService.selectBrideTransactionList(phoneNumber);	
 		
 		System.out.println("transactionList:"+transactionList);

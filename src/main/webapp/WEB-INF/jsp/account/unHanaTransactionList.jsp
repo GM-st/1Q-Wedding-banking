@@ -144,11 +144,11 @@ table.dataTable {
 
 			<div class="row justify-content-center ml-5">
 
-				<div class="col-7 text-center mt-3 mb-0">
+				<div class="col-7 text-center mt-1 mb-0">
 					
-					<h2 class="heading-section fs-1 m-0" style="font-family: hanaM">
+					<h4 class="heading-section fs-1 m-0" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;font-size: 17px">
 						타 은행 거래내역 목록
-					</h2>
+					</h4>
 					
 				</div>
 				
@@ -157,7 +157,7 @@ table.dataTable {
 			<div class="row justify-content-left ml-0">
 			
 			<div class="col-md-6 text-left mt-3 mb-2 p-0">
-				<button class="btn btn-primary" type="button" id="phoneChk"  style="background-color: #008485; border-color: #008485;">신규계좌 개설 마케팅 SMS 보내기</button>
+				<button class="btn btn-primary" type="button" id="phoneChk"  style="background-color: #008485; border-color: #008485;font-size: 14px;height: 35px">신규계좌 개설 마케팅 SMS 보내기</button>
 				
 				
 			</div>
@@ -174,25 +174,25 @@ table.dataTable {
 
 
 							<table id="data_list_2"
-								class="table font-small table-hover" style="height: 500px; vertical-align: middle; width: 730px!important;">
+								class="table font-small table-hover" style="height: 480px; vertical-align: middle; width: 730px!important;">
 
 
 								<thead class="thead-inverse">
 									<tr>
 
-										<th class="h6 py-4 border-0" style="font-family: hanaM">번호</th>
+										<th class="h6 py-1 border-0" style="font-family: hanaM;font-size: 15px">번호</th>
 
-										<th class="h6 py-4 border-0" style="font-family: hanaM">회원이름
+										<th class="h6 py-1 border-0" style="font-family: hanaM;font-size: 15px">회원이름
 										</th>
 										
-										<th class="h6 py-4 border-0" style="font-family: hanaM">거래은행
+										<th class="h6 py-1 border-0" style="font-family: hanaM;font-size: 15px">거래은행
 										</th>
 										
-										<th class="h6 py-4 border-0" style="font-family: hanaM">휴대전화
+										<th class="h6 py-1 border-0" style="font-family: hanaM;font-size: 15px">휴대전화
 										</th>
 
-										<th class="h6 py-4 border-0" style="font-family: hanaM">송금액</th>
-										<th class="h6 py-4 border-0" style="font-family: hanaM">송금일자</th>
+										<th class="h6 py-1 border-0" style="font-family: hanaM;font-size: 15px">송금액</th>
+										<th class="h6 py-1 border-0" style="font-family: hanaM;font-size: 15px">송금일자</th>
 
 									</tr>
 								</thead>
@@ -215,7 +215,7 @@ table.dataTable {
 
 				<button class="btn btn-primary" type="button"
 					onclick="location.href='/'"
-					style="background-color: #008485; border-color: #008485; width: 130px; height: 50px">
+					style="background-color: #008485; border-color: #008485; width: 130px; height: 35px;font-size: 14px">
 					<span class="mr-1"><span class="fas fa-book-open"></span></span>
 					메인화면
 				</button>

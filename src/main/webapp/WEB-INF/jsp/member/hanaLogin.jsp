@@ -107,7 +107,7 @@
 							style="background-color: #ffffff !important; background-color: rgba(255, 255, 255, 0.95) !important;">
 
 							<div class="text-center text-md-center mb-4 mt-md-0">
-								<h1 class="mb-0 h3">Log In</h1>
+								<h1 class="mb-0 h3">로그인</h1>
 							</div>
 
 							<form action="/hanaLogin" method="post" class="mt-4">

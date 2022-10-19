@@ -105,12 +105,14 @@
 
 
 	<!-- Section -->
-	<section class="section section-md">
+	<section class="section section-md " style="padding-top: 3rem;">
 		<div class="container">
+			
+			
 			
 			<div class="row mb-2">
 				<div class="col-md-12 text-center">
-					<span class="h1" style="font-family: hanaM">관리자 페이지</span>
+					<span class="h1" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;font-size: 50px">관리자 페이지</span>
 				</div>
 			</div>
 			
