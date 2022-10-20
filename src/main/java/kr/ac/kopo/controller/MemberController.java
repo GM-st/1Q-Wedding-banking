@@ -430,9 +430,11 @@ public class MemberController {
 		
 		System.out.println("일단여기1");
 		
-		MemberVO memberVO = memberService.hanaPointVideo(phoneNumber);
+		List<MemberVO> memberVOList = memberService.hanaPointVideo(phoneNumber);
 		
-		return memberVO;
+		System.out.println(memberVOList.get(0));
+		
+		return memberVOList.get(0);
 	}
 	
 	
@@ -443,32 +445,28 @@ public class MemberController {
 		
 		System.out.println("일단여기2");
 		
-		MemberVO memberVO = memberService.hanaPointImage(phoneNumber);
+		List<MemberVO> memberVOList = memberService.hanaPointImage(phoneNumber);
 		
-		return memberVO;
+		return memberVOList.get(0);
+		
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	@PostMapping("/hanaPointUpdate")
 	@ResponseBody
 	public String hanaPointInsert(
 MemberVO memberVO) {
 		
+		System.out.println("여기부터보자");
+		
 		memberService.hanaPointUpdate(memberVO);
 		
 		memberService.hanaPointUpdateAccount(memberVO);
 		
-			
+		
+		
 		return "";
 	}
 	

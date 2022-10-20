@@ -185,7 +185,7 @@
              
              console.log(result);
              
-             console.log("오잉?");
+             console.log("콜하나이다");
              
              $('#MyAccount').empty();
              

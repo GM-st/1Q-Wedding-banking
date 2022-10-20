@@ -120,14 +120,14 @@ public class MemberService {
 	}
 	
 	
-	public MemberVO hanaPointVideo(String phoneNumber) {
+	public List<MemberVO> hanaPointVideo(String phoneNumber) {
 		
 		return memberDao.hanaPointVideo(phoneNumber); 
 	}
 	
 
 	
-	public MemberVO hanaPointImage(String phoneNumber) {
+	public List<MemberVO> hanaPointImage(String phoneNumber) {
 		
 		return memberDao.hanaPointImage(phoneNumber); 
 	

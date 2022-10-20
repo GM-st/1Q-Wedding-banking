@@ -146,8 +146,8 @@
 
 										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 0.5px 0.5px 0.5px #aaa; font-weight: 700">하나은행 계좌를 갖고 계신 경우<br>축의금을 송금하고 하나포인트를 환급받으실 수 있습니다</p>
 										<form method="get" action="/selectHanaAccount">
-											<button
-												style="background-color: #008485; border-color: #008485; width: 180px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700"
+											<button onclick="location.href='/selectHanaAccount'"
+												style="background-color: #008485; border-color: #008485; width: 180px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700" 
 												type="button" class="btn btn-primary">
 												<span class="fa fa-user"></span> 축의금 송금하기 <span
 													id="chatAlarm" class="badge badge-pill badge-tertiary"></span>
@@ -155,6 +155,9 @@
 										</form>
 									</div>
 								</div>
+
+
+
 
 							</div>
 						</div>
@@ -191,7 +194,7 @@
 
 										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 0.5px 0.5px 0.5px #aaa; font-weight: 700">오픈뱅킹 서비스에 동의하시면<br>타 은행의 계좌로 축의금을 송금하실 수 있습니다</p>
 										<form method="get" action="/selectOpenAccount">
-											<button
+											<button onclick="location.href='/selectOpenAccount'"
 												style="background-color: #008485; border-color: #008485; width: 180px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700"
 												type="button" class="btn btn-primary">
 												<span class="fa fa-user"></span> 축의금 송금하기 <span
@@ -239,8 +242,8 @@
 
 										<p class="card-text" style="font-family: hanaM; font-size: 15px;text-shadow: 0.5px 0.5px 0.5px #aaa; font-weight: 700">핀테크 계좌를 활용하여<br>간편 송금 시스템으로 축의금을 송금하실 수 있습니다</p>
 
-										<form method="post" action="/kakaoPay">
-											<button
+										<form>
+											<button onclick="location.href='/kakaoPay'"
 												style="background-color: #008485; border-color: #008485; width: 180px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);font-family: hanaM; font-size: 15px;text-shadow: 2px 2px 2px #aaa; font-weight: 700"
 												type="button" class="btn btn-primary">
 												<span class="fa fa-user"></span> 축의금 송금하기 <span
@@ -385,7 +388,18 @@
 			
 			console.log("된니??00");
 			
-			location.href='/mychatt';
+			let href = "/mychatt";
+	        let options = 'top=80, left=830, width=650, height=650, status=no, menubar=no, toolbar=no';
+	        
+	        //팝업창 생성
+	        var popup = window.open(href,'popup',options);
+	        
+	        //기본이벤트 제거
+	        event.preventDefault();
+			
+			
+	/* 		
+			location.href='/mychatt'; */
 
 		}
 	

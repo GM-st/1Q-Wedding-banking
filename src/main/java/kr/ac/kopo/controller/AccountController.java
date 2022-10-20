@@ -106,11 +106,16 @@ public class AccountController {
 	public List<AccountVO> accountListProcess(@RequestParam("phoneNumber") String phoneNumber,
 			@RequestParam("withdrawalBank") String withdrawalBank) {
 		
+		System.out.println(phoneNumber);
 		List<AccountVO> accountList = new ArrayList<>();
 
 		if (withdrawalBank.equals("hana_bank")) {
+			
+			System.out.println("요기요깅12212");
 
 			accountList = accountService.hanaAccountList(phoneNumber);
+			
+			System.out.println(accountList);
 
 			return accountList;
 

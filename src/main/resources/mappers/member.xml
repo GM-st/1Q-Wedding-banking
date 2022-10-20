@@ -286,7 +286,7 @@
 	
 	
 	
-	<select id="unHanaTransactionList"  resultMap="transactionMap">
+<select id="unHanaTransactionList"  resultMap="transactionMap">
 	
 select
 TRAN_NUM, 
@@ -304,9 +304,6 @@ from FINAL_TRANSACTION_HISTORY
 where WITHDRAWAL_BANK_CODE != '2'
 		
 </select>
-
-
-
 
 
 </mapper>

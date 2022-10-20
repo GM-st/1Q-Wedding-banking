@@ -20,8 +20,9 @@ public class SampleController {
     
     
     @GetMapping("/kakaoPay")
-    public void kakaoPayGet() {
+    public String kakaoPayGet() {
         
+    	return "account/kakaoPay";
     }
     
     @PostMapping("/kakaoPay")

@@ -129,7 +129,7 @@
 			<div class="row justify-content-center">
 
 				<div class="col-md-6 text-center mt-1 mb-3">
-					<h2 class="heading-section fs-1" style="font-family: hanaM">축의금 관리 시스템</h2>
+					<h2 class="heading-section fs-1" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa">축의금 관리 시스템</h2>
 				</div>
 
 			</div>
@@ -611,7 +611,22 @@
 		
 		let guestChatting =  function(data){
 			
-			$.ajax({
+			
+			let href = "/mychatt";
+			let options = 'top=80, left=130, width=650, height=650, status=no, menubar=no, toolbar=no';
+	        
+	        
+	        
+	        //팝업창 생성
+	        var popup = window.open(href,'popup',options);
+	        
+	        //기본이벤트 제거
+	        event.preventDefault();
+			
+			
+			
+			
+/* 			$.ajax({
 			
 				type: 'post',
 				url: "/mychatt",
@@ -624,16 +639,16 @@
 					alert('실패')
 				}
 				
-			})
+			}) */
 			
 			
-				fetch("/mychatt?name="+data)
+/* 				fetch("/mychatt?name="+data)
 				.then(res=>{
 					 location.href = "http://localhost:8080/mychatt?name="+data;
 					console.log(res)
 					console.log("오노???")
 					
-				})
+				}) */
 											
 			}
 										
@@ -647,136 +662,137 @@
  		 
  		 if('${member.type}' == "신부"){
  			 
- 			let array = [];
  			 
-		    $("#data_list").DataTable({
-		        ajax:{url:"/transactionBrideData?phoneNum="
-					+ '${bride.phonenumber}',dataSrc:''},
-					scroller: false,
-					
-		        columns:[
-		           {data:"memberType"},
-		           {data:"withdrawalAccountNum"},
-		           {data:"withdrawalName"},
-		           {data:"withdrawalBankCode"},
-		           {data:"withdrawalPhoneNum"},
-		           {data:"guestGroup"},
-		           {data:"tranAmount"},
-		           {data:"tranDate"},
-		           {data:"rePay"},
-		           {data:"withdrawalAccountNum"},
-		           {data:"withdrawalName"},
-		           {data:"withdrawalName"}
-		        ],
-		        columnDefs : [
-		            { targets: 0},
-		            { targets: 1,
-		            	render:
-		            		function (data,type,row)
-		            		{
-		            			return "<input class=test12 name="+data+" value="+data+" style='display:none;'>"+data;
-		            		}
-		            },
-		            { targets: 2},
-		            { targets: 3},
-		            { targets: 4},
-		            { targets: 5, className:"guestGroup", 
-		            	render: 
-		            		function (data, type, row) 
-		            		{ 
-		            			return "<input class=sangu id="+data+" value="+data+" style='display:none;'>"+data;
-		            		}
-		            },
+   			let array = [];
+ 			 
+ 		    $("#data_list").DataTable({
+ 		        ajax:{url:"/transactionBrideData?phoneNum="
+ 					+ '${bride.phonenumber}',dataSrc:''},
+ 		        columns:[
+ 		           {data:"memberType"},
+ 		           {data:"withdrawalAccountNum"},
+ 		           {data:"withdrawalName"},
+ 		           {data:"withdrawalBankCode"},
+ 		           {data:"withdrawalPhoneNum"},
+ 		           {data:"guestGroup"},
+ 		           {data:"tranAmount"},
+ 		           {data:"tranDate"},
+ 		           {data:"rePay"},
+ 		           {data:"withdrawalAccountNum"},
+ 		           {data:"withdrawalName"},
+ 		           {data:"withdrawalName"}
+ 		        ],
+ 		        columnDefs : [
+ 		            { targets: 0, width: '100px',},
+ 		            { targets: 1, width: '350px',
+ 		            	render:
+ 		            		function (data,type,row)
+ 		            		{
+ 		            			return "<input class=test12 name="+data+" value="+data+" style='display:none;'>"+data;
+ 		            		}
+ 		            },
+ 		            { targets: 2, width: '150px',},
+ 		            { targets: 3, width: '200px',},
+ 		            { targets: 4, width: '200px',},
+ 		            { targets: 5, width: '400px', className:"guestGroup", 
+ 		            	render: 
+ 		            		function (data, type, row) 
+ 		            		{ 
+ 		            			return "<input class=sangu id="+data+" value="+data+" style='display:none;'>"+data;
+ 		            		}
+ 		            },
 
-		            { targets: 6},
-		            { targets: 7},
-		            { targets: 8,
-		            	render:
-		            		function(data, type, row){
-		            		
-		            		if(data == '미완료'){
-		            			return `<button class="btn btn-danger" type="button">미완료</button>`
-		            		} else {
-		            			
-		            			return `<button class="btn btn-info" type="button">환송완료</button>`
-		            		}
-		            		
-		            		
-		            	}
-		            	
-		            },
-		            { targets: 9,
-		            	render:
-		            		function(data,type,row)
-		            		{
-		            			if (row.rePay == '완료'){
-		            				
-		            				return `<button class="btn btn-primary"  type=button style="display:none" onclick=openRePayTransferForm('`+data+`')>환송하기</button>`
-		            			} else {
-		            				
-		            				return `<button class="btn btn-primary"  type=button onclick=openRePayTransferForm('`+data+`')>환송하기</button>`
-		            				
-		            			}
-		            	}
-		            },
-		            { targets: 10,
-		            	render:
-		            		function(data,type,row){
-		            		
-		            		return `<button class="btn btn-primary"  type=button onclick=guestChatting('`+data+`')>채팅하기</button>`
-		            	}
-		            },
-		            { targets: 11,
-		            	render:
-							function(data,type,row){
-		            		
-		            		return `<button class="btn btn-primary"  type=button onclick=guestChatting('`+data+`')>축하메시지보기</button>`
-		            	}
-		            		
-		            }
-		       ],
-		       autoWidth : false,
-		       language : {
-		           info : "현재 _START_-_END_ / 총 _TOTAL_건",
-		           loadingRecords: "로딩중...",
-		           processing : "잠시만 기다려 주세요...",
-		           search : "검색 : ",
-		           paginate : {
-		              "next" : "다음",
-		              "previous" : "이전"
-		           }
-		        },
-		        lengthChange: false,
-		        responsive:false
-		        
+ 		            { targets: 6, width: '100px',},
+ 		            { targets: 7, width: '200px',},
+ 		            { targets: 8, width: '250px',
+ 		            	render:
+ 		            		function(data, type, row){
+ 		            		
+ 		            		if(data == '미완료'){
+ 		            			return `<button class="btn btn-danger" type="button">미완료</button>`
+ 		            		} else {
+ 		            			
+ 		            			return `<button class="btn btn-info" type="button">환송<br>완료</button>`
+ 		            		}
+ 		            		
+ 		            		
+ 		            	}
+ 		            	
+ 		            },
+ 		            { targets: 9, width: '250px',
+ 		            	render:
+ 		            		function(data,type,row)
+ 		            		{
+ 		            			if (row.rePay == '완료'){
+ 		            				
+ 		            				return `<button class="btn btn-primary"  type=button style="display:none" onclick=openRePayTransferForm('`+data+`')>환송<br>하기</button>`
+ 		            			} else {
+ 		            				
+ 		            				return `<button class="btn btn-primary"  type=button onclick=openRePayTransferForm('`+data+`')>환송<br>하기</button>`
+ 		            				
+ 		            			}
+ 		            	}
+ 		            },
+ 		            { targets: 10, width: '180px',
+ 		            	render:
+ 		            		function(data,type,row){
+ 		            		
+ 		            		return `<button class="btn btn-primary"  type=button onclick=guestChatting('`+data+`')>채팅<br>하기</button>`
+ 		            	}
+ 		            },
+ 		            { targets: 11, width: '180px',
+ 		            	render:
+ 							function(data,type,row){
+ 		            		
+ 		            		return `<button class="btn btn-primary"  type=button onclick=guestChatting('`+data+`')>축하<br>메시지</button>`
+ 		            	}
+ 		            		
+ 		            }
+ 		       ],
+ 		       
+ 		       language : {
+ 		           info : "현재 _START_-_END_ / 총 _TOTAL_건",
+ 		           loadingRecords: "로딩중...",
+ 		           processing : "잠시만 기다려 주세요...",
+ 		           search : "검색 : ",
+ 		           paginate : {
+ 		              "next" : "다음",
+ 		              "previous" : "이전"
+ 		           }
+ 		        },
+ 		        lengthChange: false,
+ 		        responsive:false
+ 		        
 
-		     })
-		     
-     setTimeout(()=>{
-    	     	 
-    	 for(let i=0; i<$('.sangu').length;i++){
-    		 if(i==0){
-    		 	array.push($('.sangu')[i].defaultValue);
-    		 }else{
-    			 if(array.includes($('.sangu')[i].defaultValue)){
-    				 console.log('넣지마');
-    			 }else{
-    				array.push($('.sangu')[i].defaultValue);  		    		 		 
-    			 }
-    		 }    		 
-    	 }
-    	 
-    	 console.log("array:"+array)
+ 		     })
+ 		     
+      setTimeout(()=>{
+     	 
+     	 console.log($('.sangu').length);
+     	 
+     	 for(let i=0; i<$('.sangu').length;i++){
+     		 if(i==0){
+     		 	array.push($('.sangu')[i].defaultValue);
+     		 }else{
+     			 if(array.includes($('.sangu')[i].defaultValue)){
+     				 console.log('넣지마');
+     			 }else{
+     				array.push($('.sangu')[i].defaultValue);  		    		 		 
+     			 }
+     		 }    		 
+     	 }	
 
-     },12000)
+      },	12000)
+      
+      console.log("신부array:"+array);
 
-	setTimeout(()=>{
-	    	 for(let i=0;i<array.length;i++){
-	    	    	$('#groupSelect').append('<option value='+array[i]+'>'+array[i]+'</option>') 	
-	    	    }	 
-	},14000)
-			
- 		 } else if ('${member.type}' == "신랑"){
+ 	setTimeout(()=>{
+ 	    	 for(let i=0;i<array.length;i++){
+ 	    	    	$('#groupSelect').append('<option value='+array[i]+'>'+array[i]+'</option>') 	
+ 	    	    }	 
+ 	},14000)
+ 	
+  		 } else if ('${member.type}' == "신랑"){
  			 
  
   			let array = [];

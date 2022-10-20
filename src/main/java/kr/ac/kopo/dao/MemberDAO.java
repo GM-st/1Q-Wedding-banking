@@ -49,9 +49,9 @@ public interface MemberDAO {
 	public void selectImageMessage(String phonenumber);
 	
 	
-	public MemberVO hanaPointVideo(String phonenumber);
+	public List<MemberVO> hanaPointVideo(String phonenumber);
 	
-	public MemberVO hanaPointImage(String phonenumber);
+	public List<MemberVO> hanaPointImage(String phonenumber);
 	
 	
 	

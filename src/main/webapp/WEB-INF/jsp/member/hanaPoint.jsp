@@ -73,6 +73,13 @@
 <script src="https://kit.fontawesome.com/68941cf0d3.js"
 	crossorigin="anonymous"></script>
 
+
+<!-- lottie -->
+
+<script
+	src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css"
 	rel="stylesheet">
@@ -81,6 +88,10 @@
 <link type="text/css" href="css_2/pixel.css" rel="stylesheet">
 
 <link type="text/css" href="css_2/chart.css" rel="stylesheet">
+
+
+
+
 
 
 </head>
@@ -93,13 +104,20 @@
 		<div class="container">
 
 
-			<div class="row">
+			<div class="row justify-content-center">
 
-				<div class="col-6 text-center">
+				<div class="col-4 text-center mr-n8">
 					<a href="./../index.html"><img class="img-fluid w-100"
 						src="img_2/illustrations/groomstar.png"></a>
 				</div>
-				<div class="col-6 text-center">
+
+				<div class="col-4 text-center d-flex justify-content-center align-items-center">
+				
+				<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_tcozqiwz.json"  background="transparent"  speed="0.4"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player>
+
+				</div>
+
+				<div class="col-4 text-center ml-n8" style="margin-left: -50px;">
 					<a href="./../index.html"><img class="img-fluid w-100"
 						src="img_2/illustrations/bridestar.png"></a>
 				</div>
@@ -111,55 +129,73 @@
 					<div>
 
 
-						<h1 class="mt-4" style="font-family: hanaM;">
+						<h1 class="mt-4"
+							style="font-family: hanaM; text-shadow: 2px 2px 2px #aaa; font-size: 70px;">
 							<span class="font-weight-bolder text-primary">하나포인트 발급완료 </span>
 						</h1>
 
 
 
 
-						<p class="lead my-4 px-lg-11">지금 마이페이지로 이동하시면 축의금에 대해 발급된
-							하나포인트를 확인하실 수 있습니다</p>
+						<p class="lead my-4 px-lg-11"
+							style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 20px; color: gray;">
+							지금 마이페이지로 이동하시면<br> 축의금에 대해 발급된 하나포인트를<br> 확인하실 수 있습니다
+						</p>
 
-						<a class="btn btn-primary animate-hover" href="/hanaMyPage"><span
-							class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></span>마이페이지</a>
 
-						<a class="btn btn-primary animate-hover" href="/"><span
-							class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></span>메인페이지</a>
+
+
+						<button class="btn btn-primary" type="button"
+							onclick="location.href='/hanaMyPage'"
+							style="background-color: #008485; border-color: #008485; width: 150px; height: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+							<span class="mr-1"><span class="fa-solid fa-circle-left"></span></span>
+							마이페이지
+						</button>
+
+
+						<button class="btn btn-primary" type="button"
+							onclick="location.href='/'"
+							style="background-color: #008485; border-color: #008485; width: 150px; height: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+							<span class="mr-1"><span class="fa-solid fa-circle-left"></span></span>
+							메인페이지
+						</button>
+
 
 
 
 						<!-- 동영상 축하메시지 포인트 발급  -->
 
 
-						<button id="videoPointModalButton"
+						<button onclick="" id="videoPointModalButton"
 							class="btn btn-sm btn-secondary" data-toggle="modal"
 							data-target="#videoPointModal"
-							style="background-color: #008485; border-color: #008485;">
+							style="background-color: #008485; border-color: #008485;display: none; ">
 							<i class="fa-solid fa-child-dress"></i>&nbsp;동영상 축하메시지 포인트
 						</button>
-
 
 
 						<!-- Modal Content -->
 						<div class="modal fade" id="videoPointModal" tabindex="-1"
 							role="dialog" aria-labelledby="modal-notification"
-							aria-hidden="true">
+							aria-hidden="true" >
 							<div class="modal-dialog modal-info modal-dialog-centered"
 								role="document">
 								<div class="modal-content bg-gradient-secondary">
 
 									<div class="modal-body">
 										<div class="py-3 text-center">
-											<span class="modal-icon display-1-lg"><span
-												class="fa-regular fa-circle-check"></span></span>
-											<h2 class="h4 modal-title my-3">포인트 발급완료</h2>
+											<span class="modal-icon display-1-lg d-flex justify-content-center">
+											
+											<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_8JqYfK.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+											
+											</span>
+											<h3 class="display-2 mb-0" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">하나포인트 발급 완료</h3>
 										</div>
 									</div>
 
 									<div class="modal-footer">
 										<button id="subModalClose-3" type="button"
-											class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
+											class="btn btn-sm btn-white" data-dismiss="modal" style="width: 100px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">확인</button>
 									</div>
 
 								</div>
@@ -167,48 +203,46 @@
 							</div>
 						</div>
 						<!-- End of Modal Content -->
-
-
-
-						<!-- 자필 축하메시지 포인트 발급  -->
 
 
 						<button id="imagePointModalButton"
 							class="btn btn-sm btn-secondary" data-toggle="modal"
 							data-target="#imagePointModal"
-							style="background-color: #008485; border-color: #008485;">
+							style="background-color: #008485; border-color: #008485;display: none; ">
 							<i class="fa-solid fa-child-dress"></i>&nbsp;자필 축하메시지 포인트
 						</button>
-
-
-						<!-- Modal Content -->
+						
+						
+						
+						
+						<!-- 자필 축하메시지 포인트 발급  -->
 						<div class="modal fade" id="imagePointModal" tabindex="-1"
 							role="dialog" aria-labelledby="modal-notification"
-							aria-hidden="true">
+							aria-hidden="true" >
 							<div class="modal-dialog modal-info modal-dialog-centered"
 								role="document">
 								<div class="modal-content bg-gradient-secondary">
 
 									<div class="modal-body">
 										<div class="py-3 text-center">
-											<span class="modal-icon display-1-lg"><span
-												class="fa-regular fa-circle-check"></span></span>
-											<h2 class="h4 modal-title my-3">포인트 발급완료</h2>
+											<span class="modal-icon display-1-lg d-flex justify-content-center">
+											
+											<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_8JqYfK.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+											
+											</span>
+											<h3 class="display-2 mb-0" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">하나포인트 발급 완료</h3>
 										</div>
 									</div>
 
 									<div class="modal-footer">
 										<button id="subModalClose-3" type="button"
-											class="btn btn-sm btn-white" data-dismiss="modal">확인</button>
+											class="btn btn-sm btn-white" data-dismiss="modal" style="width: 100px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">확인</button>
 									</div>
 
 								</div>
 
 							</div>
 						</div>
-						<!-- End of Modal Content -->
-
-
 
 
 					</div>
@@ -219,11 +253,6 @@
 			</div>
 		</div>
 	</section>
-
-
-
-
-
 
 
 
@@ -283,7 +312,7 @@
 	
 	$(document).ready(function(){
 		
-		console.log('${member}')
+		// console.log('${member}')
 	
 		if('${member.video}' == 'Y'){
 			
@@ -296,9 +325,9 @@
 				},
 				success : (result) => {
 					
-					memberVO = result;
+					let memberVO = result;
 					
-					console.log("memberVO:"+memberVO)
+						console.log(memberVO.hanapoint)
 					
 					$.ajax({
 						
@@ -310,20 +339,20 @@
 						},
 						success : ()=>{
 							
-							console.log("썽꽁2 비디오 모달")
+							console.log("썽꽁2 비디오 모달");
 							
-							$('#videoPointModalButton').trigger('click')
+							$('#videoPointModalButton').trigger('click');
 							
 						},
 						error: () => {
-							console.log("쓀패2")
+							console.log("쓀패2");
 						}
 						
 					})
 
 				},
-				error : ()=>{
-					console.log("쓀패")
+				error : (e)=>{
+					console.log("쓀패"+ e);
 				}
 				
 			})
@@ -378,13 +407,24 @@
 	})
 	
 	
-	
-			
-	
+
 	
 	</script>
 
+	<!-- 	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		
+		
+		$('#videoPointModalButton').trigger('click')
+				
+	})
+	
 
+	</script>
+
+ -->
 
 
 
