@@ -14,6 +14,7 @@ public class MemberVO {
 	private String openbanking;
 	private char video;
 	private char image;
+	private char newaccount;
 	private int hanapoint;
 	private String sex;
 	

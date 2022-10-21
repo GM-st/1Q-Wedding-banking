@@ -61,6 +61,9 @@
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/68941cf0d3.js"
 	crossorigin="anonymous"></script>
+	
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css"
@@ -89,21 +92,21 @@
 
 		<div class="container">
 
-			<div class="row mt-5 justify-content-center">
+			<div class="row mt-1 justify-content-center">
 
 				<div class="col-12 col-md-7 col-lg-8">
 
-					<div class="tab-content mt-4 mt-lg-5" id="nav-tabContent-ecommerce">
+					<div class="tab-content mt-4 mt-lg-5 d-flex justify-content-center" id="nav-tabContent-ecommerce">
 
 
 						<div class="tab-pane fade show active" id="nav-credit-card"
 							role="tabpanel" aria-labelledby="nav-credit-card-tab">
 
 
-							<div class="card border-light p-3 mb-4">
+							<div class="card border-light p-3 mb-4" style="width: 600px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius: 50px;">
 
-								<div class="card-header border-light p-3">
-									<h3 class="h5 mb-0">1Q Pay 축의금 송금</h3>
+								<div class="card-header border-light p-3 " style="text-align:center; ">
+									<h3 class="h5 mb-0" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa; font-size: 35px; color: #014A5A">1Q Pay 축의금 송금</h3>
 								</div>
 
 								<div class="card-body p-4">
@@ -287,7 +290,7 @@
 											</div>
 
 											<button type="button" class="btn btn-block btn-primary mb-3"
-												data-toggle="modal" data-target="#modal-notification">송금하기</button>
+												data-toggle="modal" data-target="#modal-notification" style="background-color: #008485; border-color: #008485;width:170pt;height:40pt ;font-family: hanaM;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);font-size: 20px">송금하기</button>
 
 
 										</div>
@@ -487,7 +490,7 @@
 						
 						console.log("비디오촬영완료!!!Y")
 						
-						/* location.href = "https://hana-1q-wedding.vercel.app/#recorder-section"; */
+						location.href = "https://hana-1q-wedding.vercel.app/recorder";
 					},
 						
 					error: () =>{
@@ -552,7 +555,7 @@
 						
 						console.log("이미지작성완료!!!Y")
 						
-/* 						location.href = "https://hana-1q-wedding.vercel.app/#canvas-section"; */
+ 						location.href = "https://hana-1q-wedding.vercel.app/canvas";
 					},
 						
 					error: () =>{
@@ -592,31 +595,41 @@
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
+				
 				<div class="modal-body">
-					<div class="py-3 text-center">
-						<span class="modal-icon display-1-lg"><span
-							class="far fa-envelope-open"></span></span>
-						<h2 class="h4 modal-title my-3">축의금 송금이 완료되었습니다!</h2>
+					<div class="py-0 text-center">
+						<span class="modal-icon display-1-sm d-flex justify-content-center">
+						<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_cyyxrhlr.json"  background="transparent"  speed="0.8"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+						</span>
+						
+						<h2 class="modal-title my-3" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">축의금 송금이 완료되었습니다</h2>
+						
+						<h2 class="modal-title my-1" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">신랑 신부에게</h2>						
 
-						<h2 class="h4 modal-title my-3">신랑 신부에게 동영상 축하메시지를 보내시면</h2>
-						<h2 class="h4 modal-title my-3">축의금의 2%</h2>
-						<h2 class="h4 modal-title my-3">자필 축하메시지를 보내시면 축의금의 1%를</h2>
-						<h2 class="h4 modal-title my-3">하나포인트로 환급해드립니다</h2>
+						<h2 class="h4 modal-title my-0" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;"><br> 동영상 축하메시지를 보내시면</h2>
+						
+						<h2 class="h4 modal-title my-3" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">축의금의 2%</h2>
+						
+						<h2 class="h4 modal-title my-3" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">자필 축하메시지를 보내시면</h2>
+						
+						<h2 class="h4 modal-title my-3" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">축의금의 1%</h2>
+					
+						<h2 class="h4 modal-title my-3" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">하나포인트로 환급해드립니다</h2>
 
 
 					</div>
 				</div>
 
-				<div class="modal-footer">
+				<div class="modal-footer modal-footer d-flex justify-content-center">
 
 					<button id=subModal style="background-color: #04515C; border-color: #04515C; width: 180px"
 								type="button" class="btn btn-primary" onclick="selectImageMessage()">
-						자필 축하메시지 보내기	
+						자필 축하메시지<br>보내기	
 					</button> 
 						
 						<button id=subModal style="background-color: #04515C; border-color: #04515C; width: 180px"
 								type="button" class="btn btn-primary" onclick="selectVideoMessage()">
-						동영상 축하메시지 보내기
+						동영상 축하메시지<br>보내기
 						
 						</button>
 						

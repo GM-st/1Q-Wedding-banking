@@ -342,6 +342,63 @@
 
 
 		</div>
+		
+		
+		
+		
+																		<div class="accordion">
+
+																	<div class="card card-sm card-body border-light mb-0">
+
+																		<a href="#panel-4" data-target="#panel-4"
+																			class="accordion-panel-header" data-toggle="collapse"
+																			role="button" aria-expanded="false"
+																			aria-controls="panel-1"> <span
+																			class="icon-title h6 mb-0 font-weight-bold"><span
+																				class="fa-solid fa-hand-point-right"></span>신랑 신부 동의
+																				서약서</span> <span class="icon"><span
+																				class="fas fa-plus"></span></span>
+																		</a>
+
+																		<div class="collapse" id="panel-4">
+																			<div class="pt-3">
+
+																				<p class="mb-0" style="font-family: hanaM">1Q
+																					Wedding의 일반하객 회원에서 신랑 신부 회원으로 등록하기 위해서는 1Q Wedding가
+																					회원님의 개인정보를 수집할 수 있도록 동의해주셔야합니다.</p>
+
+																				<p class="mb-0" style="font-family: hanaM">
+
+																					개인정보수집에 동의하시고 1Q Wedding의 일반하객 회원에서 신랑 신부 회원으로
+																					등록하시면, 하객들의 축의금에 관한 정보를 다각적으로 분석하고 관리할 수 있는 시스템이
+																					제공되고, 하객들의 미디어 축하메시지를 받아보실 수 있습니다.</p>
+
+																				<br>
+
+																				<div class="custom-control custom-switch">
+																					<input type="checkbox" class="custom-control-input"
+																						id="customSwitch1"> <label
+																						class="custom-control-label" for="customSwitch1">
+																						동의하기</label>
+																				</div>
+
+
+																			</div>
+
+
+																		</div>
+
+																	</div>
+															
+															</div>
+		
+		
+		
+		
+		
+		
+		
+		
 	</section>
 
 

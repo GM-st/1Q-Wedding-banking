@@ -41,6 +41,8 @@ public class MemberController {
 		return "member/joinForm";
 	}
 	
+	
+	
 	@PostMapping("/member/join")
 	public String joinProcess(@Valid MemberVO memberVO) {
 		
@@ -58,6 +60,8 @@ public class MemberController {
 	public String login(Model model) {
 		return "member/hanaLogin";
 	}
+	
+	
 	
 	@PostMapping("/hanaLogin")
 	public String loginProcess(@ModelAttribute MemberVO memberVO, Model model, HttpSession session) {
@@ -199,8 +203,6 @@ public class MemberController {
 			
 			return member.getType();
 		}
-	
-	
 	
 	
 	@GetMapping("/member/otherApiLogin")
@@ -565,6 +567,17 @@ MemberVO memberVO) {
 	}
 	
 	
+	@PostMapping("/hanaPointNewAccount")
+	@ResponseBody
+	public MemberVO hanaPointNewAccount(String phoneNumber) {
+		
+		System.out.println("일단여기3뉴 어카운트");
+		
+		List<MemberVO> memberVOList = memberService.hanaPointNewAccount(phoneNumber);
+		
+		return memberVOList.get(0);
+		
+	}
 	
 	
 	

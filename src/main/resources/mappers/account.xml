@@ -13,7 +13,7 @@
 		<result column="BALANCE" property="balance"/>
 		<result column="BANK_ALIAS" property="bankAlias"/>
 		<result column="TRANSFER_LIMIT" property="transferLimit"/>
-		<result column="NEW_SUBSCRIBE" property="newSubscribe"/>
+		<result column="NEW_ACCOUNT" property="newAccount"/>
 		<result column="HANA_POINT" property="hanaPoint"/>
 		<result column="OPEN_BANKING" property="openBanking"/>
 
@@ -38,8 +38,8 @@
 	</resultMap>
 
 	<insert id="insertAccount" parameterType="AccountVO">
-		insert into FINAL_ACCOUNT(PHONE_NUMBER, ACCOUNT_NUMBER, ACCOUNT_PASSWORD, BALANCE, BANK_ALIAS, TRANSFER_LIMIT)
-		values(#{phoneNumber}, #{accountNumber}, #{accountPassword}, #{balance}, #{bankAlias}, #{transferLimit})
+		insert into FINAL_ACCOUNT(NAME, PHONE_NUMBER, ACCOUNT_NUMBER, ACCOUNT_PASSWORD, BALANCE, BANK_ALIAS, TRANSFER_LIMIT)
+		values(#{name}, #{phoneNumber}, #{accountNumber}, #{accountPassword}, #{balance}, #{bankAlias}, #{transferLimit})
 	</insert>
 	
 		<insert id="newInsertAccount" parameterType="AccountVO">

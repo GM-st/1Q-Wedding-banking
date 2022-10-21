@@ -104,14 +104,12 @@
 							<span class="fas fa-tablet-alt"></span>
 						</div>
 
-						<h3 class="h4" style="font-family: hanaM">계좌정보</h3>
+						<h3 class="h4" style="font-family: hanaM;font-size: 50px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">계좌정보</h3>
 
-						<p class="my-3">The share of mobile devices is growing all the
-							time. Responsive design means that the layout of a website
-							automatically adapts to the screen dimensions.</p>
+						<p class="my-3" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;font-size:20px;color: #014A5A">하나은행에 가입된 계좌정보를 확인하실 수 있습니다</p>
 
 						<button class="btn btn-sm btn-primary animate-up-1"
-							style="background-color: #008485; border-color: #008485; color: white"
+							style="background-color: #008485; border-color: #008485; color: white;;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);"
 							onclick="confirmAccount()">
 							<span class="far fa-eye"></span> <span class="ml-1">계좌정보확인</span>
 						</button>
@@ -125,17 +123,19 @@
 				<div class="col-sm-12 col-md-6 col-lg-5">
 					<!-- Icon Box -->
 					<div class="icon-box">
+					
 						<div
 							class="icon icon-shape icon-shape-secondary organic-radius mb-4">
 							<span class="fas fa-fire-alt"></span>
 						</div>
-						<h3 class="h4" style="font-family: hanaM">회원정보</h3>
-						<p class="my-3">The amount of mobile users (who in general
-							have slow connections) has increased, and the speed of wired
-							connections hasn’t significantly increased either.</p>
+						
+						<h3 class="h4" style="font-family: hanaM;font-size: 50px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">회원정보</h3>
+
+						
+						<p class="my-3" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;font-size:20px;color: #014A5A">원큐 웨딩에 가입된 회원정보를 확인하실 수 있습니다</p>
 
 						<button class="btn btn-sm btn-primary animate-up-1"
-							style="background-color: #008485; border-color: #008485; color: white"
+							style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);"
 							onclick="confirmMemberInfo()">
 							<span class="far fa-eye"></span> <span class="ml-1">회원정보확인</span>
 						</button>
@@ -283,7 +283,7 @@
 												<div class="card-footer border-top border-light p-4">
 
 													<button class="btn btn-pill btn-outline-success" type="button"
-														style="background-color: #008485; border-color: #008485; color: white">계좌잔액</button>
+														style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">계좌잔액</button>
 
 													<div class="card-header bg-white p-1">
 
@@ -304,7 +304,7 @@
 
 
 													<button class="btn btn-pill btn-outline-success" type="button"
-														style="background-color: #008485; border-color: #008485; color: white">하나포인트</button>
+														style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">하나포인트</button>
 
 													<div class="card-header bg-white p-1">
 
@@ -325,7 +325,7 @@
 
 
 													<button class="btn btn-pill btn-outline-success" type="button"
-														style="background-color: #008485; border-color: #008485; color: white">계좌번호</button>
+														style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">계좌번호</button>
 
 													<div class="card-header bg-white p-1">
 
@@ -345,7 +345,7 @@
 
 
 													<button class="btn btn-pill btn-outline-success" type="button"
-														style="background-color: #008485; border-color: #008485; color: white">통장명칭</button>
+														style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">통장명칭</button>
 
 
 													<div class="card-header bg-white p-1">
@@ -364,7 +364,7 @@
 													
 													
 													<button class="btn btn-pill btn-outline-success" type="button"
-														style="background-color: #008485; border-color: #008485; color: white">오픈뱅킹 동의여부</button>
+														style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">오픈뱅킹 동의여부</button>
 
 													<div class="card-header bg-white p-1">
 
@@ -492,7 +492,7 @@ let confirmMemberInfo = function(){
 											<div class="card-footer border-top border-light p-4">
 
 												<button class="btn btn-pill btn-outline-success" type="button"
-													style="background-color: #008485; border-color: #008485; color: white">회원이름</button>
+													style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">회원이름</button>
 
 												<div class="card-header bg-white p-1">
 
@@ -512,7 +512,7 @@ let confirmMemberInfo = function(){
 
 
 												<button class="btn btn-pill btn-outline-success" type="button"
-													style="background-color: #008485; border-color: #008485; color: white">아이디</button>
+													style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">아이디</button>
 
 												<div class="card-header bg-white p-1">
 
@@ -532,7 +532,7 @@ let confirmMemberInfo = function(){
 
 
 												<button class="btn btn-pill btn-outline-success" type="button"
-													style="background-color: #008485; border-color: #008485; color: white">회원유형</button>
+													style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">회원유형</button>
 
 												<div class="card-header bg-white p-1">
 
@@ -552,7 +552,7 @@ let confirmMemberInfo = function(){
 
 
 												<button class="btn btn-pill btn-outline-success" type="button"
-													style="background-color: #008485; border-color: #008485; color: white">휴대전화</button>
+													style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">휴대전화</button>
 
 
 												<div class="card-header bg-white p-1">
@@ -573,7 +573,7 @@ let confirmMemberInfo = function(){
 
 
 												<button class="btn btn-pill btn-outline-success" type="button"
-													style="background-color: #008485; border-color: #008485; color: white">성별</button>
+													style="background-color: #008485; border-color: #008485; color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">성별</button>
 
 												<div class="card-header bg-white p-1">
 
@@ -618,11 +618,6 @@ let confirmMemberInfo = function(){
 	
 	
 	</script>
-
-
-
-
-
 
 
 

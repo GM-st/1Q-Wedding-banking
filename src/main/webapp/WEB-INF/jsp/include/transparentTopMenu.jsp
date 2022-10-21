@@ -7,7 +7,7 @@
 <nav id="navbar-main" aria-label="Primary navigation"
 			class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark" style="
     background: transparent;">
-	<div class="container position-relative" style="max-width: 1500px;">
+	<div class="container position-relative" style="max-width: 1700px;">
 		<a class="navbar-brand mr-lg-5" href="/"> <img
 			class="navbar-brand-dark" style="width: 170px; height: 110px" src="img_2/bk19weddingwhite.png"
 			alt="Pixel Logo"> <img class="navbar-brand-light"

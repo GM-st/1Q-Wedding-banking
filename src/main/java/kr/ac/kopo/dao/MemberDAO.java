@@ -53,6 +53,8 @@ public interface MemberDAO {
 	
 	public List<MemberVO> hanaPointImage(String phonenumber);
 	
+	public List<MemberVO> hanaPointNewAccount(String phonenumber);
+	
 	
 	
 	
@@ -73,6 +75,13 @@ public interface MemberDAO {
 	
 	
 	public List<TransactionVO> unHanaTransactionList();
+	
+	
+	
+	
+	public void updateNewAccount(String phonenumber);
+	
+	public void updateNewAccountTable(String phonenumber);
 	
 	
 	

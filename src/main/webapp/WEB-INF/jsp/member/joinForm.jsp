@@ -215,25 +215,7 @@
 							<div class="mt-3 mb-4 text-center">
 								<span class="font-weight-normal"></span>
 							</div>
-							<div class="btn-wrapper my-4 text-center">
-								<button
-									class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2"
-									type="button" aria-label="facebook button"
-									title="facebook button">
-									<span aria-hidden="true" class="fab fa-facebook-f"></span>
-								</button>
-								<button
-									class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2"
-									type="button" aria-label="twitter button"
-									title="twitter button">
-									<span aria-hidden="true" class="fab fa-twitter"></span>
-								</button>
-								<button
-									class="btn btn-icon-only btn-pill btn-outline-light text-facebook"
-									type="button" aria-label="github button" title="github button">
-									<span aria-hidden="true" class="fab fa-github"></span>
-								</button>
-							</div>
+
 
 						</div>
 					</div>

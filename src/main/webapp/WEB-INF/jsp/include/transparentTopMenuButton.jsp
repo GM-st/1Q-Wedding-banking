@@ -13,7 +13,7 @@
 		<div class="container position-relative" style="max-width: 1700px">
 			<a class="navbar-brand mr-lg-5" href="/"> <img
 				class="navbar-brand-dark" src="img_2/bk19weddingwhite.png"
-				alt="Pixel Logo" style="width: 135px; height: 90px;"> 
+				alt="Pixel Logo" style="width: 180px; height: 120px;"> 
 			</a>
 
 			<div class="navbar-collapse collapse" id="navbar_global">
@@ -200,7 +200,10 @@
 													<span class="text-dark d-block"
 														style="font-size: 18px; font-weight: 700;text-shadow: 1px 1px 1px #aaa">계좌개설</span>
 												</div>
-											</a> <a href="/selectHanaAccount"
+											</a> 
+											
+											
+											<a href="/selectHanaAccount"
 												class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
 												<span class="icon icon-sm icon-dark"><span
 													class="fas fa-file-alt"></span></span>
@@ -261,7 +264,7 @@
 								data-toggle="dropdown">
 
 								<button id="usertype"
-									style="background-color: #014A5A; border-color: #014A5A;;text-shadow: 1px 1px 1px #aaa"
+									style="background-color: #014A5A; border-color: #014A5A;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);text-shadow: 1px 1px 1px #aaa"
 									type="button" class="btn btn-primary">
 									<span class="fa fa-user"></span> ${member.type} 입니다
 								</button>
@@ -293,7 +296,7 @@
 								data-toggle="dropdown">
 
 								<button id="userpoint"
-									style="background-color: #014A5A; border-color: #014A5A;;text-shadow: 1px 1px 1px #aaa"
+									style="background-color: #014A5A; border-color: #014A5A;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);text-shadow: 1px 1px 1px #aaa"
 									type="button" class="btn btn-primary">
 									<span class="fa fa-user"></span> 오픈뱅킹 : ${member.openbanking} <span
 										 class="badge badge-pill badge-tertiary"></span>
@@ -303,7 +306,7 @@
 
 
 								<button id="usertype"
-									style="background-color: #014A5A; border-color: #014A5A;;text-shadow: 1px 1px 1px #aaa"
+									style="background-color: #014A5A; border-color: #014A5A;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);text-shadow: 1px 1px 1px #aaa"
 									type="button" class="btn btn-primary">
 									<span class="fa fa-user"></span> 고객유형 : ${member.type}
 								</button>
@@ -312,7 +315,7 @@
 
 
 								<button id="username"
-									style="background-color: #014A5A; border-color: #014A5A;font-size: 15px;text-shadow: 1px 1px 1px #aaa"
+									style="background-color: #014A5A; border-color: #014A5A;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);text-shadow: 1px 1px 1px #aaa"
 									type="button" class="btn btn-primary">
 									<span class="fa fa-user"></span> 고객이름 : ${member.name} <span
 										 class="badge badge-pill badge-tertiary"></span>
@@ -321,7 +324,7 @@
 
 								&nbsp; &nbsp;&nbsp; &nbsp;
 
-								<button onclick="chatReset()"; style="background-color: #014A5A; border-color: #014A5A;text-shadow: 1px 1px 1px #aaa"
+								<button onclick="chatReset()"; style="background-color: #014A5A; border-color: #014A5A;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);text-shadow: 1px 1px 1px #aaa"
 									type="button" class="btn btn-primary">
 									<span class="fa fa-user"></span> 채팅하기 <span id="chatAlarm"
 										class="badge badge-pill badge-tertiary" style="color: white"></span>
@@ -349,7 +352,7 @@
 								data-toggle="dropdown">
 
 								<button
-									style="background-color: #04515C; border-color: #04515C; width: 130px;text-shadow: 1px 1px 1px #aaa"
+									style="background-color: #014A5A; border-color: #014A5A;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);text-shadow: 1px 1px 1px #aaa"
 									type="button" class="btn btn-primary"
 									onclick="location.href='/hanaLogin'">
 									<span class="fa fa-user"></span> &nbsp; 로그인 <span
@@ -360,7 +363,7 @@
 								&nbsp; &nbsp;&nbsp; &nbsp;
 
 								<button
-									style="background-color: #04515C; border-color: #04515C; width: 130px;text-shadow: 1px 1px 1px #aaa"
+									style="background-color: #014A5A; border-color: #014A5A;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);text-shadow: 1px 1px 1px #aaa"
 									type="button" class="btn btn-primary"
 									onclick="location.href='/join'">
 									<span class="fa fa-user"></span> &nbsp; 회원가입 <span

@@ -92,8 +92,6 @@
 
 
 
-
-
 </head>
 
 
@@ -189,7 +187,16 @@
 											<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_8JqYfK.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 											
 											</span>
-											<h3 class="display-2 mb-0" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">하나포인트 발급 완료</h3>
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">송금하신 축의금의 </h3>
+											
+											
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">2% 하나포인트 발급 완료</h3>
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">발급 완료</h3>
+											
+											
 										</div>
 									</div>
 
@@ -213,8 +220,6 @@
 						</button>
 						
 						
-						
-						
 						<!-- 자필 축하메시지 포인트 발급  -->
 						<div class="modal fade" id="imagePointModal" tabindex="-1"
 							role="dialog" aria-labelledby="modal-notification"
@@ -229,8 +234,15 @@
 											
 											<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_8JqYfK.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">송금하신 축의금의 </h3>
+											
+											
 											</span>
-											<h3 class="display-2 mb-0" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">하나포인트 발급 완료</h3>
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">1% 하나포인트 발급 완료</h3>
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">발급 완료</h3>
+											
 										</div>
 									</div>
 
@@ -243,6 +255,57 @@
 
 							</div>
 						</div>
+						
+						
+						<!-- 신규계좌가입-->
+						
+						<button id="newAccountPointModalButton"
+							class="btn btn-sm btn-secondary" data-toggle="modal"
+							data-target="#newAccountPointModal"
+							style="background-color: #008485; border-color: #008485;display: none; ">
+							<i class="fa-solid fa-child-dress"></i>&nbsp;신규계좌가입 포인트
+						</button>
+
+
+						<!-- Modal Content -->
+						<div class="modal fade" id="newAccountPointModal" tabindex="-1"
+							role="dialog" aria-labelledby="modal-notification"
+							aria-hidden="true" >
+							<div class="modal-dialog modal-info modal-dialog-centered"
+								role="document">
+								<div class="modal-content bg-gradient-secondary">
+
+									<div class="modal-body">
+										<div class="py-3 text-center">
+											
+											<span class="modal-icon display-1-lg d-flex justify-content-center">
+											
+											<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_8JqYfK.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+											
+											</span>
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">송금하신 축의금의 </h3>
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">3%의 하나포인트</h3>
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">발급 완료</h3>
+											
+										</div>
+									</div>
+
+									<div class="modal-footer">
+										<button id="subModalClose-3" type="button"
+											class="btn btn-sm btn-white" data-dismiss="modal" style="width: 100px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">확인</button>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+						<!-- End of Modal Content -->
+						
+						
+						
 
 
 					</div>
@@ -339,7 +402,7 @@
 						},
 						success : ()=>{
 							
-							console.log("썽꽁2 비디오 모달");
+							console.log("썽꽁2 비디오 모달인데");
 							
 							$('#videoPointModalButton').trigger('click');
 							
@@ -359,7 +422,7 @@
 			
 		} else if('${member.image}' == 'Y'){
 			
-			console.log("여기는오니??")
+			console.log("여기는오니 이미지인데??")
 			
 			$.ajax({
 				
@@ -401,6 +464,54 @@
 				}
 				
 			})
+			
+		}else if('${member.newaccount}' == 'Y'){
+			
+			
+console.log("여기는오니 새계좌인데??")
+			
+			$.ajax({
+				
+				type: 'post',
+				url : "/hanaPointNewAccount",
+				data : {
+					phoneNumber : '${member.phonenumber}'
+				},
+				success : (result) => {
+					
+					memberVO = result;
+					
+					console.log("memberVO:"+memberVO)
+					
+					$.ajax({
+						
+						type: 'post',
+						url : "/hanaPointUpdate",
+						data : {
+							hanapoint : memberVO.hanapoint,
+							phonenumber : memberVO.phonenumber
+						},
+						success : ()=>{
+							
+							console.log("썽꽁 뉴계좌모달")
+							
+							$('#newAccountPointModalButton').trigger('click')
+							
+						},
+						error: () => {
+							console.log("쓀패2 뉴계좌")
+						}
+						
+					})
+
+				},
+				error : ()=>{
+					console.log("쓀패 뉴계좌")
+				}
+				
+			})
+			
+			
 			
 		}
 		

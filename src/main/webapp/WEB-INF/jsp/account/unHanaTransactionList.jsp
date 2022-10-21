@@ -279,7 +279,7 @@ table.dataTable {
 				
 				function() {
 
-					alert("인증번호 발송이 완료되었습니다.\n휴대폰에서 인증번호 확인을 해주십시오.");
+					alert("1Q 웨딩에서 타 은행을 이용한 고객들에게 신규계좌개설 마케팅 SMS가 발송되었습니다");
 
 					$.ajax({
 						type : "GET",

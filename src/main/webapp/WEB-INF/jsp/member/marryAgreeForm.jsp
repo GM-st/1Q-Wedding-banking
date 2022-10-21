@@ -64,7 +64,8 @@
 <link type="text/css"
 	href="node_modules_2/@fortawesome/fontawesome-free/css/all.min.css"
 	rel="stylesheet">
-<script src="https://kit.fontawesome.com/68941cf0d3.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/68941cf0d3.js"
+	crossorigin="anonymous"></script>
 
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css"
@@ -91,15 +92,12 @@
 
 <body>
 
-	<jsp:include page="../include/topMenu.jsp" />
-
-	<jsp:include page="../include/preLoader.jsp" />
-
+	<jsp:include page="../include/coloredTopMenu.jsp" />
 
 	<main>
 
 		<section class="min-vh-70 d-flex align-items-center">
-			<div class="container py-5">
+			<div class="container py-10">
 
 				<div
 					class="row align-items-center justify-content-center justify-content-lg-between">
@@ -112,10 +110,10 @@
 
 					<div class="col-sm-12 col-lg-6">
 						<div class="text-center text-lg-left">
-							<h4 class="mt-4 text-gray" style="font-family: hanaM">1Q
-								Wedding</h4>
-							<h1 class="display-3" style="font-family: hanaM">신랑 신부 등록</h1>
-							<p class="lead my-4" style="font-family: hanaM">
+							<h1 class="display-3" style="font-family: hanaM;font-size: 50px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">1Q
+								Wedding</h1>
+							<h1 class="display-3" style="font-family: hanaM;font-size: 50px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">신랑 신부 등록</h1>
+							<p class="lead my-4" style="font-family: hanaM;text-shadow: 1px 1px 1px #aaa;font-size:20px;color: #014A5A">
 								일반 하객회원에서 신랑 신부 회원으로 전환하시면<br>축의금 송금시스템과 하객관리 시스템을 이용하실 수
 								있습니다
 							</p>
@@ -124,10 +122,10 @@
 							<div class="col-md-4">
 
 								<!-- Button Modal -->
-								
+
 								<button type="button" class="btn btn-block btn-primary mb-3"
 									data-toggle="modal" data-target="#modal-1"
-									style="background-color: #008485; border-color: #008485; width: 190px;">신랑
+									style="background-color: #008485; border-color: #008485; width: 190px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);">신랑
 									신부 등록하기</button>
 
 
@@ -139,7 +137,7 @@
 										<div class="modal-content">
 
 											<div class="modal-header">
-												<h2 class="h6 modal-title">1Q Wedding 신랑 신부 등록하기</h2>
+												<h2 class="h6 modal-title" style="font-family: hanaM;font-size: 25px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">1Q Wedding 신랑 신부 등록하기</h2>
 												<button type="button" class="close" data-dismiss="modal"
 													aria-label="Close">
 													<span aria-hidden="true">&times;</span>
@@ -148,12 +146,6 @@
 
 											<div class="modal-body">
 
-												<p>The European Union’s General Data Protection
-													Regulation (G.D.P.R.) goes into effect on May 25 and is
-													meant to ensure a common set of data rights in the European
-													Union. It requires organizations to notify users as soon as
-													possible of high-risk data breaches that could personally
-													affect them.</p>
 
 												<div class="section section-lg py-0">
 													<div class="container">
@@ -169,7 +161,7 @@
 																		<a href="#panel-4" data-target="#panel-4"
 																			class="accordion-panel-header" data-toggle="collapse"
 																			role="button" aria-expanded="false"
-																			aria-controls="panel-1"> <span
+																			aria-controls="panel-1" style="font-family: hanaM;font-size: 35px;text-shadow: 1px 1px 1px #aaa;color: #014A5A"> <span
 																			class="icon-title h6 mb-0 font-weight-bold"><span
 																				class="fa-solid fa-hand-point-right"></span>신랑 신부 동의
 																				서약서</span> <span class="icon"><span
@@ -179,11 +171,11 @@
 																		<div class="collapse" id="panel-4">
 																			<div class="pt-3">
 
-																				<p class="mb-0" style="font-family: hanaM">1Q
+																				<p class="mb-0" style="font-family: hanaM;font-size: 15px;text-shadow: 1px 1px 1px #aaa;color: #014A5A">1Q
 																					Wedding의 일반하객 회원에서 신랑 신부 회원으로 등록하기 위해서는 1Q Wedding가
 																					회원님의 개인정보를 수집할 수 있도록 동의해주셔야합니다.</p>
 
-																				<p class="mb-0" style="font-family: hanaM">
+																				<p class="mb-0" style="font-family: hanaM;font-size: 15px;text-shadow: 1px 1px 1px #aaa;color: #014A5A">
 
 																					개인정보수집에 동의하시고 1Q Wedding의 일반하객 회원에서 신랑 신부 회원으로
 																					등록하시면, 하객들의 축의금에 관한 정보를 다각적으로 분석하고 관리할 수 있는 시스템이
@@ -193,7 +185,7 @@
 
 																				<div class="custom-control custom-switch">
 																					<input type="checkbox" class="custom-control-input"
-																						id="customSwitch1"> <label
+																						id="customSwitch1" style="font-family: hanaM;font-size: 15px;text-shadow: 1px 1px 1px #aaa;color: #014A5A"> <label
 																						class="custom-control-label" for="customSwitch1">
 																						동의하기</label>
 																				</div>
@@ -204,16 +196,17 @@
 
 																		</div>
 
-
-
 																	</div>
+
+
+
 
 																	<div class="card card-sm card-body border-light mb-0">
 
 																		<a href="#panel-5" data-target="#panel-5"
 																			class="accordion-panel-header" data-toggle="collapse"
 																			role="button" aria-expanded="false"
-																			aria-controls="panel-1"> <span
+																			aria-controls="panel-1" style="font-family: hanaM;font-size: 35px;text-shadow: 1px 1px 1px #aaa;color: #014A5A"> <span
 																			class="icon-title h6 mb-0 font-weight-bold"><span
 																				class="fa-solid fa-hand-point-right"></span>결혼식장 위치
 																				선택</span> <span class="icon"><span
@@ -226,7 +219,8 @@
 
 
 																			<button onclick="sample6_execDaumPostcode()"
-																				class="btn btn-sm btn-secondary" style="background-color: #008485; border-color: #008485; ">
+																				class="btn btn-sm btn-secondary"
+																				style="background-color: #008485; border-color: #008485;">
 																				<i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;결혼식장
 																				찾기
 																			</button>
@@ -293,7 +287,11 @@
 
 
 																				<button class="btn btn-block btn-primary mb-3"
-																					data-toggle="modal" data-target="#modal-4" style="background-color: #008485; border-color: #008485; width: 180px;"><i class="fa-regular fa-circle-check"></i>&nbsp;결혼식장 입력완료</button>
+																					data-toggle="modal" data-target="#modal-4"
+																					style="background-color: #008485; border-color: #008485; width: 180px;">
+																					<i class="fa-regular fa-circle-check"></i>&nbsp;결혼식장
+																					입력완료
+																				</button>
 
 																				<!-- Modal Content -->
 																				<div class="modal fade" id="modal-4" tabindex="-1"
@@ -302,9 +300,10 @@
 																					<div
 																						class="modal-dialog modal-info modal-dialog-centered"
 																						role="document">
-																						<div class="modal-content bg-gradient-secondary" style="background-color: #008485 !important">
+																						<div class="modal-content bg-gradient-secondary"
+																							style="background-color: #008485 !important">
 																							<div class="modal-header">
-																																																<button id="finalbtn-2" type="button"
+																								<button id="finalbtn-2" type="button"
 																									class="close" data-dismiss="modal"
 																									aria-label="Close" style="display: none;">
 																									<span aria-hidden="true">×</span>
@@ -312,14 +311,14 @@
 
 																							</div>
 
-																							<div class="modal-body "  >
+																							<div class="modal-body ">
 																								<div class="py-3 text-center">
-																								
-																								
+
+
 																									<span class="modal-icon display-1-lg"><span
-																											class="fa-regular fa-circle-check"></span></span>
+																										class="fa-regular fa-circle-check"></span></span>
 																									<h2 class="h4 modal-title my-3">결혼식장 등록완료</h2>
-																																															</div>
+																								</div>
 																							</div>
 																							<div class="modal-footer">
 																								<button id="subModalClose-4" type="button"
@@ -344,7 +343,7 @@
 																		<a href="#panel-6" data-target="#panel-6"
 																			class="accordion-panel-header" data-toggle="collapse"
 																			role="button" aria-expanded="false"
-																			aria-controls="panel-1"> <span
+																			aria-controls="panel-1" style="font-family: hanaM;font-size: 35px;text-shadow: 1px 1px 1px #aaa;color: #014A5A"> <span
 																			class="icon-title h6 mb-0 font-weight-bold"><span
 																				class="fa-solid fa-hand-point-right"></span>하객유형설정</span> <span
 																			class="icon"><span class="fas fa-plus"></span></span>
@@ -376,7 +375,11 @@
 																					<!-- Button Modal -->
 																					<button onclick="guestGroupFinish()"
 																						class="btn btn-block btn-primary mb-3"
-																						data-toggle="modal" data-target="#modal-2" style="background-color: #008485; border-color: #008485; width: 180px;"><i class="fa-regular fa-circle-check"></i>&nbsp;하객유형 입력완료</button>
+																						data-toggle="modal" data-target="#modal-2"
+																						style="background-color: #008485; border-color: #008485; width: 180px;">
+																						<i class="fa-regular fa-circle-check"></i>&nbsp;하객유형
+																						입력완료
+																					</button>
 
 
 																					<!-- Modal Content -->
@@ -388,7 +391,7 @@
 																							role="document">
 																							<div class="modal-content bg-gradient-secondary">
 																								<div class="modal-header">
-																									
+
 																									<button id="finalbtn" type="button"
 																										class="close" data-dismiss="modal"
 																										aria-label="Close">
@@ -402,7 +405,7 @@
 																										<span class="modal-icon display-1-lg"><span
 																											class="fa-regular fa-circle-check"></span></span>
 																										<h2 class="h4 modal-title my-3">하객유형 등록완료</h2>
-																										
+
 																									</div>
 																								</div>
 																								<div class="modal-footer">
@@ -434,14 +437,20 @@
 											</div>
 
 											<div class="modal-footer">
-<i class="fa-regular fa-person-simple"></i>
+												<i class="fa-regular fa-person-simple"></i>
 												<button onclick="agreeMarryGroom();"
 													class="btn btn-sm btn-secondary" data-toggle="modal"
-													data-target="#modal-3" style="background-color: #008485; border-color: #008485;"><i class="fa-solid fa-person"></i>&nbsp;신랑등록하기</button>
+													data-target="#modal-3"
+													style="background-color: #008485; border-color: #008485;">
+													<i class="fa-solid fa-person"></i>&nbsp;신랑등록하기
+												</button>
 
 												<button onclick="agreeMarryBride();"
 													class="btn btn-sm btn-secondary" data-toggle="modal"
-													data-target="#modal-3" style="background-color: #008485; border-color: #008485;"><i class="fa-solid fa-child-dress"></i>&nbsp;신부등록하기</button>
+													data-target="#modal-3"
+													style="background-color: #008485; border-color: #008485;">
+													<i class="fa-solid fa-child-dress"></i>&nbsp;신부등록하기
+												</button>
 
 												<!-- Modal Content -->
 												<div class="modal fade" id="modal-3" tabindex="-1"

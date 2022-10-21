@@ -88,7 +88,7 @@
 
 <body>
 
-	<jsp:include page="../include/transparentTopMenuButton.jsp" />
+	<jsp:include page="../include/coloredTopMenu.jsp" />
 
 
 	<jsp:include page="../include/heroManager.jsp" />
@@ -126,9 +126,8 @@
 							class="icon icon-shape icon-shape-secondary rounded-circle mb-4">
 							<span class="far fa-lightbulb"></span>
 						</div>
-						<h3 class="h5">모든 거래내역 조회</h3>
-						<p class="icon-box-text">We work to figure out ways to help
-							your business grow through all platforms.</p>
+						<h3 class="h5" style="font-family: hanaM;font-size: 25px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">모든 거래내역 조회</h3>
+						
 						<a href="/managerTransactionList" class="btn btn-white btn-sm border-light">Learn
 							more</a>
 					</div>
@@ -142,9 +141,8 @@
 							class="icon icon-shape icon-shape-secondary rounded-circle mb-4">
 							<span class="fas fa-fingerprint"></span>
 						</div>
-						<h3 class="h5">모든 계좌내역 조회</h3>
-						<p class="icon-box-text">We work to figure out ways to help
-							your business grow through all platforms.</p>
+						<h3 class="h5" style="font-family: hanaM;font-size: 25px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">모든 계좌내역 조회</h3>
+
 						<a href="#" class="btn btn-white btn-sm border-light">Learn
 							more</a>
 					</div>
@@ -166,9 +164,8 @@
 							class="icon icon-shape icon-shape-secondary rounded-circle mb-4">
 							<span class="fas fa-code"></span>
 						</div>
-						<h3 class="h5">모든 회원목록 조회</h3>
-						<p class="icon-box-text">We work to figure out ways to help
-							your business grow through all platforms.</p>
+						<h3 class="h5" style="font-family: hanaM;font-size: 25px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">모든 회원목록 조회</h3>
+						
 						<a href="#" class="btn btn-white btn-sm border-light">Learn
 							more</a>
 					</div>
@@ -180,9 +177,8 @@
 							class="icon icon-shape icon-shape-secondary rounded-circle mb-4">
 							<span class="far fa-grin-stars"></span>
 						</div>
-						<h3 class="h5">모든 축하메시지 조회</h3>
-						<p class="icon-box-text">We work to figure out ways to help
-							your business grow through all platforms.</p>
+						<h3 class="h5" style="font-family: hanaM;font-size: 25px;text-shadow: 2px 2px 2px #aaa;color: #014A5A">모든 축하메시지 조회</h3>
+						
 						<a href="#" class="btn btn-white btn-sm border-light">Learn
 							more</a>
 					</div>

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.ac.kopo.service.AccountService;
+import kr.ac.kopo.service.MemberService;
 import kr.ac.kopo.vo.AccountVO;
 import kr.ac.kopo.vo.MemberVO;
 import kr.ac.kopo.vo.TransactionVO;
@@ -31,6 +32,8 @@ import lombok.RequiredArgsConstructor;
 public class AccountController {
 
 	private final AccountService accountService;
+	
+	private final MemberService memberService;
 
 	@GetMapping("/write")
 	public String accountWrite(Model model) {
@@ -40,7 +43,7 @@ public class AccountController {
 	}
 
 	@PostMapping("/accountWrite")
-	public String accountWriteProcess(@Valid @ModelAttribute("acccountVO1") AccountVO account, BindingResult result,
+	public String accountWriteProcess(@Valid @ModelAttribute("acccountVO1") AccountVO account, BindingResult result, 
 			HttpSession session) {
 
 			MemberVO member = (MemberVO) session.getAttribute("member");
@@ -48,10 +51,24 @@ public class AccountController {
 			String userid = member.getId();
 			
 			accountService.addAccount(account, userid);
+		
+			String phonenumber = member.getPhonenumber();
+			
+			
+			memberService.updateNewAccount(phonenumber);
+			
+			memberService.updateNewAccountTable(phonenumber);
+			
+			MemberVO member1 = memberService.getMember(phonenumber);
+			
+			session.setAttribute("member", member1);
+			
+			System.out.println("member:"+(MemberVO) session.getAttribute("member"));
+			
 			
 			System.out.println("아따야~~");
 			
-			return "account/list";
+			return "member/hanaPoint";
 
 	}
 	
@@ -162,6 +179,8 @@ public class AccountController {
 			@RequestParam("senderBankCode") String senderBankCode,
 			@RequestParam("receiverBankCode") String receiverBankCode,
 			@RequestParam("transferAmount") int transferAmount, @RequestParam("memberType") String memberType, @RequestParam("guestGroupSelector") String guestGroupSelector) {	
+		
+		System.out.println("옹12121233");
 		
 		accountService.accountTransferProcess(senderAccountNumber, receiverAccountNumber, senderBankCode, receiverBankCode, transferAmount);
 		
@@ -360,6 +379,9 @@ public class AccountController {
 		
 		return "account/selectHanaAccountList";
 	} 
+	
+	
+	
 	
 	@GetMapping("/selectOpenAccount")
 	public String selectOpenAccount() {

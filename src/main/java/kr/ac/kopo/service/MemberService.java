@@ -133,6 +133,12 @@ public class MemberService {
 	
 	}
 	
+	public List<MemberVO> hanaPointNewAccount(String phoneNumber) {
+		
+		return memberDao.hanaPointNewAccount(phoneNumber); 
+	
+	}
+	
 	
 	
 	
@@ -168,28 +174,43 @@ public class MemberService {
 	    String api_secret = "3EYSJBELU5NKUFG2PJOD3A3L4KPACFT9";
 	    Message coolsms = new Message(api_key, api_secret);
 
-	  List<TransactionVO> unHanaTransactionList= memberDao.unHanaTransactionList();
-	  
-	  System.out.println("unHanaTransactionList:여기는서비스"+unHanaTransactionList);
-	  
+		/*
+		 * List<TransactionVO> unHanaTransactionList= memberDao.unHanaTransactionList();
+		 * 
+		 * System.out.println("unHanaTransactionList:여기는서비스"+unHanaTransactionList);
+		 */
 	  // 위에서 핸드폰번호, 이름, 보낸은행코드만 뽑아낸 vo를 만들어서 for문을 돌린다.
 	    
-	    HashMap<String, String> params = new HashMap<String, String>();
-	    params.put("to", "01047547257");    // 수신전화번호
-	    params.put("from", "01077106366");    // 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
-	    params.put("type", "SMS");
+	    HashMap<String, String> params1 = new HashMap<String, String>();
+	    params1.put("to", "01026509600");    // 수신전화번호
+	    params1.put("from", "01077106366");    // 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
+	    params1.put("type", "SMS");
+
+	    params1.put("text", "아래의 url로 하나금융의 신규계좌를 개설하시면 보낸 축의금의 3%의 하나포인트를 지급해드립니다");
 	    
-	    params.put("text", "아래의 URL로 하나금융 계좌에 가입하시면, 축의금 의 3%를 포인트로 환급해드립니다");
 	    
+	    HashMap<String, String> params2 = new HashMap<String, String>();
+	    params2.put("to", "01026509600");    // 수신전화번호
+	    params2.put("from", "01077106366");    // 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
+	    params2.put("type", "SMS");
+ 
+	    params2.put("text", "http://hana-1q-wedding.vercel.app/account");
+	    
+
 		/*
 		 * params.put("text", "[TEST] 인증번호는" + "["+randomNumber+"]" + "입니다."); // 문자 내용
 		 * 입력
 		 */	    
-	    params.put("app_version", "test app 1.2"); // application name and version
+	    params1.put("app_version", "test app 1.2"); // application name and version
+	    
+	    params2.put("app_version", "test app 1.2");
 
 	    try {
-	        JSONObject obj = (JSONObject) coolsms.send(params);
-	        System.out.println(obj.toString());
+	        JSONObject obj1 = (JSONObject) coolsms.send(params1);
+	        
+	        JSONObject obj2 = (JSONObject) coolsms.send(params2);
+	        System.out.println(obj1.toString());
+	        System.out.println(obj2.toString());
 	      } catch (CoolsmsException e) {
 	        System.out.println(e.getMessage());
 	        System.out.println(e.getCode());
@@ -201,6 +222,19 @@ public class MemberService {
 	public List<TransactionVO> unHanaTransactionList(){
 		
 		return memberDao.unHanaTransactionList();
+	}
+	
+	
+	public void updateNewAccount(String phonenumber) {
+		
+		memberDao.updateNewAccount(phonenumber);
+		
+	}
+	
+	public void updateNewAccountTable(String phonenumber) {
+		
+		memberDao.updateNewAccountTable(phonenumber);
+		
 	}
 	
 	

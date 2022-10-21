@@ -54,7 +54,7 @@
 		<result column="BALANCE" property="balance" />
 		<result column="BANK_ALIAS" property="bankAlias" />
 		<result column="TRANSFER_LIMIT" property="transferLimit" />
-		<result column="NEW_SUBSCRIBE" property="newSubscribe" />
+		<result column="NEW_ACCOUNT" property="newAccount" />
 	</resultMap>
 
 
@@ -95,6 +95,19 @@
 		FINAL_MEMBER B
 		WHERE A.WITHDRAWAL_PHONE_NUMBER = '${phonenumber}' AND
 		B.IMAGE = 'Y'
+
+	</select>
+	
+	
+		<select id="hanaPointNewAccount" parameterType="String"
+		resultType="MemberVO">
+
+		SELECT (A.TRAN_AMOUNT * 0.03) as HANAPOINT, (B.NAME) AS NAME,
+		(B.PHONENUMBER) AS PHONENUMBER
+		FROM FINAL_TRANSACTION_HISTORY A,
+		FINAL_MEMBER B
+		WHERE A.WITHDRAWAL_PHONE_NUMBER = '${phonenumber}' AND
+		B.NEWACCOUNT = 'Y'
 
 	</select>
 
@@ -304,6 +317,32 @@ from FINAL_TRANSACTION_HISTORY
 where WITHDRAWAL_BANK_CODE != '2'
 		
 </select>
+
+
+
+<update id="updateNewAccount" parameterType="String">
+
+update FINAL_MEMBER
+set NEWACCOUNT = 'Y'
+where phonenumber = '${phoneNumber}'
+
+
+</update>
+
+
+<update id="updateNewAccountTable" parameterType="String">
+
+update FINAL_ACCOUNT
+set NEW_ACCOUNT = 'Y'
+where PHONE_NUMBER = '${phoneNumber}'
+
+
+</update>
+
+
+
+
+
 
 
 </mapper>
