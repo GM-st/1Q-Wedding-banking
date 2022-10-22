@@ -353,6 +353,8 @@
 		
 		if('${member.type}' == "하객" && '${bride}' != ''){
 			
+			con
+			
 			$.ajax({
 				
 				type : 'post',

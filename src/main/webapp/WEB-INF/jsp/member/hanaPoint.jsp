@@ -230,16 +230,16 @@
 
 									<div class="modal-body">
 										<div class="py-3 text-center">
+											
 											<span class="modal-icon display-1-lg d-flex justify-content-center">
 											
 											<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_8JqYfK.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 											
-											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">송금하신 축의금의 </h3>
-											
-											
 											</span>
 											
-											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">1% 하나포인트 발급 완료</h3>
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">송금하신 축의금의 </h3>
+											
+											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">1%의 하나포인트</h3>
 											
 											<h3 class="display-2 mb-2" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa;color: white; font-size: 40px">발급 완료</h3>
 											
@@ -375,10 +375,16 @@
 	
 	$(document).ready(function(){
 		
-		// console.log('${member}')
+		$('#newAccountPointModalButton').trigger('click')
+		
+		console.log("오냐~!!~1123"+'${member}')
+		
+		console.log('${member}');
 	
 		if('${member.video}' == 'Y'){
 			
+			console.log("오냐~!!~4949"+'${member}')
+				
 			$.ajax({
 				
 				type: 'post',

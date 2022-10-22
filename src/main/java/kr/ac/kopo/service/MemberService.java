@@ -181,36 +181,44 @@ public class MemberService {
 		 */
 	  // 위에서 핸드폰번호, 이름, 보낸은행코드만 뽑아낸 vo를 만들어서 for문을 돌린다.
 	    
+
+	   	    
 	    HashMap<String, String> params1 = new HashMap<String, String>();
-	    params1.put("to", "01026509600");    // 수신전화번호
+	    params1.put("to", "01050114980");    // 수신전화번호
 	    params1.put("from", "01077106366");    // 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
 	    params1.put("type", "SMS");
 
-	    params1.put("text", "아래의 url로 하나금융의 신규계좌를 개설하시면 보낸 축의금의 3%의 하나포인트를 지급해드립니다");
+	    params1.put("text", "다음의 url로 하나금융 계좌를 개설하시면 보낸 축의금의 3%의 하나포인트를 지급해드립니다");
 	    
 	    
 	    HashMap<String, String> params2 = new HashMap<String, String>();
-	    params2.put("to", "01026509600");    // 수신전화번호
+	    params2.put("to", "01050114980");    // 수신전화번호
 	    params2.put("from", "01077106366");    // 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
 	    params2.put("type", "SMS");
  
-	    params2.put("text", "http://hana-1q-wedding.vercel.app/account");
+	    params2.put("text", "http://hana-1q-wedding.vercel.app/account"); 
+
 	    
 
 		/*
 		 * params.put("text", "[TEST] 인증번호는" + "["+randomNumber+"]" + "입니다."); // 문자 내용
 		 * 입력
-		 */	    
+		 */
+	    params2.put("app_version", "test app 1.2");
+
+	    
 	    params1.put("app_version", "test app 1.2"); // application name and version
 	    
-	    params2.put("app_version", "test app 1.2");
 
 	    try {
 	        JSONObject obj1 = (JSONObject) coolsms.send(params1);
 	        
 	        JSONObject obj2 = (JSONObject) coolsms.send(params2);
+	        
 	        System.out.println(obj1.toString());
+	        
 	        System.out.println(obj2.toString());
+
 	      } catch (CoolsmsException e) {
 	        System.out.println(e.getMessage());
 	        System.out.println(e.getCode());

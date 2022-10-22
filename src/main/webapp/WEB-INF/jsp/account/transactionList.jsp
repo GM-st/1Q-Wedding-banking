@@ -584,7 +584,7 @@
 			})
 			
 			 let href = "/rePayTransferForm";
-		         let options = 'top=250, left=250, width=500, height=1000, status=no, menubar=no, toolbar=no';
+		         let options = 'top=300, left=470, width=420, height=800, status=no, menubar=no, toolbar=no';
 		         
 		         //팝업창 생성
 		         var popup = window.open(href,'popup',options);
@@ -613,7 +613,7 @@
 			
 			
 			let href = "/mychatt";
-			let options = 'top=80, left=130, width=650, height=650, status=no, menubar=no, toolbar=no';
+			let options = 'top=80, left=60, width=650, height=650, status=no, menubar=no, toolbar=no';
 	        
 	        
 	        

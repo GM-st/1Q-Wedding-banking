@@ -203,6 +203,8 @@
 
 		let confirmAccount = function(){
 			
+			console.log('${member.hanapoint}');
+			
 			$.ajax({
 				
 				type :'post',
@@ -223,10 +225,15 @@
 					
 					let calBalance = balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 					
-					let hanaPoint = accountVO.hanaPoint;
+					let hanaPoint = ${member.hanapoint};
+					
+					
+					console.log(hanaPoint)
+					
 					let accountNumber = accountVO.accountNumber;
 					let bankAlias = accountVO.bankAlias;
 					let openBanking = accountVO.openBanking;
+					
 					
 					
 					let name = accountVO.name;

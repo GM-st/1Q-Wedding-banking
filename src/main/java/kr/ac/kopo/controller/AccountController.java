@@ -200,6 +200,8 @@ public class AccountController {
 		
 		accountService.addTransaction(map);
 		
+		System.out.println("붹12121233");
+		
 		return "";
 
 	}

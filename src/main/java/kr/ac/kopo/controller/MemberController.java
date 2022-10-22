@@ -514,10 +514,17 @@ MemberVO memberVO) {
 	
 	@PostMapping("/updateAgreeOpenBanking")
 	@ResponseBody
-	public String updateAgreeOpenBanking(@RequestParam("phonenumber") String phonenumber, @RequestParam("openbanking") String openbanking) {
+	public String updateAgreeOpenBanking(@RequestParam("phonenumber") String phonenumber, @RequestParam("openbanking") String openbanking, HttpSession session) {
 
 		
 		memberService.updateAgreeOpenBanking(phonenumber);
+		
+		MemberVO member = memberService.getMember(phonenumber);
+		
+		System.out.println("member :"+member );
+		
+		session.setAttribute("member", member);
+		
 		
 		openbanking = "동의";
 		

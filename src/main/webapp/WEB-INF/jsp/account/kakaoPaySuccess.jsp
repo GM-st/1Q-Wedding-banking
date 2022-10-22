@@ -192,7 +192,7 @@
 									</div>
 
 									<div class="modal-footer">
-										<button id="subModalClose-3" type="button"
+										<button onclick="location.href='https://hana-1q-wedding.vercel.app/canvas' " id="subModalClose-3" type="button"
 											class="btn btn-sm btn-white" data-dismiss="modal">자필 축하메시지 보내기</button>
 									</div>
 

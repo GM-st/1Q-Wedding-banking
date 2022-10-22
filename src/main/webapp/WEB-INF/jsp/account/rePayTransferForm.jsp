@@ -60,6 +60,9 @@
 	href="node_modules_2/@fortawesome/fontawesome-free/css/all.min.css"
 	rel="stylesheet">
 
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
 <!-- Prism -->
 <link type="text/css" href="node_modules_2/prismjs/themes/prism.css"
 	rel="stylesheet">
@@ -77,6 +80,7 @@
 
 </head>
 
+
 <body>
 
 	<main>
@@ -88,9 +92,9 @@
 
 		<div class="container">
 
-			<div class="row mt-5 justify-content-center">
+			<div class="row mt-5 col-12 ml-1 d-flex justify-content-center">
 
-				<div class="col-12 col-md-7 col-lg-8">
+				<div class="col-12 d-flex justify-content-center">
 
 					<div class="tab-content mt-4 mt-lg-5" id="nav-tabContent-ecommerce">
 
@@ -99,10 +103,10 @@
 							role="tabpanel" aria-labelledby="nav-credit-card-tab">
 
 
-							<div class="card border-light p-3 mb-4">
+							<div class="card border-light p-3 mb-4" style="width: 420px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius: 50px;">
 
-								<div class="card-header border-light p-3">
-									<h3 class="h5 mb-0">1Q Pay 축의금 환송하기</h3>
+								<div class="card-header border-light p-3 d-flex justify-content-center">
+									<h3 class="h5 mb-0" style="font-family: hanaM;text-shadow: 2px 2px 2px #aaa; font-size: 35px; color: #014A5A">1Q Pay 축의금 환송하기</h3>
 								</div>
 
 								<div class="card-body p-4">
@@ -226,8 +230,16 @@
 											</div>
 											<!-- End of Form -->
 										</div>
+										<div class="d-flex justify-content-center">
+										
+										<button onclick="accountReTransferProcess()" type="button" class="btn btn-block btn-primary mb-3"
+												data-toggle="modal" data-target="#modal-notification" style="background-color: #008485; border-color: #008485;width:170pt;height:40pt ;font-family: hanaM;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);font-size: 20px">축의금 환송하기</button>
+										
+										</div>
+
 	
-									  	<button onclick="accountReTransferProcess()" type="button" class="btn btn-block btn-primary mb-3" data-toggle="modal" data-target="#modal-notification">축의금 환송하기</button>
+	
+									  	<!-- <button onclick="accountReTransferProcess()" type="button" class="btn btn-block btn-primary mb-3" data-toggle="modal" data-target="#modal-notification">축의금 환송하기</button> -->
 											
 								</div>
 
@@ -304,7 +316,7 @@
 				childtransferAmount : parseInt(document.getElementById('childtransferAmount').value)
 			},
 			success : ()=>{
-				alert("성공임당2232323");			
+				console.log("성공임당2232323");			
 			},
 			error: () => {
 				alert("실패임당777777");
@@ -350,30 +362,57 @@
 	<script src="js_2/pixel.js"></script>
 	
 	<!-- modal -->
+
+
+	<div class="modal fade" id="modal-notification" tabindex="-1"
+		role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+		<div class="modal-dialog modal-info modal-dialog-centered"
+			role="document">
+			<div class="modal-content bg-gradient-secondary">
+				<div class="modal-header">
+					<button id=finalbtn type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				
+				<div class="modal-body">
+					<div class="py-0 text-center">
+						<span class="modal-icon display-1-sm d-flex justify-content-center">
+						<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_cyyxrhlr.json"  background="transparent"  speed="0.8"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player>
+						</span>
+						
+						<h2 class="modal-title my-3" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">축의금 환송 완료되었습니다</h2>
+						
+						<h2 class="modal-title my-1" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">환송한 금액은</h2>						
+
+						<h2 class="h4 modal-title mt-n2" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;"><br> 축의금 관리 시스템에서</h2>
+						
+						<h2 class="h4 modal-title my-3" style="font-family: hanaM; text-shadow: 1px 1px 1px #aaa; font-size: 23px;">환송완료로 전환됩니다</h2>
+						
+
+					</div>
+				</div>
+
+				<div class="modal-footer modal-footer d-flex justify-content-center">
+						
+						<button id=subModal style="background-color: #04515C; border-color: #04515C; width: 180px"
+								type="button" class="btn btn-primary" onclick="closePage()">
+						축의금 환송 완료
+						</button>
+						
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- End of Modal Content -->
 	
-	<div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
-        <div class="modal-dialog modal-info modal-dialog-centered" role="document">
-            <div class="modal-content bg-gradient-secondary">
-                <div class="modal-header">
-                    <p class="modal-title" id="modal-title-notification">A new experience, personalized for you.</p>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="py-3 text-center">
-                        <span class="modal-icon display-1-lg"><span class="far fa-envelope-open"></span></span>
-                        <h2 class="h4 modal-title my-3">Important message!</h2>
-                        <p>Do you know that you can assign status and relation to a company right in the visit list?.</p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button onclick="closePage()" type="button" class="btn btn-sm btn-white">Go to Inbox</button>
-                </div>
-            </div>
-        </div>
-    </div>
 	
+	
+
+
+
 
 
 

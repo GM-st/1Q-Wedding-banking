@@ -13,6 +13,8 @@
 		
 	$(document).ready(function(){
 		
+		
+		
 		 location.href = "https://hana-1q-wedding.vercel.app/recorder";
 		
 	}
